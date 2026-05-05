@@ -1,0 +1,196 @@
+video:
+  title: 20251227 05 105考試閒扯
+  url: https://www.youtube.com/watch?v=Y4MCcXziUOQ
+  duration: 02:29
+  downloaded_at: '2026-02-21'
+  is_bilingual: false
+chapters:
+- title: 考試題目復古與模糊基地形狀的挑戰
+  start_index: 0
+  end_index: 1
+- title: 快速完成圖表與錄影備忘
+  start_index: 2
+  end_index: 3
+- title: 畫圖與狗的破壞
+  start_index: 4
+  end_index: 5
+- title: 無法展示內容
+  start_index: 6
+  end_index: 7
+frames:
+- timestamp: 00:00
+  timestamp_seconds: 0.0
+  image: frames/00_00_00.png
+  transcript: '現場有人在問我今年考試題目的解法
+
+    我認為今年的考試題目出的
+
+    就是很復古啊
+
+    非常復古
+
+    然後今年的那個基地形狀
+
+    我們去年練習的很多遍
+
+    對不對一個是
+
+    一個是旁邊還有一間老房子要如何去串聯對不對
+
+    另外一個是
+
+    菜刀形狀
+
+    菜刀形狀是超難的形狀啦我們去年也練習了很多體驗型基地嘛
+
+    對不對
+
+    其實
+
+    其實他是很復古的題目
+
+    那如果說照我們讀書會的練習方式理論上去推導出
+
+    答案還蠻容易的
+
+    但是因為他的形他這兩題的那個基地條件都還蠻模糊的
+
+    所以他在這麼模糊的情況下面你要去把它畫到很精準的去'
+  note: ''
+  title: 考試題目復古與模糊基地形狀的挑戰
+  summary: 講者指出今年考試題目風格非常復古，主要包含兩個基地形狀：一個是旁邊有老房子的串聯，另一個是菜刀形狀。雖然這兩種形狀去年已經多次練習，理論上推導答案相對容易，但由於題目對基地條件描述模糊，考生需要在不確定的情況下精準繪製，才能正確解題。
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 01:00
+  timestamp_seconds: 60.0
+  image: frames/00_01_00.png
+  transcript: '所以他在這麼模糊的情況下面你要去把它畫到很精準的去
+
+    流速開放空間就變得有一點點難
+
+    有點點難
+
+    所以我覺得今年要把圖快速化完對我們讀書來講太簡單'
+  note: ''
+  title: 精準繪圖與流速空間挑戰
+  summary: 在模糊情況下需精準繪圖，流速開放空間較難處理，建議加速圖表製作以提升學習效率。
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 01:08
+  timestamp_seconds: 68.9
+  image: frames/00_01_08.png
+  transcript: '所以我覺得今年要把圖快速化完對我們讀書來講太簡單
+
+    我剛才有
+
+    有說啦就是
+
+    我自己在家測試啊
+
+    剛才有沒有錄影啊
+
+    那句話錄影嗎
+
+    我不想公開的那件事
+
+    好像沒錄影吧對不對
+
+    沒有錄就算我自己在家練習畫大圖這一題大體'
+  note: ''
+  title: 快速完成圖表與錄影備忘
+  summary: 講者提到今年想快速完成一張圖表，對於學習來說相當簡單；他在家自行測試並練習畫大圖，雖然沒有錄影，但仍會記錄下來以備未來參考。
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 01:32
+  timestamp_seconds: 92.9
+  image: frames/00_01_32.png
+  transcript: '沒有錄就算我自己在家練習畫大圖這一題大體
+
+    但是因為被我兒子撕掉
+
+    然後又被我家狗咬掉所以我給你看
+
+    也沒有紀錄步驟'
+  note: ''
+  title: 未錄製教學影片：作品被兒子與狗毀壞
+  summary: 講者表示自己在家練習畫大圖，但作品被兒子撕掉、狗咬掉，導致沒有錄製影片或步驟紀錄。
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 01:44
+  timestamp_seconds: 104.1
+  image: frames/00_01_44.png
+  transcript: '所以我自己畫的那張圖我大概
+
+    還喝咖啡吃點心大概三個半小時就把大社集畫完兩面畫完
+
+    那因為我家狗真的不乖他就把我大圖製料掉'
+  note: ''
+  title: 畫圖與狗的破壞
+  summary: 講者描述自己在喝咖啡、吃點心的同時，花了約三個半小時完成一幅雙面畫作，卻因為家裡不乖的狗把作品毀掉。
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 01:54
+  timestamp_seconds: 114.9
+  image: frames/00_01_54.png
+  transcript: '那因為我家狗真的不乖他就把我大圖製料掉
+
+    所以沒辦法給大家看'
+  note: ''
+  title: 狗狗搞砸大圖，無法展示
+  summary: 講者因為家裡的狗不乖，導致他的大圖被毀，無法向觀眾展示。
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 01:59
+  timestamp_seconds: 119.5
+  image: frames/00_01_59.png
+  transcript: 所以沒辦法給大家看
+  note: ''
+  title: 無法展示內容
+  summary: 說明因某些限制，無法將內容展示給觀眾。
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 02:00
+  timestamp_seconds: 120.0
+  image: frames/00_02_00.png
+  transcript: '所以沒辦法給大家看
+
+    連餐還都沒有
+
+    都被他吃到肚子裡面
+
+    嘿嘿嘿
+
+    好
+
+    那
+
+    很正常啊他有吃過球啊
+
+    什麼的對不對
+
+    好
+
+    那
+
+    檢查了如果說在我們的
+
+    推理推理解決方法這兩題其實很容易推出答案
+
+    但是要畫到很精確不太容易
+
+    好
+
+    顯化扯一扯'
+  note: ''
+  title: 推理解題技巧與圖示挑戰
+  summary: 講者指出，雖然利用推理方法能輕易推導出兩題答案，但要將解答精確地畫出來卻相對困難。
+  visual_analysis: ''
+  source: auto
+  analyzed: true

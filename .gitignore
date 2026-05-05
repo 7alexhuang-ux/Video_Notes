@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.pytest_cache/
+
+# 環境
+.env
+.venv/
+venv/
+
+# 影片資料（檔案太大不進 repo，原始 YouTube URL 在各影片的 data.yaml）
+data/*/*.mp4
+data/*/*.mp3
+data/*/*.wav
+data/*/*.m4a
+data/*/*.webm
+data/*/transcript.json
+data/*/frames/
+data/*/*.srt
+data/*/*.vtt
+
+# yt-dlp 執行檔（請使用者自行下載）
+yt-dlp.exe
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 暫存
+*.log

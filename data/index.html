@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Library - Alex Diary</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --text-color: #f1f5f9;
+            --accent-color: #38bdf8;
+            --secondary-bg: #1e293b;
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --success-color: #10b981;
+            --folder-color: #fbbf24;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background: radial-gradient(circle at top right, #1e293b, #0f172a);
+            color: var(--text-color);
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        .container { max-width: 1400px; margin: 0 auto; padding: 40px 20px; }
+
+        header { margin-bottom: 40px; display: flex; justify-content: space-between; align-items: flex-end; }
+        header h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.025em; margin: 0; }
+        
+        .tab-bar { margin-bottom: 24px; display: flex; gap: 8px; border-bottom: 1px solid var(--glass-border); padding-bottom: 8px; }
+        .tab { 
+            padding: 8px 24px; cursor: pointer; border-radius: 8px 8px 0 0; font-weight: 600; opacity: 0.5;
+            transition: all 0.2s;
+        }
+        .tab.active { opacity: 1; background: var(--secondary-bg); color: var(--accent-color); border-bottom: 2px solid var(--accent-color); }
+
+        .stat-pills { display: flex; gap: 12px; }
+        .pill { background: var(--secondary-bg); padding: 6px 16px; border-radius: 99px; border: 1px solid var(--glass-border); font-size: 0.85rem; font-weight: 500; }
+        .pill span { color: var(--accent-color); font-weight: 700; margin-right: 4px; }
+
+        /* List View Styles */
+        .library-section { margin-bottom: 40px; }
+        .folder-container { margin-bottom: 20px; background: var(--card-bg); border-radius: 12px; border: 1px solid var(--glass-border); overflow: hidden; }
+        .collapsed { background: none; border-color: transparent; }
+        .folder-header { 
+            padding: 16px 20px; background: rgba(255,255,255,0.03); cursor: pointer; display: flex; align-items: center; justify-content: space-between;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .collapsed .folder-header { border-bottom: none; background: rgba(255,255,255,0.01); }
+        .folder-title { display: flex; align-items: center; gap: 12px; font-weight: 700; color: var(--folder-color); }
+        .folder-arrow { transition: transform 0.2s; }
+        .collapsed .folder-arrow { transform: rotate(-90deg); }
+        .folder-content { padding: 8px 0; min-height: 20px; }
+        .collapsed .folder-content { display: none; }
+
+        .video-item { 
+            display: grid; grid-template-columns: 40px 1fr 120px 100px 160px 140px; align-items: center; padding: 12px 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.05); transition: background 0.2s; cursor: grab;
+        }
+        .video-item:last-child { border-bottom: none; }
+        .video-item:hover { background: rgba(255,255,255,0.02); }
+        
+        .drag-handle { color: #475569; font-size: 1.2rem; }
+        .video-main { display: flex; flex-direction: column; gap: 2px; }
+        .video-name { font-weight: 600; text-decoration: none; color: inherit; font-size: 0.95rem; }
+        .video-name:hover { color: var(--accent-color); }
+        .video-sub { font-size: 0.75rem; color: #64748b; display: flex; gap: 10px; }
+
+        .status-cell { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; }
+        .check-box { 
+            width: 18px; height: 18px; border-radius: 4px; border: 2px solid #475569; cursor: pointer;
+            display: flex; align-items: center; justify-content: center; transition: all 0.2s;
+        }
+        .check-box.checked { background: var(--success-color); border-color: var(--success-color); }
+        .check-box.checked::after { content: '✓'; color: white; font-size: 12px; font-weight: 900; }
+
+        .review-counter { display: flex; align-items: center; gap: 8px; background: #1e293b; padding: 4px 10px; border-radius: 6px; border: 1px solid var(--glass-border); }
+        .rev-btn { cursor: pointer; opacity: 0.6; transition: opacity 0.2s; }
+        .rev-btn:hover { opacity: 1; color: var(--accent-color); }
+        .rev-val { font-family: monospace; font-weight: 700; min-width: 12px; text-align: center; }
+
+        .badge { padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; background: #334155; }
+        .badge.analyzed { background: rgba(16, 185, 129, 0.2); color: #10b981; }
+
+        .controls-top { margin-bottom: 20px; display: flex; gap: 10px; }
+        .view-section { display: none; }
+        .view-section.active { display: block; }
+        
+        /* Star Card Specific */
+        .star-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 20px; padding: 20px; }
+        .star-card { background: var(--card-bg); border-radius: 12px; overflow: hidden; border: 1px solid var(--glass-border); display: flex; flex-direction: column; cursor: grab; }
+        .star-card img { width: 100%; height: 200px; object-fit: cover; }
+        .star-card-body { padding: 16px; flex-grow: 1; }
+        .star-card-title { font-weight: 700; margin-bottom: 8px; color: var(--accent-color); font-size: 1rem; }
+        .star-card-summary { font-size: 0.85rem; opacity: 0.8; line-height: 1.6; }
+        .star-card-meta { margin-top: 12px; font-size: 0.75rem; color: #64748b; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 8px; }
+
+        .btn { 
+            padding: 8px 16px; border-radius: 8px; border: 1px solid var(--glass-border); background: var(--secondary-bg); 
+            color: white; font-size: 0.85rem; cursor: pointer; transition: all 0.2s;
+        }
+        .btn:hover { background: #334155; border-color: var(--accent-color); }
+        .btn.primary { background: var(--accent-color); color: #0f172a; font-weight: 700; border: none; }
+
+        #save-status { position: fixed; bottom: 20px; right: 20px; padding: 12px 24px; border-radius: 12px; background: var(--success-color); color: white; font-weight: 700; transform: translateY(100px); transition: transform 0.3s; z-index: 1000; box-shadow: 0 10px 30px rgba(0,0,0,0.3); pointer-events: none; }
+        #save-status.visible { transform: translateY(0); }
+
+        .sortable-ghost { opacity: 0.4; background: var(--accent-color) !important; }
+
+        @media (max-width: 1000px) {
+            .video-item { grid-template-columns: 40px 1fr 100px; }
+            .hide-mobile { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div id="save-status">✅ 已自動同步</div>
+    <div class="container">
+        <header>
+            <div>
+                <h1>Video Library</h1>
+                <p style="color: #64748b; margin-top: 4px;">由 AI 自動提煉的互動式筆記系統</p>
+            </div>
+            <div class="stat-pills" id="global-stats"></div>
+        </header>
+
+        <div class="tab-bar">
+            <div class="tab active" onclick="switchView('library')">📚 檔案庫</div>
+            <div class="tab" onclick="switchView('stars')">⭐ 重點摘錄</div>
+        </div>
+
+        <div id="library-view" class="view-section active">
+            <div class="controls-top">
+                <button class="btn primary" onclick="addNewFolder('library')">+ 新增分類</button>
+                <button class="btn" onclick="autoCategorize()">🪄 按日期分類</button>
+                <button class="btn" style="margin-left: auto;" onclick="toggleAllFolders()">展開/摺疊全部</button>
+            </div>
+            <div id="library-root" class="library-section"></div>
+        </div>
+
+        <div id="stars-view" class="view-section">
+            <div class="controls-top">
+                <button class="btn primary" onclick="addNewFolder('stars')">+ 新增主題</button>
+                <button class="btn" style="margin-left: auto;" onclick="toggleAllFolders('.stars-section')">展開/摺疊全部</button>
+            </div>
+            <div id="stars-root" class="library-section stars-section"></div>
+        </div>
+
+        <footer>
+            Video Notes v0.4.5 | 最後同步於 <span id="sync-time"></span>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+
+    <script>
+        let library = {"structure": [{"type": "folder", "name": "未分類", "items": [{"type": "video", "id": "0baG4H2ruMU"}, {"type": "video", "id": "18DZEAcs89Y"}, {"type": "video", "id": "2BYPh2bDQ2A"}, {"type": "video", "id": "5BF2Q6Nk4nA"}, {"type": "video", "id": "6nsu16wghRg"}, {"type": "video", "id": "alw6vXIPylI"}, {"type": "video", "id": "a_m1rsK3HkA"}, {"type": "video", "id": "CX94uQ6Qo30"}, {"type": "video", "id": "d8X05Q1YaGE"}, {"type": "video", "id": "eO2hGi2bJME"}, {"type": "video", "id": "GjwJVefi_HU"}, {"type": "video", "id": "HPvfKwCLvLs"}, {"type": "video", "id": "M52U8ng29aA"}, {"type": "video", "id": "PhulEY1N5rU"}, {"type": "video", "id": "RwzRrx8-d_w"}, {"type": "video", "id": "S7ulqidC36w"}, {"type": "video", "id": "XUXFUXCizQg"}, {"type": "video", "id": "XzXwfGQe1Es"}, {"type": "video", "id": "Y4MCcXziUOQ"}, {"type": "video", "id": "YEmW5ITHT9A"}, {"type": "video", "id": "YNHp8YwxPwI"}, {"type": "video", "id": "-elEsUbarUU"}, {"type": "video", "id": "XWfePYlK45E"}]}], "starred_structure": [{"type": "folder", "name": "全體重點", "items": [{"type": "star", "vid": "S7ulqidC36w", "idx": 30}, {"type": "star", "vid": "S7ulqidC36w", "idx": 34}]}]}; 
+        const videosMap = {"-elEsUbarUU": {"video_id": "-elEsUbarUU", "title": "Piet Oudolf - Perennials, garden design, lecture", "url": "https://www.youtube.com/watch?v=-elEsUbarUU", "duration": "53:37", "downloaded_at": "2026-02-19", "total_frames": 60, "analyzed_count": 60, "manual_count": 0, "max_score": null, "thumbnail": "-elEsUbarUU/frames/00_00_00.png", "watched": false, "watched_at": null, "review_count": 0, "reviewed_at": null}, "0baG4H2ruMU": {"video_id": "0baG4H2ruMU", "title": "2026 0124 02 怎樣開始練習", "url": "https://www.youtube.com/watch?v=0baG4H2ruMU", "duration": "10:18", "downloaded_at": "2026-02-21", "total_frames": 50, "analyzed_count": 50, "manual_count": 0, "max_score": null, "thumbnail": "0baG4H2ruMU/frames/00_00_00.png", "watched": false, "watched_at": null, "review_count": 0, "reviewed_at": null}, "18DZEAcs89Y": {"video_id": "18DZEAcs89Y", "title": "2026 0207 03 流程ＳＯＰ、解題三原則", "url": "https://www.youtube.com/watch?v=18DZEAcs89Y", "duration": "10:45", "downloaded_at": "2026-02-21", "total_frames": 50, "analyzed_count": 50, "manual_count": 0, "max_score": null, "thumbnail": "18DZEAcs89Y/frames/00_00_00.png", "watched": false, "watched_at": null, "review_count": 0, "reviewed_at": null}, "2BYPh2bDQ2A": {"video_id": "2BYPh2bDQ2A", "title": "2026 0124 07 本週練習說明", "url": "https://www.youtube.com/watch?v=2BYPh2bDQ2A", "duration": "04:21", "downloaded_at": "2026-02-21", "total_frames": 23, "analyzed_count": 23, "manual_count": 0, "max_score": null, "thumbnail": "2BYPh2bDQ2A/frames/00_00_00.png", "watched": false, "watched_at": null, "review_count": 0, "reviewed_at": null}, "5BF2Q6Nk4nA": {"video_id": "5BF2Q6Nk4nA", "title": "2026 0214 03 讀題 105D 三種提升社區品質的空間", "url": "https://www.youtube.com/watch?v=5BF2Q6Nk4nA", "duration": "36:04", "downloaded_at": "2026-02-21", "total_frames": 50, "analyzed_count": 50, "manual_count": 0, "max_score": null, "thumbnail": "5BF2Q6Nk4nA/frames/00_00_00.png", "watched": false, "watched_at": null, "review_count": 0, "reviewed_at": null}, "6nsu16wghRg": {"video_id": "6nsu16wghRg", "title": "20251227 04 作業說明、排版與時間安排", "url": "https://www.youtube.com/watch?v=6nsu16wghRg", "duration": "10:09", "downloaded_at": "2026-02-21", "total_frames": 41, "analyzed_count": 41, "manual_count": 0, "max_score": null, "thumbnail": "6nsu16wghRg/frames/00_00_00.png", "watched": false, "watched_at": null, "review_count": 0, "reviewed_at": null}, "alw6vXIPylI": {"video_id": "alw6vXIPylI", "title": "2026 0124 04 讀題 107D 創意空間設定方法？", "url": "https://www.youtube.com/watch?v=alw6vXIPylI", "duration": "23:21", "downloaded_at": "2026-02-21", "total_frames": 32, "analyzed_count": 32, "manual_count": 0, "max_score": null, "thumbnail": "alw6vXIPylI/frames/00_00_00.png", "watched": false, "watched_at": null, "review_count": 0, "reviewed_at": null}, "a_m1rsK3HkA": {"video_id": "a_m1rsK3HkA", "title": "2026 0110 05 觀念 讀題練習的方法（以念法規為例）", "url": "https://www.youtube.com/watch?v=a_m1rsK3HkA", "duration": "02:41", "downloaded_at": "2026-02-21", "total_frames": 6, "analyzed_count": 6, "manual_count": 0, "max_score": null, "thumbnail": "a_m1rsK3HkA/frames/00_00_00.png", "watched": false, "watched_at": null, "review_count": 0, "reviewed_at": null}, "CX94uQ6Qo30": {"video_id": "CX94uQ6Qo30", "title": "2025 0110 01 觀念 解題設計流程", "url": "https://www.youtube.com/watch?v=CX94uQ6Qo30", "duration": "09:47", "downloaded_at": "2026-02-21", "total_frames": 50, "analyzed_count": 50, "manual_count": 0, "max_score": null, "thumbnail": "CX94uQ6Qo30/frames/00_00_00.png", "watched": false, "watched_at": null, "review_count": 0, "reviewed_at": null}, "d8X05Q1YaGE": {"video_id": "d8X05Q1YaGE", "title": "2026 0110 07 練習說明", "url": "https://www.youtube.com/watch?v=d8X05Q1YaGE", "duration": "09:27", "downloaded_at": "2026-02-21", "total_frames": 33, "analyzed_count": 33, "manual_count": 0, "max_score": null, "thumbnail": "d8X05Q1YaGE/frames/00_00_00.png", "watched": false, "watched_at": null, "review_count": 0, "reviewed_at": null}, "eO2hGi2bJME": {"video_id": "eO2hGi2bJME", "title": "2025 1227 01 繪圖 構成平面的元素與流程", "url": "https://www.youtube.com/watch?v=eO2hGi2bJME", "duration": "33:50", "downloaded_at": "2026-02-21", "total_frames": 50, "analyzed_count": 50, "manual_count": 0, "max_score": null, "thumbnail": "eO2hGi2bJME/frames/00_00_00.png", "watched": false, "watched_at": null, "review_count": 0, "reviewed_at": null}, "GjwJVefi_HU": {"video_id": "GjwJVefi_HU", "title": "2026 0207 01 改卷方式、解題原則", "url": "https://www.youtube.com/watch?v=GjwJVefi_HU", "duration": "11:56", "downloaded_at": "2026-02-21", "total_frames": 43, "analyzed_count": 43, "manual_count": 0, "max_score": null, "thumbnail": "GjwJVefi_HU/frames/00_00_00.png", "watched": false, "watched_at": null, "review_count": 0, "reviewed_at": null}, "HPvfKwCLvLs": {"video_id": "HPvfKwCLvLs", "title": "2026 0207 02 七種都設空間說明、開放空間形式", "url": "https://www.youtube.com/watch?v=HPvfKwCLvLs", "duration": "27:57", "downloaded_at": "2026-02-21", "total_frames": 23, "analyzed_count": 23, "manual_count": 0, "max_score": null, "thumbnail": "HPvfKwCLvLs/frames/00_00_00.png", "watched": false, "watched_at": null, "review_count": 0, "reviewed_at": null}, "M52U8ng29aA": {"video_id": "M52U8ng29aA", "title": "2026 0214 02 讀題 106D 讀題的三個目標：空間、標題、面積用完", "url": "https://www.youtube.com/watch?v=M52U8ng29aA", "duration": "25:21", "downloaded_at": "2026-02-21", "total_frames": 50, "analyzed_count": 50, "manual_count": 0, "max_score": null, "thumbnail": "M52U8ng29aA/frames/00_00_00.png", "watched": false, "watched_at": null, "review_count": 0, "reviewed_at": null}, "PhulEY1N5rU": {"video_id": "PhulEY1N5rU", "title": "2026 0124 06 讀題 99D 兒童議題的對應原則", "url": "https://www.youtube.com/watch?v=PhulEY1N5rU", "duration": "17:32", "downloaded_at": "2026-02-21", "total_frames": 30, "analyzed_count": 30, "manual_count": 0, "max_score": null, "thumbnail": "PhulEY1N5rU/frames/00_00_00.png", "watched": false, "watched_at": null, "review_count": 0, "reviewed_at": null}, "RwzRrx8-d_w": {"video_id": "RwzRrx8-d_w", "title": "2026 0124 01 讀題目的概念", "url": "https://www.youtube.com/watch?v=RwzRrx8-d_w", "duration": "05:59", "downloaded_at": "2026-02-21", "total_frames": 12, "analyzed_count": 12, "manual_count": 0, "max_score": null, "thumbnail": "RwzRrx8-d_w/frames/00_00_00.png", "watched": false, "watched_at": null, "review_count": 0, "reviewed_at": null}, "S7ulqidC36w": {"video_id": "S7ulqidC36w", "title": "2026 0110 02 觀念 量體計劃、高度設定", "url": "https://www.youtube.com/watch?v=S7ulqidC36w", "duration": "20:38", "downloaded_at": "2026-02-21", "total_frames": 50, "analyzed_count": 50, "manual_count": 0, "max_score": null, "thumbnail": "S7ulqidC36w/frames/00_00_00.png", "watched": false, "watched_at": null, "review_count": 0, "reviewed_at": null}, "XUXFUXCizQg": {"video_id": "XUXFUXCizQg", "title": "2026 0214 04 讀題 104D 永續建築、學習交流、年假練習、正面要畫什麼", "url": "https://www.youtube.com/watch?v=XUXFUXCizQg", "duration": "31:41", "downloaded_at": "2026-02-21", "total_frames": 50, "analyzed_count": 50, "manual_count": 0, "max_score": null, "thumbnail": "XUXFUXCizQg/frames/00_00_00.png", "watched": false, "watched_at": null, "review_count": 0, "reviewed_at": null}, "XWfePYlK45E": {"video_id": "XWfePYlK45E", "title": "2026 0214 01 復原圖討論", "url": "https://www.youtube.com/watch?v=XWfePYlK45E", "duration": "17:47", "downloaded_at": "2026-02-19", "total_frames": 41, "analyzed_count": 41, "manual_count": 0, "max_score": null, "thumbnail": "XWfePYlK45E/frames/00_00_34.png", "watched": false, "watched_at": null, "review_count": 0, "reviewed_at": null}, "XzXwfGQe1Es": {"video_id": "XzXwfGQe1Es", "title": "2025 1227 02 繪圖 標準平面的變形運用mov", "url": "https://www.youtube.com/watch?v=XzXwfGQe1Es", "duration": "22:08", "downloaded_at": "2026-02-21", "total_frames": 50, "analyzed_count": 50, "manual_count": 0, "max_score": null, "thumbnail": "XzXwfGQe1Es/frames/00_00_00.png", "watched": false, "watched_at": null, "review_count": 0, "reviewed_at": null}, "Y4MCcXziUOQ": {"video_id": "Y4MCcXziUOQ", "title": "20251227 05 105考試閒扯", "url": "https://www.youtube.com/watch?v=Y4MCcXziUOQ", "duration": "02:29", "downloaded_at": "2026-02-21", "total_frames": 8, "analyzed_count": 8, "manual_count": 0, "max_score": null, "thumbnail": "Y4MCcXziUOQ/frames/00_00_00.png", "watched": false, "watched_at": null, "review_count": 0, "reviewed_at": null}, "YEmW5ITHT9A": {"video_id": "YEmW5ITHT9A", "title": "2026 0207 04 114U 環境分析", "url": "https://www.youtube.com/watch?v=YEmW5ITHT9A", "duration": "19:44", "downloaded_at": "2026-02-21", "total_frames": 26, "analyzed_count": 26, "manual_count": 0, "max_score": null, "thumbnail": "YEmW5ITHT9A/frames/00_00_00.png", "watched": false, "watched_at": null, "review_count": 0, "reviewed_at": null}, "YNHp8YwxPwI": {"video_id": "YNHp8YwxPwI", "title": "2026 0110 04  觀念 讀題練習示範（113D", "url": "https://www.youtube.com/watch?v=YNHp8YwxPwI", "duration": "30:59", "downloaded_at": "2026-02-21", "total_frames": 50, "analyzed_count": 50, "manual_count": 0, "max_score": null, "thumbnail": "YNHp8YwxPwI/frames/00_00_00.png", "watched": false, "watched_at": null, "review_count": 0, "reviewed_at": null}}; 
+        const starredFrames = [{"video_id": "S7ulqidC36w", "video_title": "2026 0110 02 觀念 量體計劃、高度設定", "frame_index": 30, "timestamp": "08:37", "title": "道路網路對建築物高度與尺寸的影響", "summary": "影片片段討論如何以道路網路為基礎，透過將深度放大3~4倍來控制建築物高度，並說明道路寬度越大，拉出的建築物尺寸也會相應增大。重點區分主要道路、次要道路與背面道路，強調在三維建模時需考慮道路的重要性與比例關係。", "image": "frames/00_08_37.png"}, {"video_id": "S7ulqidC36w", "video_title": "2026 0110 02 觀念 量體計劃、高度設定", "frame_index": 34, "timestamp": "09:49", "title": "根據周邊建築高度調整設計樓層數", "summary": "講者說明若周邊建築高度為7至14層，則新設計的樓層數上限為14層；若周邊為19層以上，則不設高度限制，只要外觀美觀即可。接著舉例低矮老舊建築（2-3層）與較高建築（10層）的情境，說明如何依照周邊環境決定設計高度。", "image": "frames/00_09_49.png"}];
+
+        function switchView(view) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.textContent.includes(view === 'library' ? '檔案庫' : '重點')));
+            document.querySelectorAll('.view-section').forEach(s => s.classList.toggle('active', s.id === view + '-view'));
+            if (view === 'stars') renderStars();
+            else renderLibrary();
+        }
+
+        function renderLibrary() {
+            const root = document.getElementById('library-root');
+            root.innerHTML = '';
+            if (!library.structure) library.structure = [];
+            library.structure.forEach((item, idx) => {
+                if (item.type === 'folder') root.appendChild(createFolderEl(item, ['structure', idx]));
+                else root.appendChild(createVideoEl(item.id, ['structure', idx]));
+            });
+            initDragDrop('.sortable-list', 'library');
+            updateStats();
+        }
+
+        function renderStars() {
+            const root = document.getElementById('stars-root');
+            root.innerHTML = '';
+            if (!library.starred_structure) library.starred_structure = [];
+            library.starred_structure.forEach((item, idx) => {
+                if (item.type === 'folder') root.appendChild(createStarFolderEl(item, ['starred_structure', idx]));
+                else root.appendChild(createStarCardEl(item.vid, item.idx, ['starred_structure', idx]));
+            });
+            initDragDrop('.sortable-stars', 'stars');
+            updateStats();
+        }
+
+        function createFolderEl(folder, path) {
+            const container = document.createElement('div');
+            container.className = 'folder-container';
+            const header = document.createElement('div');
+            header.className = 'folder-header';
+            header.innerHTML = `<div class="folder-title"><span class="folder-arrow">▼</span> 📂 <span>${folder.name}</span> <span class="badge" style="background:#1e293b; color:#94a3b8; margin-left:8px;">${folder.items.length}</span></div>`;
+            header.onclick = () => container.classList.toggle('collapsed');
+            const content = document.createElement('div');
+            content.className = 'folder-content sortable-list';
+            folder.items.forEach((item, i) => {
+                if (item.type === 'video') content.appendChild(createVideoEl(item.id, [...path, 'items', i]));
+                else if (item.type === 'folder') content.appendChild(createFolderEl(item, [...path, 'items', i]));
+            });
+            container.appendChild(header);
+            container.appendChild(content);
+            return container;
+        }
+
+        function createStarFolderEl(folder, path) {
+            const container = document.createElement('div');
+            container.className = 'folder-container';
+            const header = document.createElement('div');
+            header.className = 'folder-header';
+            header.innerHTML = `<div class="folder-title"><span class="folder-arrow">▼</span> ⭐ <span>${folder.name}</span> <span class="badge" style="background:#1e293b; color:#fbbf24; margin-left:8px;">${folder.items.length}</span></div>`;
+            header.onclick = () => container.classList.toggle('collapsed');
+            const content = document.createElement('div');
+            content.className = 'folder-content star-grid sortable-stars';
+            folder.items.forEach((item, i) => {
+                if (item.type === 'star') content.appendChild(createStarCardEl(item.vid, item.idx, [...path, 'items', i]));
+                else if (item.type === 'folder') content.appendChild(createStarFolderEl(item, [...path, 'items', i]));
+            });
+            container.appendChild(header);
+            container.appendChild(content);
+            return container;
+        }
+
+        function createVideoEl(id, path) {
+            const video = videosMap[id];
+            if (!video) return document.createElement('div');
+            const el = document.createElement('div');
+            el.className = 'video-item';
+            el.dataset.id = id;
+            const isWatched = video.watched || false;
+            el.innerHTML = `
+                <div class="drag-handle">⋮⋮</div>
+                <div class="video-main">
+                    <a href="${id}/index.html" class="video-name">${video.title}</a>
+                    <div class="video-sub">
+                        <span>⏱️ ${video.duration}</span>
+                        <span>📅 ${video.downloaded_at}</span>
+                        <span class="badge ${video.analyzed_count > 0 ? 'analyzed' : ''}">${video.analyzed_count}/${video.total_frames} 分析</span>
+                    </div>
+                </div>
+                <div class="status-cell hide-mobile">
+                    <div class="check-box ${isWatched ? 'checked' : ''}" onclick="toggleWatched('${id}')"></div>
+                    <span>${isWatched ? '已看完' : '未看'}</span>
+                </div>
+                <div class="review-counter hide-mobile">
+                    <span class="rev-btn" onclick="updateReview('${id}', -1)">−</span>
+                    <span class="rev-val">${video.review_count || 0}</span>
+                    <span class="rev-btn" onclick="updateReview('${id}', 1)">+</span>
+                </div>
+                <div class="hide-mobile" style="font-size: 0.75rem; color: #64748b;">
+                    ${video.watched_at ? `👁️ ${video.watched_at.split(' ')[0]}` : ''}<br>
+                    ${video.reviewed_at ? `🔄 ${video.reviewed_at.split(' ')[0]}` : ''}
+                </div>
+                <div class="hide-mobile">${video.max_score !== null ? `<span class="badge" style="background: ${video.max_score >= 60 ? 'rgba(16,185,129,0.2)' : 'rgba(233,69,96,0.2)'}; color: ${video.max_score >= 60 ? '#10b981' : '#f87171'}">Score: ${video.max_score}</span>` : ''}</div>
+            `;
+            return el;
+        }
+
+        function createStarCardEl(vid, frameIdx, path) {
+            const star = starredFrames.find(s => s.video_id === vid && s.frame_index === frameIdx);
+            if (!star) return document.createElement('div');
+            const el = document.createElement('div');
+            el.className = 'star-card';
+            el.dataset.vid = vid; el.dataset.idx = frameIdx;
+            el.innerHTML = `
+                <a href="${vid}/index.html#frame-${frameIdx + 1}" style="display:block;"><img src="${vid}/${star.image}" loading="lazy"></a>
+                <div class="star-card-body">
+                    <div class="star-card-title">${star.title || '無標題'}</div>
+                    <div class="star-card-summary">${(star.summary || '').replace(/\n/g, '<br>')}</div>
+                    <div class="star-card-meta">🎬 ${star.video_title} (${star.timestamp})</div>
+                </div>
+            `;
+            return el;
+        }
+
+        function initDragDrop(selector, groupName) {
+            document.querySelectorAll(selector).forEach(list => {
+                new Sortable(list, {
+                    group: groupName, animation: 150, handle: '.drag-handle, .video-item, .star-card', ghostClass: 'sortable-ghost',
+                    onEnd: () => {
+                        if (groupName === 'library') rebuildLibraryFromDOM();
+                        else rebuildStarsFromDOM();
+                    }
+                });
+            });
+        }
+
+        function rebuildLibraryFromDOM() { library.structure = scanNode(document.getElementById('library-root'), 'video'); saveLibrary(); }
+        function rebuildStarsFromDOM() { library.starred_structure = scanNode(document.getElementById('stars-root'), 'star'); saveLibrary(); }
+
+        function scanNode(node, typeName) {
+            const items = [];
+            Array.from(node.children).forEach(child => {
+                if (child.classList.contains('video-item')) items.push({ type: 'video', id: child.dataset.id });
+                else if (child.classList.contains('star-card')) items.push({ type: 'star', vid: child.dataset.vid, idx: parseInt(child.dataset.idx) });
+                else if (child.classList.contains('folder-container')) {
+                    const name = child.querySelector('.folder-title span:not(.folder-arrow):not(.badge)').textContent;
+                    items.push({ type: 'folder', name: name, items: scanNode(child.querySelector('.folder-content'), typeName) });
+                }
+            });
+            return items;
+        }
+
+        function toggleWatched(id) {
+            const video = videosMap[id];
+            video.watched = !video.watched;
+            video.watched_at = video.watched ? new Date().toISOString().replace('T', ' ').substring(0, 19) : null;
+            saveVideoStatus(id, { watched: video.watched, watched_at: video.watched_at });
+            renderLibrary();
+        }
+
+        function updateReview(id, delta) {
+            const video = videosMap[id];
+            video.review_count = Math.max(0, (video.review_count || 0) + delta);
+            if (delta > 0) video.reviewed_at = new Date().toISOString().replace('T', ' ').substring(0, 19);
+            saveVideoStatus(id, { review_count: video.review_count, reviewed_at: video.reviewed_at });
+            renderLibrary();
+        }
+
+        function saveVideoStatus(id, data) {
+            fetch('http://localhost:10002/api/save', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ video_id: id, ...data }) });
+            showToast();
+        }
+
+        function saveLibrary() {
+            fetch('http://localhost:10002/api/library/save', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(library) });
+            showToast();
+        }
+
+        function showToast() {
+            const toast = document.getElementById('save-status');
+            toast.classList.add('visible');
+            setTimeout(() => toast.classList.remove('visible'), 2000);
+        }
+
+        function addNewFolder(view) {
+            const name = prompt('資料夾名稱:');
+            if (name) {
+                if (view === 'library') library.structure.unshift({ type: 'folder', name, items: [] });
+                else library.starred_structure.unshift({ type: 'folder', name, items: [] });
+                saveLibrary();
+                view === 'library' ? renderLibrary() : renderStars();
+            }
+        }
+
+        function toggleAllFolders(selector = '.folder-container') {
+            const anyOpen = document.querySelector(selector + ':not(.collapsed)');
+            document.querySelectorAll(selector).forEach(f => {
+                if (anyOpen) f.classList.add('collapsed');
+                else f.classList.remove('collapsed');
+            });
+        }
+
+        function autoCategorize() {
+            const videos = Object.values(videosMap);
+            const groups = {};
+
+            videos.forEach(v => {
+                // 1. Determine Category (from folder property)
+                const category = v.folder || "未分類";
+
+                // 2. Extract Date from Title (Matches YYYY MMDD, YYYY-MM-DD, or YYYYMMDD)
+                let date = "未定日期";
+                // 擴增正則表達式，不僅支援 YYYY MMDD，也支援 YYYYMMDD
+                const dateMatch = v.title.match(/(20\d{2})[- \/]?([01]\d)[- \/]?([0-3]\d)/);
+                if (dateMatch) {
+                    date = `${dateMatch[1]}-${dateMatch[2]}-${dateMatch[3]}`;
+                }
+
+                if (!groups[category]) groups[category] = {};
+                if (!groups[category][date]) groups[category][date] = [];
+                
+                groups[category][date].push({ type: 'video', id: v.video_id });
+            });
+
+            // 3. Build hierarchical structure
+            library.structure = Object.keys(groups).sort().map(category => {
+                const dateFolders = Object.keys(groups[category]).sort().reverse().map(date => ({
+                    type: 'folder', 
+                    name: date, 
+                    items: groups[category][date]
+                }));
+                
+                return {
+                    type: 'folder',
+                    name: category,
+                    items: dateFolders
+                };
+            });
+
+            saveLibrary();
+            renderLibrary();
+        }
+
+        function updateStats() {
+            let total = 0, watched = 0, reviewed = 0;
+            Object.values(videosMap).forEach(v => { total++; if (v.watched) watched++; if (v.review_count > 0) reviewed++; });
+            document.getElementById('global-stats').innerHTML = `
+                <div class="pill"><span>${total}</span> 總數</div>
+                <div class="pill"><span>${watched}</span> 已完食</div>
+                <div class="pill"><span>${reviewed}</span> 已複習</div>
+            `;
+            document.getElementById('sync-time').textContent = new Date().toLocaleTimeString();
+        }
+
+        renderLibrary();
+    </script>
+</body>
+</html>

@@ -1,0 +1,814 @@
+video:
+  title: 2026 0110 07 練習說明
+  url: https://www.youtube.com/watch?v=d8X05Q1YaGE
+  duration: 09:27
+  downloaded_at: '2026-02-21'
+  is_bilingual: false
+chapters:
+- title: 空間圖紙與設計概論
+  start_index: 0
+  end_index: 5
+- title: 高效練習與時間管理
+  start_index: 6
+  end_index: 12
+- title: 實踐配置與評估
+  start_index: 13
+  end_index: 20
+- title: 基礎平面圖與作業
+  start_index: 21
+  end_index: 36
+frames:
+- timestamp: 00:00
+  timestamp_seconds: 0.0
+  image: frames/00_00_00.png
+  transcript: '好 我今天把空間定性定量
+
+    在圖紙上要完成的狀態'
+  note: ''
+  title: 空間定性定量圖紙完成狀態
+  summary: "- 空間定性定量\n  - 定性：描述性特徵\n  - 定量：數值測量\n- 圖紙完成狀態\n  - 在圖紙上呈現分析結果"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 00:07
+  timestamp_seconds: 7.1
+  image: frames/00_00_07.png
+  transcript: '在圖紙上要完成的狀態
+
+    這個樣子大概交給大家了
+
+    這一題真的很急歪
+
+    他可能是這幾年最複雜的一個題目
+
+    因為他又要自己設定又有指定的面積
+
+    還要加上要不要判斷要不要做總量
+
+    對不對
+
+    所以我就用這一題來做個完成示範'
+  note: ''
+  title: 複雜圖紙設計示範
+  summary: "- 目標：在圖紙上完成指定狀態\n  - 交付給大家的樣子已完成\n- 挑戰：急迫且複雜\n  - 可能是近年最複雜的題目\n  - 需要自行設定與指定面積\n\
+    - 需求：判斷是否要做總量計算\n- 示範：以此題作完整示範"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 00:26
+  timestamp_seconds: 26.8
+  image: frames/00_00_26.png
+  transcript: '所以你們回家真的上個禮拜教大家畫這個標準平面
+
+    對不對 含家具的
+
+    那這禮拜教大家怎麼讀題了
+
+    怎麼找出地面成人空間
+
+    怎麼找出空間量對不對
+
+    怎麼找出基地環境裡面的開放空間的要求
+
+    對不對 然後'
+  note: ''
+  title: 從標準平面到空間閱讀與基地環境分析
+  summary: "- 上週教學重點\n  - 畫標準平面\n    - 包含家具佈局\n- 本週教學重點\n  - 讀題技巧\n  - 找出地面成人空間\n\
+    \  - 確定空間量\n  - 分析基地環境中的開放空間要求"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 00:48
+  timestamp_seconds: 48.6
+  image: frames/00_00_48.png
+  transcript: '還有教大家做出這些圖
+
+    那
+
+    我會很強烈的建議大家如果要開始練習
+
+    就像我剛今天都會問一個問題'
+  note: ''
+  title: 教學：製作圖表與實踐建議
+  summary: "- 製作圖表技巧\n  - 介紹如何製作各種圖表\n  - 強調實際操作的重要性\n- 初學者練習建議\n  - 建議立即開始練習\n  -\
+    \ 鼓勵透過實作加深理解\n- 問題引導\n  - 會提出一個問題以促進思考\n  - 讓學員在練習中自行探索答案"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 01:00
+  timestamp_seconds: 60.0
+  image: frames/00_01_00.png
+  transcript: '假設你今天要念
+
+    念過結構 結構已經說了 法規也說了
+
+    假設你今天要念環控
+
+    你一定要念多久
+
+    一天兩個小時好了
+
+    假設你今天還是留兩個小時要念環控
+
+    但是呢
+
+    我覺得設計真的不太容易練那麼久
+
+    所以我決定今天奉獻半小時就好
+
+    好了 一小時我覺得今天念設計要
+
+    念設計練一個小時
+
+    那請問一下你把題目讀完
+
+    認真的去思考它地面成要什麼空間
+
+    認真的去思考基地裡面要有怎樣的公共開放空間'
+  note: ''
+  title: 學習時間分配與設計思考
+  summary: "- 學習時間分配\n  - 結構與法規：已說明，需留足時間\n  - 環境控制：建議每日兩小時，實際留兩小時\n  - 設計：實際練習時間較短，決定半小時或一小時\n\
+    - 設計思考流程\n  - 先閱讀題目，確保理解完整\n  - 思考地面空間需求\n  - 思考基地內公共開放空間的配置"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 01:34
+  timestamp_seconds: 94.9
+  image: frames/00_01_34.png
+  transcript: '再認真的去把這張圖畫完
+
+    可能一個小時是可以做完
+
+    可能一個小時是可以做完
+
+    然後你把這一套做完就可以丟一邊就換下一題
+
+    你只是一直在重複做這件事情
+
+    但你還可以拆解成第二個
+
+    就是單純的念題目
+
+    找出地面成的空間
+
+    我這邊
+
+    我寫一下版詞給大家
+
+    練習的方法'
+  note: ''
+  title: 高效畫圖與拆解練習方法
+  summary: "- 完成圖畫的時間管理\n  - 目標：一張圖在一小時內完成\n  - 完成後即丟棄，快速切換到下一題\n- 重複練習的結構\n  - 先畫圖再丟棄，形成循環\n\
+    \  - 透過不斷重複提升熟練度\n- 拆解練習流程\n  - 步驟一：單純念題目\n  - 步驟二：找出題目中「地面成的空間」關鍵\n- 其他提示\n \
+    \ - 影片中提到「寫版詞」作為輔助記憶工具\n  - 透過簡化流程，提升練習效率"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 02:00
+  timestamp_seconds: 120.0
+  image: frames/00_02_00.png
+  transcript: 練習的方法
+  note: ''
+  title: 練習方法要點
+  summary: "- 設定明確目標\n  - 短期可達成的子目標\n  - 長期終極目標\n- 分段練習\n  - 將技能拆解成小單元\n  - 逐步提升難度\n\
+    - 反覆與回顧\n  - 重複練習以鞏固\n  - 事後回顧錯誤與改進\n- 取得即時回饋\n  - 透過錄影或同儕評估\n  - 調整練習策略\n- 建立持續習慣\n\
+    \  - 固定練習時間\n  - 內在動機與外在激勵"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 02:11
+  timestamp_seconds: 131.9
+  image: frames/00_02_11.png
+  transcript: '最重要的叫做重複
+
+    重複練習
+
+    所以假設你今天只有一個小時
+
+    可以念書可以準備設計
+
+    那你一個就是讀題目
+
+    找重點
+
+    然後配對空間'
+  note: ''
+  title: 重複練習的重要性
+  summary: "- 重複練習\n  - 透過重複加深記憶與熟練度\n- 時間管理\n  - 以一小時為例，合理分配學習與設計時間\n- 讀題目與找重點\n\
+    \  - 先快速閱讀題目，確定關鍵資訊\n- 配對空間\n  - 將重點與實際練習或設計結合，形成有效學習空間"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 02:38
+  timestamp_seconds: 158.1
+  image: frames/00_02_38.png
+  transcript: '然後配對空間
+
+    讀完
+
+    讀題目找重點配對空間
+
+    這個要很久嗎
+
+    半小時一題好不好
+
+    那你一天至少做兩題可以嗎
+
+    哦
+
+    然後還有一個就是'
+  note: ''
+  title: 配對空間練習與時間規劃
+  summary: "- 配對空間練習流程\n  - 先閱讀題目\n  - 找出重點\n  - 進行配對空間操作\n- 時間管理建議\n  - 每題半小時\n \
+    \ - 每日至少完成兩題\n- 其他待補充內容"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 03:00
+  timestamp_seconds: 180.0
+  image: frames/00_03_00.png
+  transcript: '今天要教讀題目嘛
+
+    然後再來就是
+
+    你這樣子重複重複做重複做一天做兩題
+
+    你一個禮拜就做掉大部分的題目了
+
+    對不對
+
+    好第二個一個小時能做什麼
+
+    練習量體企劃
+
+    做出我這一些圖做出這些資料'
+  note: ''
+  title: 高效題目練習與時間管理
+  summary: "- 重複練習策略\n  - 每天做兩題，持續一週即可完成大部分題目\n  - 強調「重複做」的習慣養成\n- 時間分配建議\n  - 第二個小時可用於練習量體企劃\n\
+    \  - 製作圖表與資料，提升分析與呈現能力\n- 目標與成效\n  - 透過持續練習快速掌握題目\n  - 以圖表與資料支援學習成果"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 03:16
+  timestamp_seconds: 196.7
+  image: frames/00_03_16.png
+  transcript: '做出我這一些圖做出這些資料
+
+    一天做個一題兩題應該不會太難吧
+
+    哦
+
+    這樣重點就是
+
+    有很多題目重複念重複念重複做重複做
+
+    然後你就會在重複的過程當中
+
+    找出bug跟問題
+
+    因為每一題都很難
+
+    每一題都有不一樣的問題
+
+    每一題都有不一樣問題情況下
+
+    你就每一個問題都變成自己的一次經驗值
+
+    好
+
+    然後就是一直做一直做一直做
+
+    可以理解嗎
+
+    好所以說
+
+    我們到
+
+    這個階段其實現在已經是正式課程哦
+
+    我要強調我現在教的東西在外面已經值很多錢哦'
+  note: ''
+  title: 透過重複練習提升解題能力
+  summary: "- 每天練習一到兩題，保持練習頻率\n  - 透過重複做題發現 bug 與問題\n  - 逐步熟悉題型與解題技巧\n- 每題皆具不同挑戰\n\
+    \  - 讓每個問題成為一次實戰經驗\n  - 累積多樣化的解題經驗值\n- 持續不斷的練習是關鍵\n  - 重複做題能鞏固知識與提升效率\n- 課程已正式化\n\
+    \  - 教授內容在市場上具有高價值"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 04:00
+  timestamp_seconds: 240.0
+  image: frames/00_04_00.png
+  transcript: '我要強調我現在教的東西在外面已經值很多錢哦
+
+    哦
+
+    然後這是正式課程
+
+    所以不要以為我沒有跟你們收錢沒有跟你們說
+
+    接下來什麼上課沒有提什麼上課
+
+    就是因為反正大家現在太想練習
+
+    就放輕鬆
+
+    所以我就排這比較簡單的作業
+
+    但是我希望如果你們把設計當作青年要
+
+    加強練習的一個科目的話
+
+    這個時候最適合花時間
+
+    假設你一天兩個小時
+
+    重複做這些動作做個
+
+    三變三題四題
+
+    利用這個重複做的過程
+
+    你可以大量累積你的獨體經驗
+
+    跟在腦袋裡面建構環境
+
+    的特色還有量體的規模
+
+    那有了這些基礎的知識之後'
+  note: ''
+  title: 設計學習的價值與重複練習
+  summary: "- 課程價值高\n  - 教授的內容在市場上已具備高價值\n- 正式課程收費\n  - 明確告知學員需支付費用\n- 針對練習者的簡易作業\n\
+    \  - 為想快速練習的學員設計輕鬆作業\n- 建議每日兩小時重複練習\n  - 重複做三變三題、四題\n  - 透過重複練習累積獨體經驗\n- 建構環境特色與量體規模\n\
+    \  - 透過練習在腦中建構設計環境\n  - 形成對量體規模的直覺\n- 基礎知識累積後可進一步學習\n  - 完成上述練習後，可進一步深化設計知識"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 04:42
+  timestamp_seconds: 282.7
+  image: frames/00_04_42.png
+  transcript: 你到練配置的時候就會變得有評有據
+  note: ''
+  title: 配置實踐：提升評估與證據意識
+  summary: "- 透過練習配置，培養評估與證據的意識\n  - 逐步形成有評有據的思考模式\n  - 使決策更具依據與可驗證性"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 04:46
+  timestamp_seconds: 286.6
+  image: frames/00_04_46.png
+  transcript: 最好是你在練配設計配置
+  note: ''
+  title: 練習設計配置的重要性
+  summary: "- 建議先進行實際練習，才能熟悉配置設計流程\n  - 透過實作可快速發現問題並調整\n- 配置設計應以實際需求為導向，避免僅停留在理論層面"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 04:49
+  timestamp_seconds: 289.0
+  image: frames/00_04_49.png
+  transcript: 配置的那個
+  note: ''
+  title: 配置項目說明
+  summary: "- 配置的那個\n  - 指設定中的特定項目\n  - 需要進行設定以完成配置"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 04:50
+  timestamp_seconds: 290.3
+  image: frames/00_04_50.png
+  transcript: '草圖的時候
+
+    你腦子裡面都還跑出一個
+
+    這一題有遇過這個問題
+
+    這一題有這樣處理過
+
+    這一題是這樣想的
+
+    那有了這些東西之後不斷的在腦袋裡面去'
+  note: ''
+  title: 草圖時的思考與問題處理流程
+  summary: "- 草圖階段的思考流程\n  - 先在腦中構思草圖\n  - 遇到問題時回想以往經驗\n  - 思考並整理解決方案\n- 持續在腦中迭代\n\
+    \  - 不斷重複上述步驟，深化設計"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 05:00
+  timestamp_seconds: 300.0
+  image: frames/00_05_00.png
+  transcript: '那有了這些東西之後不斷的在腦袋裡面去
+
+    自我對話很重要
+
+    你進了考長師看到這一句話
+
+    我曾經讀過什麼東西
+
+    看到這個要求我曾經怎麼樣處理
+
+    有這些經驗值不斷的跟自己對話
+
+    你上考長時間才會快
+
+    懂意思嗎
+
+    好
+
+    今天
+
+    等一下我再講一下
+
+    時間不太夠講一件事情
+
+    我們今天大致上就先這樣子好不好
+
+    然後因為再多
+
+    你們回去練習也很痛苦
+
+    今天大致上就這樣
+
+    然後我希望你們
+
+    要教什麼成果呢
+
+    如果你們要教作業給我
+
+    第一個成果就是像這個東西
+
+    好吧
+
+    那教了這也沒有對錯
+
+    教了只是存在你跟我對話的技術本
+
+    裡面或項目裡面
+
+    這樣就好了
+
+    這是第一個練習成果長這個樣子
+
+    第二個練習成果是像'
+  note: ''
+  title: 自我對話與學習成果的實踐
+  summary: "- **自我對話的重要性**\n  - 在腦中不斷與自己對話，回顧過去閱讀與處理的經驗\n  - 透過自我提問（如「我曾經讀過什麼？」「我怎麼處理？」）來加速學習\n\
+    - **學習過程的節奏與調整**\n  - 先把重點說清楚，避免時間過長造成學習疲勞\n  - 讓學生先把重點掌握，再回去練習\n- **成果呈現與評估**\n\
+    \  - 學生需提交「第一個成果」與「第二個成果」的實作範例\n  - 成果不在於對錯，而是展示與教師之間的技術對話\n- **教學策略**\n  - 先說明目標，再讓學生自行練習並提交成果\n\
+    \  - 透過對話與回饋，持續優化學習效果"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 06:00
+  timestamp_seconds: 360.0
+  image: frames/00_06_00.png
+  transcript: 第二個練習成果是像
+  note: ''
+  title: 第二個練習成果概述
+  summary: "- 第二個練習成果\n  - 以「像」為關鍵詞描述\n  - 影片片段僅顯示片語，未提供完整細節"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 06:10
+  timestamp_seconds: 370.4
+  image: frames/00_06_10.png
+  transcript: '好
+
+    第二個練習成果是像這個
+
+    你讀了哪個字也很重要
+
+    他可以對應到什麼空間
+
+    這要練習讀題嗎
+
+    哦哪個字也很重要
+
+    哦多
+
+    多樣化生活出軍治理生活
+
+    機器融入社會
+
+    哦哪些空間很重要
+
+    可以對應到這一次
+
+    把它對應進去
+
+    這就是第二個練習成果
+
+    就教這個給我就好
+
+    教這個給我就好
+
+    哦教這個
+
+    哦這個在教你如何排空間
+
+    這個要練很熟哦
+
+    因為這其實也是不用動腦的工作吧
+
+    對不對
+
+    這個要動腦但是是輕鬆的吧
+
+    哦所以麻煩大家
+
+    積極的把所有題目拿出來練習好嗎
+
+    哦然後
+
+    大家都在等放榜啦
+
+    放榜好像是2月初嘛'
+  note: ''
+  title: 第二練習：字與空間對應練習
+  summary: "- 重要性\n  - 讀字與對應空間的關聯\n  - 透過練習加深對字意與空間位置的理解\n- 內容範例\n  - 多樣化生活\n  - 軍事治理生活\n\
+    \  - 機器融入社會\n- 目的與方法\n  - 教導如何排布空間\n  - 需要熟悉但不需過度思考，屬於輕鬆練習\n- 學習行動\n  - 鼓勵學生積極拿出所有題目練習\n\
+    - 期待與時間\n  - 學生期待放榜，預計於二月初公布"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 07:00
+  timestamp_seconds: 420.0
+  image: frames/00_07_00.png
+  transcript: '不影響中是過年前
+
+    啊
+
+    2月2號
+
+    那不到一個月了
+
+    然後還有20幾天哎
+
+    我20幾天你們就可以好好讀題目
+
+    哦哈哈哈哈
+
+    好還有什麼問題嗎
+
+    哦再再說一次哦
+
+    如果你要教作業
+
+    如果你要教練習給我'
+  note: ''
+  title: 即將到來的作業/考試提醒
+  summary: "- 重要日期提醒\n  - 2月2日為截止日期\n  - 目前距離截止還不到一個月\n- 時間規劃\n  - 仍有約20天時間\n  - 建議利用這段時間好好閱讀題目\n\
+    - 教學互動\n  - 先確認學生是否有任何問題\n  - 重複關鍵說明以確保理解\n- 支援與協助\n  - 提供作業或練習的指導\n  - 鼓勵學生若需要協助可隨時詢問"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 07:22
+  timestamp_seconds: 442.3
+  image: frames/00_07_22.png
+  transcript: '第一個就是這教出這張圖
+
+    這張圖'
+  note: ''
+  title: 圖表說明
+  summary: "- 影片中以圖表作為教學工具\n  - 先提到「第一個」主題\n  - 以「這張圖」作為示例展示"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 07:24
+  timestamp_seconds: 444.5
+  image: frames/00_07_24.png
+  transcript: '這張圖
+
+    這張圖'
+  note: ''
+  title: 圖表說明
+  summary: "- 影片中講者重複提及「這張圖」以強調視覺重點\n  - 透過重複說明，提示觀眾注意圖表內容"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 07:26
+  timestamp_seconds: 446.8
+  image: frames/00_07_26.png
+  transcript: '這張圖
+
+    這張圖這個文字分析是要跟我講'
+  note: ''
+  title: 圖像文字分析說明
+  summary: "- 影片中提到「這張圖」  \n  - 主要討論圖表或圖片的文字內容  \n  - 解析文字如何與圖像配合傳遞訊息  \n- 觀眾被邀請關注文字分析的重點\
+    \  \n  - 了解文字在圖像中的角色  \n  - 掌握分析技巧以提升理解力"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 07:28
+  timestamp_seconds: 448.0
+  image: frames/00_07_28.png
+  transcript: '這張圖這個文字分析是要跟我講
+
+    你讀題目了
+
+    你找出的這些重點字
+
+    你配對了這一些空間
+
+    沒有正確答案
+
+    反正你就
+
+    我接下來經營的目標是一次把所有的這個
+
+    分析文字分析一次講完
+
+    哦
+
+    然後
+
+    這個很輕鬆很簡單就是閱讀而已 ok 嗎
+
+    第二個
+
+    空間電信定量
+
+    空間電信定量'
+  note: ''
+  title: 文字分析與閱讀策略
+  summary: "- 讀題目並找出重點字\n  - 透過關鍵字配對空間\n  - 了解題目無固定正確答案\n- 教學目標：一次性說明所有文字分析\n  - 強調閱讀是最簡單、輕鬆的方式\n\
+    - 進一步討論「空間電信定量」概念"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 07:54
+  timestamp_seconds: 474.9
+  image: frames/00_07_54.png
+  transcript: 第三個就是上禮拜的基礎平面圖
+  note: ''
+  title: 基礎平面圖概述
+  summary: "- 第三個項目為上週的基礎平面圖\n  - 用於設計與規劃\n  - 包含房間佈局與尺寸"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 07:58
+  timestamp_seconds: 478.8
+  image: frames/00_07_58.png
+  transcript: '基礎平面圖
+
+    哦啊我是很佛心的'
+  note: ''
+  title: 基礎平面圖
+  summary: "- 介紹基礎平面圖的概念與重要性\n  - 平面圖是建築設計的基礎\n  - 透過簡單示例說明如何繪製\n- 影片中講者以輕鬆、佛心的語氣說明，營造放鬆學習氛圍"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 08:00
+  timestamp_seconds: 480.0
+  image: frames/00_08_00.png
+  transcript: '哦啊我是很佛心的
+
+    在耳提面命給你們想要教什麼東西
+
+    但是
+
+    教徒的量就好像
+
+    要你們加半一樣的痛苦
+
+    哈哈哈哈
+
+    所以呢大家努力好不好
+
+    啊那今天就這樣
+
+    如果沒問題的話我就先這樣了
+
+    有問題嗎'
+  note: ''
+  title: 教學者的自我覺察與教學負擔
+  summary: "- 教學者自我定位\n  - 表示自己「佛心」的教學態度\n  - 強調願意分享知識\n- 對教學負擔的感受\n  - 認為教徒的數量像「加半一樣的痛苦」\n\
+    \  - 對教學壓力的自嘲與幽默\n- 鼓勵學員努力\n  - 呼籲大家「努力好不好」\n  - 結束語與提問邀請"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 08:21
+  timestamp_seconds: 501.8
+  image: frames/00_08_21.png
+  transcript: '有問題嗎
+
+    你是你那個基礎平面圖是標準成平面圖'
+  note: ''
+  title: 基礎平面圖標準化確認
+  summary: "- 確認觀眾是否有疑問\n  - 以「有問題嗎」作為互動開場\n- 檢視基礎平面圖是否符合標準\n  - 強調「標準成平面圖」的重要性"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 08:24
+  timestamp_seconds: 504.9
+  image: frames/00_08_24.png
+  transcript: 對標準成平面圖
+  note: ''
+  title: 將標準模型轉成平面圖
+  summary: "- 了解標準模型的結構\n  - 先確認模型的主要組件與關鍵尺寸\n- 選擇合適的投影平面\n  - 根據設計需求選擇正投影或斜投影\n-\
+    \ 使用 CAD 工具進行投影\n  - 將三維模型投影到選定平面\n  - 調整視角與比例\n- 確保尺寸與比例正確\n  - 檢查投影後的尺寸是否符合標準\n\
+    - 添加必要的註記與尺寸標註\n  - 在平面圖上標示尺寸、符號與說明\n- 檢查平面圖的完整性與可讀性\n  - 確保所有重要細節均已顯示且無重疊"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 08:27
+  timestamp_seconds: 507.1
+  image: frames/00_08_27.png
+  transcript: '那個同學在問你的
+
+    第三個作業基礎平面就是那個標準成平面圖'
+  note: ''
+  title: 第三個作業基礎平面：標準成平面圖
+  summary: '- 第三個作業的基礎平面是「標準成平面圖」。
+
+    - 標準成平面圖用於將三維物件投影到二維平面，作為作業的參考圖。
+
+    - 這是學生在作業中需要使用的主要圖形。'
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 08:29
+  timestamp_seconds: 509.9
+  image: frames/00_08_29.png
+  transcript: '第三個作業基礎平面就是那個標準成平面圖
+
+    那個是要讓你們練習手會
+
+    最簡單的方法
+
+    哦上禮拜的功課
+
+    手會很簡單
+
+    哦
+
+    因為這是概念式提案
+
+    那個標準成平面也不會牽扯到對或錯'
+  note: ''
+  title: 第三個作業：基礎平面圖練習
+  summary: "- 第三個作業主題\n  - 基礎平面：標準成平面圖\n- 目的\n  - 讓學生練習手會（手繪技巧）\n- 方法\n  - 參考上週功課，手會最簡單\n\
+    - 評分標準\n  - 概念式提案，標準成平面不牽涉對錯"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 08:45
+  timestamp_seconds: 525.3
+  image: frames/00_08_45.png
+  transcript: '那個標準成平面也不會牽扯到對或錯
+
+    只要你看起來爽就好
+
+    這句話很重要哦
+
+    什麼叫看起來爽就好
+
+    第一個他大小四中第二他的
+
+    筆觸穩定
+
+    第三個他看起來豐富但是不會雜亂'
+  note: ''
+  title: 以外觀評估繪畫：重視尺寸、筆觸與豐富度
+  summary: "- 評估重點不在於對錯，而是「看起來爽」的感覺\n  - 以觀者的視覺感受為核心\n- 具體評估指標\n  - 大小：適中、均衡\n  -\
+    \ 筆觸：穩定、流暢\n  - 內容：豐富但不雜亂，保持整體協調"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 09:00
+  timestamp_seconds: 540.0
+  image: frames/00_09_00.png
+  transcript: '第四個他用你喜歡的
+
+    元素在裡面
+
+    啊什麼是喜歡的元素
+
+    比如說有些人喜歡畫圈圈
+
+    無形的建築物
+
+    有些人喜歡畫很多微目
+
+    有些人喜歡怎樣把它畫出來
+
+    要畫成你的彎高品質
+
+    懂嗎
+
+    哦
+
+    然後今天果然如我所料
+
+    我預計要講的東西只講了一半
+
+    哦下禮拜應該就是把剩下那一半講完
+
+    哦好沒有問題的話我們就這樣啦'
+  note: ''
+  title: 使用你喜歡的元素
+  summary: "- 定義「喜歡的元素」  \n  - 圓形、無形建築、微細細節等  \n- 如何選擇並融入作品  \n  - 以個人喜好為導向  \n  -\
+    \ 強調畫面品質  \n- 課程進度  \n  - 目前只講到一半  \n  - 下週完成剩餘內容"
+  visual_analysis: ''
+  source: auto
+  analyzed: true

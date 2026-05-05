@@ -1,0 +1,503 @@
+video:
+  title: Piet Oudolf - Perennials, garden design, lecture
+  url: https://www.youtube.com/watch?v=-elEsUbarUU
+  duration: '53:37'
+  downloaded_at: '2026-02-19'
+  is_bilingual: true
+chapters:
+- title: 章節 1
+  start_index: 0
+  end_index: 12
+- title: 章節 2
+  start_index: 13
+  end_index: 24
+- title: 章節 3
+  start_index: 25
+  end_index: 36
+- title: 章節 4
+  start_index: 37
+  end_index: 48
+- title: 章節 5
+  start_index: 49
+  end_index: 59
+frames:
+- timestamp: 00:00
+  timestamp_seconds: 0.0
+  image: frames/00_00_00.png
+  title: 00:00 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  visual_analysis: ''
+- timestamp: 00:30
+  timestamp_seconds: 30.0
+  image: frames/00_00_30.png
+  title: 00:30 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  visual_analysis: ''
+- timestamp: 01:00
+  timestamp_seconds: 60.0
+  image: frames/00_01_00.png
+  title: 01:00 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  visual_analysis: ''
+- timestamp: 01:32
+  timestamp_seconds: 92.0
+  image: frames/00_01_32.png
+  title: 01:32 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  visual_analysis: ''
+- timestamp: 02:00
+  timestamp_seconds: 120.0
+  image: frames/00_02_00.png
+  title: 02:00 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  visual_analysis: ''
+- timestamp: 02:30
+  timestamp_seconds: 150.0
+  image: frames/00_02_30.png
+  title: 02:30 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  visual_analysis: ''
+- timestamp: 03:08
+  timestamp_seconds: 188.0
+  image: frames/00_03_08.png
+  title: 03:08 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  visual_analysis: ''
+- timestamp: 03:40
+  timestamp_seconds: 220.0
+  image: frames/00_03_40.png
+  title: 03:40 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  visual_analysis: ''
+- timestamp: 04:10
+  timestamp_seconds: 250.0
+  title: 04:10 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_04_10.png
+  visual_analysis: ''
+- timestamp: 04:41
+  timestamp_seconds: 281.0
+  title: 04:41 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_04_41.png
+  visual_analysis: ''
+- timestamp: 05:15
+  timestamp_seconds: 315.0
+  title: 05:15 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_05_15.png
+  visual_analysis: ''
+- timestamp: 05:42
+  timestamp_seconds: 342.0
+  title: 05:42 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_05_42.png
+  visual_analysis: ''
+- timestamp: 06:15
+  timestamp_seconds: 375.0
+  title: 06:15 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_06_15.png
+  visual_analysis: ''
+- timestamp: 07:14
+  timestamp_seconds: 434.0
+  title: 07:14 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_07_14.png
+  visual_analysis: ''
+- timestamp: 07:45
+  timestamp_seconds: 465.0
+  title: 07:45 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_07_45.png
+  visual_analysis: ''
+- timestamp: 08:30
+  timestamp_seconds: 510.0
+  title: 08:30 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_08_30.png
+  visual_analysis: ''
+- timestamp: 09:15
+  timestamp_seconds: 555.0
+  title: 09:15 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_09_15.png
+  visual_analysis: ''
+- timestamp: 600
+  timestamp_seconds: 600.0
+  title: 600 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_10_00.png
+  visual_analysis: ''
+- timestamp: 660
+  timestamp_seconds: 660.0
+  title: 660 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_11_00.png
+  visual_analysis: ''
+- timestamp: 720
+  timestamp_seconds: 720.0
+  title: 720 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_12_00.png
+  visual_analysis: ''
+- timestamp: 780
+  timestamp_seconds: 780.0
+  title: 780 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_13_00.png
+  visual_analysis: ''
+- timestamp: 840
+  timestamp_seconds: 840.0
+  title: 840 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_14_00.png
+  visual_analysis: ''
+- timestamp: 900
+  timestamp_seconds: 900.0
+  title: 900 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_15_00.png
+  visual_analysis: ''
+- timestamp: 1003
+  timestamp_seconds: 1003.0
+  title: 1003 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_16_43.png
+  visual_analysis: ''
+- timestamp: 1035
+  timestamp_seconds: 1035.0
+  title: 1035 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_17_15.png
+  visual_analysis: ''
+- timestamp: 1110
+  timestamp_seconds: 1110.0
+  title: 1110 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_18_30.png
+  visual_analysis: ''
+- timestamp: 1170
+  timestamp_seconds: 1170.0
+  title: 1170 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_19_30.png
+  visual_analysis: ''
+- timestamp: 1230
+  timestamp_seconds: 1230.0
+  title: 1230 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_20_30.png
+  visual_analysis: ''
+- timestamp: 1287
+  timestamp_seconds: 1287.0
+  title: 1287 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_21_27.png
+  visual_analysis: ''
+- timestamp: 1320
+  timestamp_seconds: 1320.0
+  title: 1320 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_22_00.png
+  visual_analysis: ''
+- timestamp: 1380
+  timestamp_seconds: 1380.0
+  title: 1380 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_23_00.png
+  visual_analysis: ''
+- timestamp: 1440
+  timestamp_seconds: 1440.0
+  title: 1440 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_24_00.png
+  visual_analysis: ''
+- timestamp: 1500
+  timestamp_seconds: 1500.0
+  title: 1500 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_25_00.png
+  visual_analysis: ''
+- timestamp: 1570
+  timestamp_seconds: 1570.0
+  title: 1570 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_26_10.png
+  visual_analysis: ''
+- timestamp: 1633
+  timestamp_seconds: 1633.0
+  title: 1633 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_27_13.png
+  visual_analysis: ''
+- timestamp: 1695
+  timestamp_seconds: 1695.0
+  title: 1695 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_28_15.png
+  visual_analysis: ''
+- timestamp: 1770
+  timestamp_seconds: 1770.0
+  title: 1770 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_29_30.png
+  visual_analysis: ''
+- timestamp: 1830
+  timestamp_seconds: 1830.0
+  title: 1830 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_30_30.png
+  visual_analysis: ''
+- timestamp: 1890
+  timestamp_seconds: 1890.0
+  title: 1890 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_31_30.png
+  visual_analysis: ''
+- timestamp: 1950
+  timestamp_seconds: 1950.0
+  title: 1950 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_32_30.png
+  visual_analysis: ''
+- timestamp: 2020
+  timestamp_seconds: 2020.0
+  title: 2020 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_33_40.png
+  visual_analysis: ''
+- timestamp: 2080
+  timestamp_seconds: 2080.0
+  title: 2080 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_34_40.png
+  visual_analysis: ''
+- timestamp: 2130
+  timestamp_seconds: 2130.0
+  title: 2130 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_35_30.png
+  visual_analysis: ''
+- timestamp: 2171
+  timestamp_seconds: 2171.0
+  title: 2171 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_36_11.png
+  visual_analysis: ''
+- timestamp: 2235
+  timestamp_seconds: 2235.0
+  title: 2235 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_37_15.png
+  visual_analysis: ''
+- timestamp: 2280
+  timestamp_seconds: 2280.0
+  title: 2280 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_38_00.png
+  visual_analysis: ''
+- timestamp: 2360
+  timestamp_seconds: 2360.0
+  title: 2360 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_39_20.png
+  visual_analysis: ''
+- timestamp: 2400
+  timestamp_seconds: 2400.0
+  title: 2400 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_40_00.png
+  visual_analysis: ''
+- timestamp: 2489
+  timestamp_seconds: 2489.0
+  title: 2489 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_41_29.png
+  visual_analysis: ''
+- timestamp: 2520
+  timestamp_seconds: 2520.0
+  title: 2520 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_42_00.png
+  visual_analysis: ''
+- timestamp: 2580
+  timestamp_seconds: 2580.0
+  title: 2580 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_43_00.png
+  visual_analysis: ''
+- timestamp: 2646
+  timestamp_seconds: 2646.0
+  title: 2646 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_44_06.png
+  visual_analysis: ''
+- timestamp: 2708
+  timestamp_seconds: 2708.0
+  title: 2708 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_45_08.png
+  visual_analysis: ''
+- timestamp: 2771
+  timestamp_seconds: 2771.0
+  title: 2771 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_46_11.png
+  visual_analysis: ''
+- timestamp: 2869
+  timestamp_seconds: 2869.0
+  title: 2869 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_47_49.png
+  visual_analysis: ''
+- timestamp: 2900
+  timestamp_seconds: 2900.0
+  title: 2900 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_48_20.png
+  visual_analysis: ''
+- timestamp: 2990
+  timestamp_seconds: 2990.0
+  title: 2990 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_49_50.png
+  visual_analysis: ''
+- timestamp: 3090
+  timestamp_seconds: 3090.0
+  title: 3090 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_51_30.png
+  visual_analysis: ''
+- timestamp: 3120
+  timestamp_seconds: 3120.0
+  title: 3120 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_52_00.png
+  visual_analysis: ''
+- timestamp: 3181
+  timestamp_seconds: 3181.0
+  title: 3181 - 無內容
+  summary: ''
+  source: semantic
+  analyzed: true
+  image: frames/00_53_01.png
+  visual_analysis: ''

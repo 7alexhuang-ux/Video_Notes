@@ -1,0 +1,989 @@
+video:
+  title: 2025 0110 01 觀念 解題設計流程
+  url: https://www.youtube.com/watch?v=CX94uQ6Qo30
+  duration: 09:47
+  downloaded_at: '2026-02-21'
+  is_bilingual: false
+chapters:
+- title: 設計流程與基礎圖面概念
+  start_index: 0
+  end_index: 12
+- title: 時間管理與分析技巧
+  start_index: 13
+  end_index: 18
+- title: 題目閱讀與透視簡化
+  start_index: 19
+  end_index: 24
+- title: 配置草圖與切割方法
+  start_index: 25
+  end_index: 34
+- title: 檢查、透視應用與快速組織
+  start_index: 35
+  end_index: 40
+- title: 整體架構與最終呈現
+  start_index: 41
+  end_index: 49
+frames:
+- timestamp: 00:00
+  timestamp_seconds: 0.0
+  image: frames/00_00_00.png
+  transcript: '大家早安
+
+    我們今天先來上個點
+
+    一開始現在上一點簡單的課
+
+    再複習一下
+
+    設計的流程
+
+    這個東西
+
+    你要認真聽
+
+    這個是我自己會要求自己會
+
+    要去好好執行的
+
+    那個
+
+    流程啊也是我這幾年上課都是固定的流程
+
+    然後這一個會有一些東西要跟大家提醒一下
+
+    這一個流程裡面其實就是我們在分配靠場上時間的
+
+    流程表
+
+    在靠場上分配時間
+
+    從這裡開始第八第九第十一第十二
+
+    景觀配置圖'
+  note: ''
+  title: 設計流程與時間分配概覽
+  summary: "- 重新複習設計流程\n  - 先簡單說明流程概念\n  - 強調流程的重要性與自我執行要求\n- 課程固定流程\n  - 這幾年上課皆採用相同流程\n\
+    - 现场时间分配\n  - 通过流程表安排现场时间\n  - 重点关注第八、第九、第十一、第十二景观配置图"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 00:53
+  timestamp_seconds: 53.3
+  image: frames/00_00_53.png
+  transcript: '景觀配置圖
+
+    透視圖空間主師圖棚面圖平面想圖棚面想圖'
+  note: ''
+  title: 景觀配置圖與圖面類型概覽
+  summary: "- 景觀配置圖\n  - 用於規劃景觀佈局與空間關係\n  - 包含主要景觀元素與比例\n- 透視圖\n  - 表示三維空間的視覺效果\n\
+    \  - 常用於展示建築外觀與景觀視角\n- 空間主師圖\n  - 可能指空間主導圖，強調空間佈局\n  - 用於說明空間功能分區\n- 棚面圖\n  -\
+    \ 描繪棚架或結構的平面布局\n  - 用於設計棚面結構與支撐\n- 平面圖\n  - 顯示地面層級的佈局\n  - 包含道路、植栽、座椅等元素\n- 棚面想圖\n\
+    \  - 可能是棚面設計概念圖\n  - 用於呈現棚面設計的初步構想"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 00:54
+  timestamp_seconds: 54.9
+  image: frames/00_00_54.png
+  transcript: '透視圖空間主師圖棚面圖平面想圖棚面想圖
+
+    情境透視圖其他的補充說明這些東西每一個步驟都要練到'
+  note: ''
+  title: 透視圖與棚面圖的學習重點
+  summary: "- 透視圖空間與主師圖\n  - 透視圖的空間構造\n  - 主師圖的定位與比例\n- 棚面圖平面想圖\n  - 棚面圖的平面視角\n  -\
+    \ 想圖的概念與應用\n- 情境透視圖\n  - 在實際情境中的透視表現\n- 補充說明\n  - 每一步驟都需練習，強調實踐重要性"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 00:58
+  timestamp_seconds: 58.9
+  image: frames/00_00_58.png
+  transcript: 情境透視圖其他的補充說明這些東西每一個步驟都要練到
+  note: ''
+  title: 情境透視圖與步驟練習
+  summary: "- 情境透視圖\n  - 介紹情境透視圖的基本概念\n  - 提供補充說明以加深理解\n- 步驟練習\n  - 每一個步驟都需要練習\n \
+    \ - 強調練習的重要性與持續性"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 01:00
+  timestamp_seconds: 60.0
+  image: frames/00_01_00.png
+  transcript: '情境透視圖其他的補充說明這些東西每一個步驟都要練到
+
+    一模一樣的圖面版面大小'
+  note: ''
+  title: 情境透視圖練習重點
+  summary: "- 其他補充說明\n  - 針對情境透視圖的細節與技巧進行說明\n- 每一步驟都要練到一模一樣的圖面版面大小\n  - 確保圖面尺寸與比例完全一致"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 01:04
+  timestamp_seconds: 64.3
+  image: frames/00_01_04.png
+  transcript: '一模一樣的圖面版面大小
+
+    一模一樣的時間
+
+    一模一樣的完成度'
+  note: ''
+  title: 保持一致性：圖面、時間與完成度
+  summary: "- 圖面版面大小一致\n  - 版面尺寸統一\n  - 版面比例保持相同\n  - 排版風格一致\n- 時間一致\n  - 進度安排相同\n\
+    \  - 時間管理保持一致\n  - 里程碑同步\n- 完成度一致\n  - 目標達成度相同\n  - 質量保證標準一致\n  - 交付成果保持同等水準"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 01:11
+  timestamp_seconds: 71.4
+  image: frames/00_01_11.png
+  transcript: '一模一樣的圖面品質
+
+    理解嗎
+
+    8到14這14點
+
+    都要練到一模一樣的時間
+
+    而且這8到14點
+
+    照我自己的經驗來看
+
+    我可能最多
+
+    一小時最快最快我可能一個小時就可以全部做完
+
+    因為
+
+    上課上你上次的課有看嗎'
+  note: ''
+  title: 練習圖面品質一致性與時間管理
+  summary: "- 目標：將圖面品質做到「一模一樣」  \n  - 重點練習點：第 8 至第 14 點  \n  - 需要反覆練習直至完全一致  \n- 時間估算\
+    \  \n  - 依個人經驗，最快可於 1 小時內完成全部練習  \n  - 需留意個別差異，實際時間可能略長  \n- 上課回顧  \n  - 影片提到「上次課程有看嗎？」\
+    \  \n  - 建議先確認前一課內容，作為基礎進行練習"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 01:34
+  timestamp_seconds: 94.9
+  image: frames/00_01_34.png
+  transcript: '上次的課其實你看我們平面都是可以
+
+    只要練熟了就可以快速的產出'
+  note: ''
+  title: 平面設計快速產出技巧
+  summary: "- 上次課程重點\n  - 平面設計可快速產出\n- 只要練熟技巧即可\n  - 透過練習提升熟練度\n  - 產出速度提升"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 01:40
+  timestamp_seconds: 100.8
+  image: frames/00_01_40.png
+  transcript: '那透視圖也一樣
+
+    透視圖也一樣然後'
+  note: ''
+  title: 透視圖的基本規則
+  summary: "- 透視圖與其他圖形一樣遵循相同的構造原則\n  - 透視線與消失點的運用\n  - 透視比例與尺寸保持一致"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 01:42
+  timestamp_seconds: 102.4
+  image: frames/00_01_42.png
+  transcript: 透視圖也一樣然後
+  note: ''
+  title: 透視圖概念
+  summary: "- 透視圖的基本概念\n  - 透視圖與其他圖形相同\n  - 透視圖也一樣"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 01:44
+  timestamp_seconds: 104.4
+  image: frames/00_01_44.png
+  transcript: '配置圖景觀上
+
+    上景觀設施景觀補免也是一樣
+
+    然後還有
+
+    那些情境透視那些東西都要練成'
+  note: ''
+  title: 景觀配置與情境透視
+  summary: "- 配置圖景觀\n  - 針對景觀設施的配置\n  - 景觀補償或免除同樣重要\n- 情境透視\n  - 需要練習掌握不同情境下的視角與效果"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 01:53
+  timestamp_seconds: 113.9
+  image: frames/00_01_53.png
+  transcript: '一樣的時間一樣的圖面品質
+
+    一樣的
+
+    一樣的完成度
+
+    一樣的大小版面大小'
+  note: ''
+  title: 保持一致性：時間、品質、完成度與尺寸
+  summary: "- 同一時間\n  - 作品在相同的時間框架內完成\n- 同一圖面品質\n  - 設計與繪圖的品質保持一致\n- 同一完成度\n  - 作品的完成度與預期標準相符\n\
+    - 同一大小版面\n  - 版面尺寸保持統一"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 02:00
+  timestamp_seconds: 120.0
+  image: frames/00_02_00.png
+  transcript: '一樣的大小版面大小
+
+    我這邊寫下
+
+    8
+
+    8到14
+
+    時間
+
+    固定
+
+    然後
+
+    版面大小
+
+    固定
+
+    我
+
+    玩搞程度'
+  note: ''
+  title: 設定固定版面與時間範圍
+  summary: "- 固定版面大小\n  - 版面尺寸保持不變\n- 固定時間範圍\n  - 8 到 14 時間段固定\n- 調整程度\n  - 可能調整難度或操作方式"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 02:37
+  timestamp_seconds: 157.5
+  image: frames/00_02_37.png
+  transcript: '固定
+
+    差不多就是三個
+
+    前面第8到第14點'
+  note: ''
+  title: 固定項目概述
+  summary: "- 固定的概念\n  - 指不變的設定或條件\n- 主要三個要點\n  - 依據前面第8到第14點的內容\n- 參考前文第8至第14點\n\
+    \  - 以便進一步理解與應用"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 02:44
+  timestamp_seconds: 164.0
+  image: frames/00_02_44.png
+  transcript: '都是固定的圖然後固定的圖你他唯一差別就設計有一點不一樣
+
+    然後設計不一樣配合設計有一點點不一樣情況下面
+
+    去把它
+
+    扎扎實實用
+
+    標準時間不要準的
+
+    版面大小標準的玩搞程度去把它呈現出來'
+  note: ''
+  title: 固定圖樣設計與呈現要點
+  summary: "- 固定圖樣的使用\n  - 只差設計細節\n- 設計配合\n  - 版面大小標準\n  - 時間安排標準\n- 實際呈現\n  - 扎實實用\n\
+    \  - 版面比例與呈現方式"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 03:00
+  timestamp_seconds: 180.0
+  image: frames/00_03_00.png
+  transcript: '好所以這些東西是不會浪費你的時間
+
+    所以不管是大設計或小設計
+
+    你這些東西
+
+    都是會穩定輸出
+
+    品質一樣
+
+    然後所以來反過來講
+
+    上面這一段一到七就是你要認真花時間去好好想
+
+    那大部分人在考場上面都是
+
+    怕這一段做不完
+
+    所以是去壓縮前面的這一段
+
+    這一段前面這一段有讀題目看空間看基地'
+  note: ''
+  title: 設計流程與時間管理重點
+  summary: "- 設計不會浪費時間\n  - 大設計與小設計皆能穩定輸出品質\n- 前期思考至關重要\n  - 影片中提到的「一到七」段落需認真投入時間\n\
+    - 考場常見問題\n  - 學生擔心做不完，往往會壓縮前期思考時間\n- 前期準備重點\n  - 讀題目、觀察空間、考慮基礎"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 03:28
+  timestamp_seconds: 208.7
+  image: frames/00_03_28.png
+  transcript: '文字分析環境分析地面層量體計畫二樓以上量體計畫跟配置草圖
+
+    這七點是要認真尤其是讀題跟'
+  note: ''
+  title: 文字與環境分析及量體計畫概述
+  summary: "- 文字分析與環境分析\n  - 針對文字內容進行細緻拆解\n  - 評估環境因素對設計的影響\n- 地面層量體計畫\n  - 量測地面層面積與體量\n\
+    \  - 確保基礎設計符合規範\n- 二樓以上量體計畫\n  - 量測上層樓面與體量\n  - 與地面層配合設計\n- 配置草圖\n  - 以草圖方式呈現空間配置\n\
+    \  - 方便後續細部設計\n- 讀題重點\n  - 先確定題目要求\n  - 針對關鍵點進行分析\n- 七點要認真\n  - 逐項檢查確保無遺漏\n  -\
+    \ 以嚴謹態度完成設計"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 03:37
+  timestamp_seconds: 217.7
+  image: frames/00_03_37.png
+  transcript: '環境分析還有配置草圖
+
+    這三個必須要
+
+    花大量的時間去做
+
+    如果說今天在考場上遇到一個
+
+    簡單的題目
+
+    像去年對我來講就是簡單的報
+
+    我可能一個小時就把前面都做完了
+
+    那後面就可以畫得很豐富很精彩甚至提早離開
+
+    那如果前面題目很難前面花了很多很多時間'
+  note: ''
+  title: 環境分析與配置草圖的時間投入與考場策略
+  summary: "- 需要大量時間完成環境分析與配置草圖\n  - 這三項工作是考場成功的關鍵\n- 題目簡單時可快速完成前置工作\n  - 之後可畫得更豐富、精彩\n\
+    \  - 甚至可提早離開考場\n- 題目難時前置工作耗時較多\n  - 影響後續畫面與時間分配"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 04:00
+  timestamp_seconds: 240.0
+  image: frames/00_04_00.png
+  transcript: '那如果前面題目很難前面花了很多很多時間
+
+    那你要跟自己講我的景觀配置'
+  note: ''
+  title: 面對難題時的時間管理與自我提醒
+  summary: "- 當前面題目難度高且耗時長時\n  - 需要提醒自己「我的景觀配置」以調整策略\n- 透過自我提醒來維持專注與有效利用時間"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 04:00
+  timestamp_seconds: 240.7
+  image: frames/00_04_00.png
+  transcript: 那你要跟自己講我的景觀配置
+  note: ''
+  title: 自我說明景觀配置
+  summary: "- 內部溝通的重要性\n  - 透過自我對話加深對景觀配置的理解\n- 景觀配置的核心概念\n  - 空間佈局、視覺焦點、功能分區\n- 自我說明的實務技巧\n\
+    \  - 用簡短語句重複關鍵概念，檢視自身理解"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 04:03
+  timestamp_seconds: 243.6
+  image: frames/00_04_03.png
+  transcript: '還是要畫的好我透視圖可能要畫陽春一點
+
+    我的空間主視圖可能就放棄不畫了'
+  note: ''
+  title: 簡化透視圖與放棄主視圖
+  summary: '- 透視圖仍需完成，但風格可能簡化為陽春風格
+
+    - 空間主視圖可能不再繪製，放棄此部分'
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 04:06
+  timestamp_seconds: 246.4
+  image: frames/00_04_06.png
+  transcript: 我的空間主視圖可能就放棄不畫了
+  note: ''
+  title: 放棄畫空間主視圖
+  summary: "- 考慮不再繪製空間主視圖\n  - 可能因時間或精力限制\n  - 可能覺得此視圖不必要或可用其他方式呈現"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 04:09
+  timestamp_seconds: 249.2
+  image: frames/00_04_09.png
+  transcript: '我的鵬麵圖稍微帶到就好
+
+    懂意思嗎這是時間上分配的一個
+
+    一個
+
+    一個過程好
+
+    然後我們再來說一下
+
+    讀題
+
+    有沒有我在強調一件事情在我們這整個流程裡面是包不包含打格子這件事情
+
+    很多人都會說我讀完題目開始打格子用打格子之後
+
+    時候去想題目
+
+    那是不可能的通常打格子就是專心打格子
+
+    所以我這邊是反對打格子的
+
+    那讀題有我們讀題的方法
+
+    第一
+
+    先
+
+    把題目快速瀏覽快速瀏覽完以後知道他是要幹什麼的
+
+    然後知道哪邊是要去叫你做空間分析
+
+    哪邊是要叫你做基地環境分析
+
+    哪些要去叫你做議題分析
+
+    然後建築計畫裡面要求哪些項目要說明
+
+    要找出來
+
+    然後第二次
+
+    第二'
+  note: ''
+  title: 讀題與打格子流程
+  summary: "- 讀題流程\n  - 快速瀏覽題目，了解主要任務\n  - 確認需要進行的分析類型\n    - 空間分析\n    - 基地環境分析\n\
+    \    - 議題分析\n  - 找出建築計畫中必須說明的項目\n- 打格子觀點\n  - 反對在讀題後立即打格子\n  - 打格子需專注，不能同時思考題目\n\
+    - 時間分配\n  - 先將鵬麵圖帶到適度程度\n- 兩次讀題\n  - 第一次快速瀏覽\n  - 第二次深入分析"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 05:00
+  timestamp_seconds: 300.0
+  image: frames/00_05_00.png
+  transcript: '第二
+
+    然後要看一下基地有沒有特殊的條件
+
+    然後大概腦子裡面有一個輪廓之後
+
+    然後接下來第二次認真讀題
+
+    哪些字眼是可以拿出來確定一樓的
+
+    一樓的重要空間哪些空間得放一樓
+
+    這議題關鍵字
+
+    然後議題哪些
+
+    一樓要有什麼特殊的開放空間
+
+    什麼機能
+
+    是用議題分析來處理
+
+    然後
+
+    接下來
+
+    腦袋大概有分過這些東西之後然後開始
+
+    嗯
+
+    要
+
+    然後哪些哪些文字是會產生空間的
+
+    就是比如說二樓是什麼三樓是什麼
+
+    然後做出空間定量
+
+    好然後進到文字分析
+
+    進到文字分析之後來就是像剛才講的議題關鍵字
+
+    找出地面層最重要的空間或開放空間
+
+    環境關鍵字利用環境關鍵字去設計都市環境空間
+
+    都市設計空間
+
+    那都市設計空間就是人開建焦鋁身在
+
+    哦
+
+    人本空間開放空間綠化空間'
+  note: ''
+  title: 議題與文字分析在都市空間規劃中的應用
+  summary: "- 基地條件檢查\n  - 確認是否有特殊限制或機會\n- 讀題與關鍵字提取\n  - 針對一樓重要空間的字眼\n  - 確定開放空間與機能需求\n\
+    - 議題分析\n  - 以關鍵字為基礎，劃分空間功能\n  - 決定一樓特殊開放空間\n- 文字分析與空間定量\n  - 解析二樓、三樓等空間關鍵字\n \
+    \ - 進行空間數量化評估\n- 環境關鍵字設計\n  - 以人本、開放、綠化為核心\n  - 設計都市環境空間"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 06:00
+  timestamp_seconds: 360.0
+  image: frames/00_06_00.png
+  transcript: '人本空間開放空間綠化空間
+
+    建築空間
+
+    交通空間綠化生態空間還有防災空間
+
+    哦會在我們的
+
+    基地環境分析的時候產生出來
+
+    好然後這些都出來之後
+
+    做地面層的量體計畫跟二樓以上的量體計畫
+
+    那今天會是上禮拜主要是講的是二樓以上的量體計畫
+
+    標準層平面層把它長出來'
+  note: ''
+  title: 空間規劃與量體計畫概述
+  summary: "- 空間分類\n  - 人本空間\n  - 開放空間\n  - 綠化空間\n  - 建築空間\n  - 交通空間\n  - 生態空間\n \
+    \ - 防災空間\n- 產生流程\n  - 基地環境分析後，產出上述各類空間\n- 量體計畫\n  - 地面層量體計畫\n  - 二樓以上量體計畫\n- 近期重點\n\
+    \  - 上週聚焦於二樓以上量體計畫\n  - 標準層平面層進行延伸"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 06:20
+  timestamp_seconds: 380.8
+  image: frames/00_06_20.png
+  transcript: '標準層平面層把它長出來
+
+    地面層的量體計畫就是什麼
+
+    地面層需要多大的空間量要放什麼空間進去
+
+    好然後來這些上面的東西
+
+    你已經知道外部開放空間
+
+    室外的開放空間都市設計空間有哪些要用
+
+    地面層有哪些特殊重要的
+
+    室內空間要放
+
+    製作已經決定好了
+
+    然後也知道一樓的量體有多大
+
+    這時候就可以畫配置草圖'
+  note: ''
+  title: 地面層空間規劃與配置草圖
+  summary: "- 確定地面層量體計畫\n  - 了解需要多大的空間\n  - 決定放置哪些空間\n- 考慮外部開放空間\n  - 室外開放空間的都市設計用途\n\
+    - 確認特殊重要的室內空間\n  - 製作已決定\n- 當量體已知後\n  - 可畫配置草圖"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 06:45
+  timestamp_seconds: 405.9
+  image: frames/00_06_45.png
+  transcript: '這時候就可以畫配置草圖
+
+    那畫配置草圖的時候就會可以'
+  note: ''
+  title: 畫配置草圖
+  summary: "- 這時候可以開始畫配置草圖\n  - 透過草圖快速檢視佈局\n  - 確認元件位置與連線"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 06:47
+  timestamp_seconds: 407.9
+  image: frames/00_06_47.png
+  transcript: '那畫配置草圖的時候就會可以
+
+    比較認真的去
+
+    因為我前面這些訊息知道外部空間內部空間各是什麼
+
+    知道有多大量體
+
+    然後再利用切配置的方法'
+  note: ''
+  title: 配置草圖與空間量化
+  summary: "- 在畫配置草圖時\n  - 可更認真投入\n- 先掌握空間資訊\n  - 外部空間與內部空間的定義\n  - 各自的體量大小\n- 再運用切配置方法\n\
+    \  - 以量化資料為基礎進行設計"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 06:56
+  timestamp_seconds: 416.9
+  image: frames/00_06_56.png
+  transcript: 然後再利用切配置的方法
+  note: ''
+  title: 切配置方法
+  summary: "- 利用切配置的方法\n  - 透過調整設定參數來優化流程\n  - 適用於多種場景與需求"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 06:58
+  timestamp_seconds: 418.8
+  image: frames/00_06_58.png
+  transcript: 哦這個我的專有名字叫做切配置
+  note: ''
+  title: 切配置（專有名詞）
+  summary: '- 這個術語是講者自創的專有名詞，稱為「切配置」。
+
+    - 其用途與含義在影片中未進一步說明，但暗示為某種配置或設定方式。'
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 07:00
+  timestamp_seconds: 420.0
+  image: frames/00_07_00.png
+  transcript: 哦這個我的專有名字叫做切配置
+  note: ''
+  title: 專有名詞：切配置
+  summary: '- "切配置" 是講者自創的專有名詞。
+
+    - 可能用於描述某種配置或切割設定。
+
+    - 具體含義需依後續內容確認。'
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 07:03
+  timestamp_seconds: 423.5
+  image: frames/00_07_03.png
+  transcript: '利用切配置這個方法
+
+    哦去切出
+
+    把那個說把建築物放進去然後去切配置'
+  note: ''
+  title: 利用切配置方法處理建築物
+  summary: "- 切配置方法概念\n  - 透過切割工具將建築物切出\n  - 先將建築物放入工作區\n- 操作流程\n  - 選擇切配置工具\n  -\
+    \ 把建築物放進去後進行切割"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 07:07
+  timestamp_seconds: 427.0
+  image: frames/00_07_07.png
+  transcript: '把那個說把建築物放進去然後去切配置
+
+    切完配置之後各個開放空間的大小'
+  note: ''
+  title: 建築物配置與開放空間調整
+  summary: "- 放入建築物並進行切割配置\n  - 先將建築模型放入工作區\n  - 使用切割工具將建築分割成不同區域\n- 切割後調整各開放空間大小\n\
+    \  - 根據需求調整每個區域的尺寸\n  - 確保開放空間符合設計規範"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 07:10
+  timestamp_seconds: 430.4
+  image: frames/00_07_10.png
+  transcript: '切完配置之後各個開放空間的大小
+
+    形狀位置就會定下來'
+  note: ''
+  title: 配置完成後空間尺寸與位置確定
+  summary: "- 切完配置之後\n  - 開放空間的大小被確定\n  - 空間的形狀與位置被鎖定\n- 這表示設計決策已經完成，後續調整需重新配置"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 07:14
+  timestamp_seconds: 434.8
+  image: frames/00_07_14.png
+  transcript: 那配置草圖就完成了
+  note: ''
+  title: 配置草圖完成
+  summary: "- 配置草圖已完成\n  - 表示所有必要的設定已經完成\n- 這是進入下一階段的前置條件"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 07:16
+  timestamp_seconds: 436.6
+  image: frames/00_07_16.png
+  transcript: '那配置草圖完成之後呢
+
+    就會去
+
+    稍微檢查一下配置草圖的成果'
+  note: ''
+  title: 配置草圖完成後的檢查流程
+  summary: "- 完成配置草圖後的主要步驟\n  - 進行初步檢查以確保草圖符合預期\n- 檢查重點\n  - 核對配置細節是否正確\n  - 確認草圖與實際需求的一致性"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 07:19
+  timestamp_seconds: 439.7
+  image: frames/00_07_19.png
+  transcript: '稍微檢查一下配置草圖的成果
+
+    是不是跟自己的基地環境分析跟文字分析
+
+    是胡影的
+
+    如果是的話
+
+    那你的設計就做完了
+
+    那你的設計
+
+    接下來就是畫景觀鋪面'
+  note: ''
+  title: 檢查配置草圖與基地環境分析一致性
+  summary: "- 檢查配置草圖成果是否符合基地環境分析與文字分析\n  - 確認設計與實際環境相符\n- 若符合，則設計完成\n- 接下來進行景觀鋪面的繪製"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 07:31
+  timestamp_seconds: 451.5
+  image: frames/00_07_31.png
+  transcript: '還有或者是先畫透視圖都可以
+
+    景觀鋪面可以幫助你去思考
+
+    你的室內室外空間如何連結'
+  note: ''
+  title: 透視圖與景觀鋪面在室內外空間連結中的應用
+  summary: "- 先畫透視圖\n  - 可視化室內外空間的連結方式\n  - 幫助規劃視覺與功能的過渡\n- 景觀鋪面\n  - 作為連結元素，協助思考空間流動\n\
+    \  - 影響室內外的視覺與實際接觸感\n- 兩種方法皆可\n  - 可單獨使用，也可結合使用以達最佳設計效果"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 07:39
+  timestamp_seconds: 459.1
+  image: frames/00_07_39.png
+  transcript: '透視圖可以幫你思考整體建築物的外型架構
+
+    還有一些特殊空間
+
+    比如說挑高的室內空間
+
+    比如說
+
+    呃挑高的延廊
+
+    比如說半戶外頂蓋空間
+
+    好知道這些東西之後你就可以回到'
+  note: ''
+  title: 透視圖在建築設計中的應用
+  summary: "- 透視圖協助思考整體建築物的外型架構\n  - 透視圖提供全局視角，方便把握建築比例與空間佈局\n- 透視圖可呈現特殊空間\n  - 挑高的室內空間\n\
+    \  - 挑高的延廊\n  - 半戶外頂蓋空間\n- 了解上述空間後，可進一步回到設計流程或細部規劃"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 07:55
+  timestamp_seconds: 475.6
+  image: frames/00_07_55.png
+  transcript: 就可以去很快去產生空間組織圖
+  note: ''
+  title: 快速產生空間組織圖
+  summary: "- 只需簡單操作，即可快速產生空間組織圖\n  - 省時省力，提升視覺化效果\n  - 適用於規劃、設計與資料整理"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 07:58
+  timestamp_seconds: 478.0
+  image: frames/00_07_58.png
+  transcript: '就可以去很快去產生空間組織圖
+
+    平面圖鋪面圖這一些'
+  note: ''
+  title: 快速產生空間組織圖與平面鋪面圖
+  summary: "- 透過簡易流程快速產生空間組織圖\n  - 省時省力的工具或技巧\n- 同時產出平面圖與鋪面圖\n  - 相關設計要點與注意事項"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 08:00
+  timestamp_seconds: 480.0
+  image: frames/00_08_00.png
+  transcript: '啊這些東西我們平常練死的
+
+    就不會那麼認真的去
+
+    詳細的去雕刻他
+
+    因為我們最重要的整體配置架構'
+  note: ''
+  title: 重視整體配置架構，避免過度雕刻細節
+  summary: "- 重要性：整體配置架構是首要\n  - 先確定整體結構，再處理細節\n- 避免過度關注細節\n  - 先完成大框架，細節可後續調整\n-\
+    \ 實踐導向\n  - 先練習到熟練，再進行細部雕刻"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 08:05
+  timestamp_seconds: 485.6
+  image: frames/00_08_05.png
+  transcript: '因為我們最重要的整體配置架構
+
+    就在配置草圖的時候就搞定了'
+  note: ''
+  title: 整體配置架構在草圖階段即確定
+  summary: "- 整體配置架構是最重要的設計要素\n  - 影響後續所有配置與實施\n- 在配置草圖階段即完成\n  - 透過草圖快速確定整體結構\n \
+    \ - 省去後續重構的時間與成本"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 08:07
+  timestamp_seconds: 487.9
+  image: frames/00_08_07.png
+  transcript: '就在配置草圖的時候就搞定了
+
+    好好然後呢
+
+    這個大概是一個真正
+
+    我在操作設計的設計流程啊
+
+    那
+
+    繪花時間最多的就是好好讀題目
+
+    好好讀題目
+
+    然後想出題目裡面
+
+    討厭的地方如何去解決掉
+
+    然後利用景觀配置跟透視圖去做設計'
+  note: ''
+  title: 設計流程重點：從讀題到草圖與透視
+  summary: "- 先讀題目\n  - 花最多時間\n  - 找出題目中的痛點與挑戰\n- 草圖配置\n  - 先在草圖階段決定設計方向\n  - 以景觀配置為基礎\n\
+    - 透視圖應用\n  - 透視圖協助完成最終設計\n- 整體流程\n  - 讀題 → 草圖配置 → 景觀配置 → 透視圖"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 08:25
+  timestamp_seconds: 505.8
+  image: frames/00_08_25.png
+  transcript: '然後利用景觀配置跟透視圖去做設計
+
+    做
+
+    外型的設計啊開放空間的設計'
+  note: ''
+  title: 景觀配置與透視圖在建築外型與開放空間設計中的應用
+  summary: "- 利用景觀配置\n  - 考慮景觀元素的佈局與視覺連結\n  - 定義功能分區與空間流動\n- 透視圖的運用\n  - 呈現空間比例與視角\n\
+    \  - 反映光影效果與建築外型\n- 兩者結合的設計流程\n  - 形成統一的設計語言\n  - 提升空間感與美感\n- 設計目標\n  - 建築外型的整體規劃\n\
+    \  - 開放空間的功能與美學平衡"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 08:32
+  timestamp_seconds: 512.5
+  image: frames/00_08_32.png
+  transcript: '去充實我們前面配置草圖的內容
+
+    對吧
+
+    好然後咧
+
+    最後我們到第九點的時候
+
+    大概設計已經全部都定案了
+
+    然後我們再用再去把題目要求的東西
+
+    譬如說建築計畫要講的項目
+
+    綠建築智慧建築
+
+    結構系統開放空間系統
+
+    這些東西
+
+    哦就會把它帶進去
+
+    那那些都是用我們平常就練好的方法
+
+    在快速的承生'
+  note: ''
+  title: 從草圖到設計定案與題目要求整合
+  summary: "- 充實前面配置的草圖內容\n  - 先完成草圖的基本框架與細節\n- 到第九點時設計已定案\n  - 大部分設計決策已確定\n- 再將題目要求帶入設計\n\
+    \  - 建築計畫項目\n  - 綠建築、智慧建築\n  - 結構系統、開放空間系統\n- 使用平常練好的方法快速承生\n  - 以熟悉的流程快速完成整合"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 08:58
+  timestamp_seconds: 538.0
+  image: frames/00_08_58.png
+  transcript: 然後到最後還有時間就是把平面想圖
+  note: ''
+  title: 平面視覺化技巧
+  summary: "- 確定平面基準\n  - 選擇合適的坐標系與參考點\n  - 標示關鍵交點與方向\n- 以圖形方式呈現平面\n  - 畫出平面邊界與投影\n\
+    \  - 加入說明文字與符號\n- 時間管理與檢查\n  - 規劃繪製步驟與時間分配\n  - 留出檢查與修正的時間"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 09:00
+  timestamp_seconds: 540.0
+  image: frames/00_09_00.png
+  transcript: '然後到最後還有時間就是把平面想圖
+
+    鵬面想圖爬化完'
+  note: ''
+  title: 平面與三維化完成流程
+  summary: "- 完成平面設計圖的最後階段\n  - 確認所有尺寸與細節\n- 將平面設計圖轉換為三維模型\n  - 使用相應軟體進行立體化\n  - 需要時間與步驟調整"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 09:00
+  timestamp_seconds: 540.5
+  image: frames/00_09_00.png
+  transcript: '鵬面想圖爬化完
+
+    然後圖面裡面有些空白的地方'
+  note: ''
+  title: 圖面空白區域處理
+  summary: "- 完成圖面轉換後，先檢查是否有空白區域\n  - 空白區域可能代表資料遺漏或未繪製\n- 針對空白區域進行補充\n  - 補上缺失的圖層或資料\n\
+    \  - 確保所有必要資訊完整呈現\n- 驗證圖面完整性\n  - 重新檢查所有層級與細節\n  - 確保無遺漏或錯誤"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 09:01
+  timestamp_seconds: 541.9
+  image: frames/00_09_01.png
+  transcript: '然後圖面裡面有些空白的地方
+
+    就加入情境透視圖
+
+    哦還有其他補充說明
+
+    那這樣才算是做完
+
+    那我這邊有寫啊
+
+    8到14是標準圖面
+
+    繪圖時間要固定
+
+    把裡面大小固定完成
+
+    玩搞程度要固定
+
+    那這個是最適合在放忙前或是過年前
+
+    把這些東西練熟練上手
+
+    好那這個是一個解題的流程
+
+    我希望大家去好好的去體會一下'
+  note: ''
+  title: 圖面設計與練習流程
+  summary: "- 空白處加入情境透視圖\n  - 補充說明以完成圖面\n- 標準圖面完成要點\n  - 8到14為標準圖面\n  - 繪圖時間固定\n \
+    \ - 內部尺寸固定\n  - 玩搞程度固定\n- 練習時機\n  - 最適合在放假前或過年前練習\n- 解題流程\n  - 鼓勵學員體會整體流程"
+  visual_analysis: ''
+  source: auto
+  analyzed: true

@@ -1,0 +1,889 @@
+video:
+  title: 20251227 04 作業說明、排版與時間安排
+  url: https://www.youtube.com/watch?v=6nsu16wghRg
+  duration: '10:09'
+  downloaded_at: '2026-02-21'
+  is_bilingual: false
+chapters:
+- title: 設計實踐基礎
+  start_index: 0
+  end_index: 5
+- title: 考試準備與時間管理
+  start_index: 6
+  end_index: 12
+- title: 繪圖技巧與透視概念
+  start_index: 13
+  end_index: 20
+- title: 進階繪圖與比例調整
+  start_index: 21
+  end_index: 28
+- title: 練習管理與課程安排
+  start_index: 29
+  end_index: 32
+- title: 景觀配置與設計哲學
+  start_index: 33
+  end_index: 38
+- title: 設計本質與標準面圖
+  start_index: 39
+  end_index: 40
+frames:
+- timestamp: 00:00
+  timestamp_seconds: 0.0
+  image: frames/00_00_00.png
+  transcript: '我現在再強調一件事情
+
+    我們今天下課後大家要去練習的東西
+
+    就是像我剛才講做的這麼簡單
+
+    先算出幾個步驟
+
+    第一個算總量
+
+    第二個設定高度
+
+    設定樓層數
+
+    第三個話標準成平面'
+  note: ''
+  title: 建築設計練習流程概述
+  summary: "- 步驟一：計算總量\n  - 確定整體建築所需材料或空間量\n- 步驟二：設定高度與樓層數\n  - 決定建築高度\n  - 設定各樓層數量\n\
+    - 步驟三：將標準轉成平面圖\n  - 以平面圖方式呈現設計"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 00:28
+  timestamp_seconds: 28.2
+  image: frames/00_00_28.png
+  transcript: '第三個話標準成平面
+
+    重點是比例詞要依照考試規定
+
+    第一題目規定
+
+    了解嗎
+
+    然後是要畫五題
+
+    最好是從最新的五題'
+  note: ''
+  title: 第三個話標準成平面
+  summary: "- 重點是比例詞要依照考試規定\n  - 需遵循考試官方標準\n- 第一題目規定\n  - 先確認題目要求\n- 需要畫五題\n  - 以實作方式加深理解\n\
+    - 建議從最新的五題開始\n  - 以符合最新考試趨勢"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 01:00
+  timestamp_seconds: 60.0
+  image: frames/00_01_00.png
+  transcript: '最好是從最新的五題
+
+    大小設計都可以
+
+    盡量以大設計為主
+
+    為什麼你不能說
+
+    你如果剩下伏地這一顆
+
+    那你不能只畫伏地
+
+    因為大小設計他們的概念是延續的
+
+    所以都要一起練
+
+    那為什麼以大設計為主
+
+    因為大設計比較有機會去練習到完成度'
+  note: ''
+  title: 設計練習重點：以大設計為主、延續性練習
+  summary: "- 從最新的五題開始練習\n  - 先挑選最近的題目，確保練習的時效性\n- 大小設計皆可，但盡量以大設計為主\n  - 大設計更易於完成度的提升\n\
+    - 不能只畫單一「伏地」的設計\n  - 因為設計概念是延續性的，需要同時練習多個元素\n- 大設計給予更高機會練習到完整作品\n  - 有助於提升整體完成度與技巧"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 01:34
+  timestamp_seconds: 94.9
+  image: frames/00_01_34.png
+  transcript: '因為小設計有可能就這樣畫個簡圖就可以過
+
+    要練大設計為主
+
+    好然後來重複剛才講的話
+
+    重點一重複練習
+
+    重點二練出熟悉的熟悉的完成度'
+  note: ''
+  title: 設計練習重點：大設計、重複與熟悉度
+  summary: "- 小設計可簡圖通過，但重點在大設計練習\n  - 需要多做大規模設計以提升實戰能力\n- 重複練習是關鍵\n  - 透過不斷重複相同內容，鞏固技巧\n\
+    - 透過熟悉度提升完成度\n  - 熟悉流程與細節能快速完成設計"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 02:00
+  timestamp_seconds: 120.0
+  image: frames/00_02_00.png
+  transcript: '重點二練出熟悉的熟悉的完成度
+
+    好這邊要強調一件事情
+
+    我們在放訪前或是放訪沒多久後
+
+    我們的練習會強調大家的完成度為主
+
+    完成度就是我很熟悉'
+  note: ''
+  title: 重點二：練習完成度的重要性
+  summary: "- 先前或後訪問的練習重點\n  - 強調完成度為主\n  - 完成度即對內容的熟悉程度\n- 目的\n  - 讓學員在實際訪問前或後能快速掌握重點\n\
+    \  - 透過熟悉度提升表現與自信"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 02:25
+  timestamp_seconds: 145.0
+  image: frames/00_02_25.png
+  transcript: '痛似圖這件事情
+
+    一出手就直接畫成完成的樣子
+
+    時間又在規定的
+
+    就是在自己要求範圍內
+
+    比如說我像剛才這平面圖'
+  note: ''
+  title: 即時完成圖畫的策略
+  summary: "- 立即完成圖畫的概念\n  - 一出手就直接畫成完成的樣子\n- 時間管理與自我要求\n  - 在規定的時間內完成\n  - 只在自己要求的範圍內\n\
+    - 以平面圖為例說明"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 02:32
+  timestamp_seconds: 152.7
+  image: frames/00_02_32.png
+  transcript: '比如說我像剛才這平面圖
+
+    如果閉著眼睛不管你們一直畫
+
+    可能多久可以畫完
+
+    可能只有三分鐘或兩分鐘就畫完
+
+    對不對
+
+    很有可能因為其實沒有很精準
+
+    沒有很漂亮對不對
+
+    所以你們在家說我這樣子
+
+    假設我在考場上
+
+    我誠實講我在家也計時的時候
+
+    是因為我一直很想吃巧克力跟喝咖啡
+
+    所以沒有很在意這件事情
+
+    所以畫得很Loft就變了變化'
+  note: ''
+  title: 時間管理與專注對繪圖品質的影響
+  summary: "- 快速繪圖與精準度\n  - 以平面圖為例，若不加精準度，可能只需 2~3 分鐘完成\n  - 速度快但畫面不夠精準或漂亮\n- 考場與在家環境的差異\n\
+    \  - 在考場上需更嚴格的時間控制\n  - 在家時雖計時，但因分心（巧克力、咖啡）而不在意\n- 分心對品質的影響\n  - 分心導致畫作變得「loft」或不夠精緻\n\
+    \  - 需要提升專注度以保持畫質"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 03:00
+  timestamp_seconds: 180.0
+  image: frames/00_03_00.png
+  transcript: '所以畫得很Loft就變了變化
+
+    畫出來就這個品質
+
+    要考試也夠了吧對不對
+
+    所以這就是我在考場上的完成度
+
+    然後你們要畫出屬於你們認同自己的完成度
+
+    平面的完成度'
+  note: ''
+  title: 考試畫作的完成度與自我認同
+  summary: "- 作品完成度評估\n  - 畫作品質與考試適用性\n  - 透過「Loft」風格的變化來調整品質\n- 個人化完成度\n  - 需要畫出符合自己認同的完成度\n\
+    \  - 強調「平面完成度」的概念\n- 考試中的實際表現\n  - 以自己的完成度作為考場上的參考"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 03:10
+  timestamp_seconds: 190.7
+  image: frames/00_03_10.png
+  transcript: '平面的完成度
+
+    然後時間固定好
+
+    因為我們一張'
+  note: ''
+  title: 平面完成度與時間管理
+  summary: "- 平面完成度\n  - 確保平面設計完整，細節到位\n  - 針對每個面向進行檢查與修正\n- 時間固定\n  - 設定固定時間段完成或檢查\n\
+    \  - 以時間管理提升工作效率\n- 一張圖紙/平面\n  - 以單一圖紙為基礎進行設計與驗證"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 03:18
+  timestamp_seconds: 198.7
+  image: frames/00_03_18.png
+  transcript: '我們一張大圖紙裡面
+
+    真正要動腦筋的只有
+
+    只有這兩塊
+
+    這兩塊是什麼
+
+    這邊叫做基地環境分析
+
+    這邊叫做組配置'
+  note: ''
+  title: 兩大重點：基地環境分析與組配置
+  summary: "- 基地環境分析\n  - 針對整張大圖紙中最關鍵的環境因素進行評估\n  - 主要聚焦於基礎設施與外部條件\n- 組配置\n  - 確定各組件的配置與相互關係\n\
+    \  - 以提升整體效能與協同作業"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 03:36
+  timestamp_seconds: 216.1
+  image: frames/00_03_36.png
+  transcript: '這邊叫做組配置
+
+    基地分析需要靠
+
+    文字分析去推出
+
+    我們要畫什麼樣的空間
+
+    所以這個是動腦子的
+
+    組配置是'
+  note: ''
+  title: 組配置在基地分析中的角色
+  summary: "- 組配置（Group Configuration）\n  - 主要用於基地分析階段\n  - 依賴文字分析來推導空間設計\n- 目的\n\
+    \  - 決定要畫什麼樣的空間\n- 特點\n  - 需要動腦子、思考與推理"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 03:50
+  timestamp_seconds: 230.8
+  image: frames/00_03_50.png
+  transcript: '組配置是
+
+    我們要花時間去想
+
+    剛才要留的那些開放空間跟室內空間
+
+    要怎麼樣畫出正確的形狀'
+  note: ''
+  title: 組配置與空間設計
+  summary: "- 組配置的重要性\n  - 需要投入時間思考空間佈局\n- 開放空間與室內空間的考量\n  - 先前提到的留白區域\n  - 兩者之間的平衡與連結\n\
+    - 正確畫出形狀的關鍵\n  - 確保比例與比例關係\n  - 以功能為導向調整形狀"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 04:00
+  timestamp_seconds: 240.0
+  image: frames/00_04_00.png
+  transcript: '要怎麼樣畫出正確的形狀
+
+    位置
+
+    大小
+
+    了解嗎
+
+    所以這兩塊圖'
+  note: ''
+  title: 畫出正確形狀的技巧
+  summary: "- 正確畫形狀的關鍵\n  - 位置：確定圖形在畫布上的位置\n  - 大小：掌握比例與尺寸\n- 兩塊圖的比較\n  - 觀察差異，確認位置與大小是否一致"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 04:09
+  timestamp_seconds: 249.1
+  image: frames/00_04_09.png
+  transcript: '所以這兩塊圖
+
+    都是要
+
+    花時間去思考
+
+    花時間是去思考'
+  note: ''
+  title: 兩塊圖的思考時間
+  summary: "- 兩塊圖\n  - 需要投入時間進行思考\n- 思考時間的重點\n  - 不是單純花時間，而是專注於思考"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 04:16
+  timestamp_seconds: 256.1
+  image: frames/00_04_16.png
+  transcript: 然後接下來這裡是各層平面
+  note: ''
+  title: 各層平面說明
+  summary: "- 介紹各層的平面圖\n  - 每層的功能區域\n  - 主要設計要點"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 04:18
+  timestamp_seconds: 258.1
+  image: frames/00_04_18.png
+  transcript: 這裡是跑面圖
+  note: ''
+  title: 跑面圖概念
+  summary: "- 什麼是跑面圖\n  - 用於顯示程式執行流程的圖形表示\n- 主要用途\n  - 方便開發者觀察程式執行順序與分支\n- 產生方式\n\
+    \  - 透過工具或手動繪製程式碼結構"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 04:19
+  timestamp_seconds: 259.5
+  image: frames/00_04_19.png
+  transcript: '這裡是立面圖
+
+    這邊是透視圖'
+  note: ''
+  title: 立面圖與透視圖的區別
+  summary: "- 立面圖\n  - 只顯示垂直面\n  - 以平面方式呈現建築外觀\n  - 常用於建築設計與施工文件\n- 透視圖\n  - 透過透視投影呈現三維感\n\
+    \  - 顯示建築在空間中的視覺效果\n  - 常用於展示與說明設計概念"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 04:20
+  timestamp_seconds: 260.9
+  image: frames/00_04_20.png
+  transcript: 這邊是透視圖
+  note: ''
+  title: 透視圖概念與應用
+  summary: "- 透視圖的定義\n  - 用於將三維空間投影到二維平面\n  - 透過消失點呈現遠近關係\n- 透視圖的基本構造\n  - 觀測點、視平線、消失點\n\
+    \  - 透視比例與比例尺的關係\n- 透視圖的實際應用\n  - 建築設計、工程圖、繪畫\n  - 幫助觀者理解空間深度"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 04:22
+  timestamp_seconds: 262.5
+  image: frames/00_04_22.png
+  transcript: 這邊是情境透視圖
+  note: ''
+  title: 情境透視圖概念
+  summary: "- 情境透視圖\n  - 以視覺方式呈現使用者在特定情境中的行為與環境\n  - 透過人物、場景、時間等元素構成完整情境\n- 主要用途\n\
+    \  - 幫助設計師理解使用者需求\n  - 指導功能規劃與介面設計"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 04:24
+  timestamp_seconds: 264.3
+  image: frames/00_04_24.png
+  transcript: 這邊是各層平面圖
+  note: ''
+  title: 各層平面圖說明
+  summary: "- 各層平面圖概念\n  - 代表建築不同樓層的平面佈局\n  - 用於規劃、施工與檢查\n- 主要內容\n  - 樓層高度、牆體位置、開口與門窗\n\
+    \  - 重要符號與比例尺"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 04:26
+  timestamp_seconds: 266.1
+  image: frames/00_04_26.png
+  transcript: '這邊是空間組織泡泡圖
+
+    這些東西都是你必須練習到
+
+    哦
+
+    我平常畫這個只要花10分鐘就好了
+
+    我進考場就是10分鐘要完成
+
+    我平常跑面圖只花了5分鐘就畫好了'
+  note: ''
+  title: 空間組織泡泡圖練習與時間管理
+  summary: "- 空間組織泡泡圖\n  - 需要持續練習以熟練掌握\n- 時間管理\n  - 平時畫圖只需 10 分鐘\n  - 考場上必須在 10 分鐘內完成\n\
+    - 面圖練習\n  - 平時只需 5 分鐘即可畫完"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 04:38
+  timestamp_seconds: 278.9
+  image: frames/00_04_38.png
+  transcript: '我平常跑面圖只花了5分鐘就畫好了
+
+    所以我進考場只花5分鐘就畫完
+
+    懂嗎
+
+    那你唯一進考場的時候時間的控制就是
+
+    當我今天這這個題目真的有夠難有夠難
+
+    我組配置總共花了7個小時才畫完'
+  note: ''
+  title: 面圖繪製時間管理與難度差異
+  summary: "- 正常情況下的面圖繪製\n  - 平時練習時只需 5 分鐘即可完成\n  - 考場中亦以 5 分鐘完成，強調時間控制\n- 面臨極難題目時的挑戰\n\
+    \  - 題目難度大幅提升，需 7 小時完成配置\n  - 反映出時間管理與難度之間的顯著差距"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 04:52
+  timestamp_seconds: 292.1
+  image: frames/00_04_52.png
+  transcript: '我組配置總共花了7個小時才畫完
+
+    就是前面這兩個步驟總共花了7個小時才分析完
+
+    那我時間有限'
+  note: ''
+  title: 配置設計耗時與時間管理
+  summary: "- 7 小時完成整體配置繪製\n  - 主要耗時於細節設計與調整\n- 前兩個步驟共耗 7 小時進行分析\n  - 包含需求確認與初步規劃\n\
+    - 時間有限，需優化流程或分配資源"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 05:00
+  timestamp_seconds: 300.0
+  image: frames/00_05_00.png
+  transcript: '那我時間有限
+
+    我可以跟我自己講
+
+    我還有多少時間可以畫這5分鐘
+
+    我可以畫幾個
+
+    懂意思嗎
+
+    啊可能我只剩下了半小時
+
+    那我只能畫一個泡面
+
+    那我至少那個泡面要畫出來
+
+    懂意思嗎
+
+    哦
+
+    然後所以'
+  note: ''
+  title: 有限時間內的創作策略
+  summary: "- 時間管理\n  - 認知時間有限，主角自我提醒剩餘時間\n  - 以「5分鐘」為單位評估可完成的畫作數量\n- 目標設定\n  - 只剩半小時，決定專注於畫一個泡面\n\
+    \  - 強調「至少要畫出來」的完成度\n- 自我對話\n  - 用自我說話的方式確認計畫與動機"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 05:16
+  timestamp_seconds: 316.3
+  image: frames/00_05_16.png
+  transcript: '我們旁邊這一些圖都必須練習到
+
+    不用花腦子
+
+    就是畫出來就會直接畫到我們平常練習的水準
+
+    哦
+
+    然後你這些造型怎麼變都平常都要練好
+
+    哦平常都要練好
+
+    所以來你進考場這些叫做灌頭圖'
+  note: ''
+  title: 圖形練習與考場準備
+  summary: "- 必須練習旁邊的圖形\n  - 直接畫出來即可達到平常練習水準\n- 造型無論如何變化都需練好\n- 這些圖在考場稱為「灌頭圖」"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 05:34
+  timestamp_seconds: 334.0
+  image: frames/00_05_34.png
+  transcript: 所以來你進考場這些叫做灌頭圖
+  note: ''
+  title: 考場圖示說明
+  summary: "- 進入考場時會看到的圖示\n  - 這些圖示被稱為「灌頭圖」\n  - 主要用於指示考場內部結構與注意事項"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 05:37
+  timestamp_seconds: 337.6
+  image: frames/00_05_37.png
+  transcript: '灌頭圖叫同一時間
+
+    跟你平常練的時間都一樣
+
+    完成度都一樣
+
+    大小都一樣
+
+    畫面的大小'
+  note: ''
+  title: 保持練習與作品尺寸一致
+  summary: "- 作品尺寸與練習時間保持一致\n  - 目標是讓每次練習的時間與完成度相同\n- 完成度與平常練習相同\n  - 期望每幅作品的細節與質量保持一致\n\
+    - 畫面大小保持統一\n  - 以確保作品在展示或比對時能保持相同的視覺比例"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 05:47
+  timestamp_seconds: 347.5
+  image: frames/00_05_47.png
+  transcript: '畫面大小圖面大小
+
+    畫面大小
+
+    時間
+
+    比處
+
+    表現法'
+  note: ''
+  title: 畫面尺寸與比例的表現方法
+  summary: "- 畫面大小\n  - 解析畫面尺寸的概念與測量方法\n- 圖面大小\n  - 圖像尺寸的定義與應用\n- 時間\n  - 時間的處理與顯示方式\n\
+    - 比處\n  - 比例與比例尺的計算\n- 表現法\n  - 在影片或圖像中表現尺寸與比例的技巧"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 06:00
+  timestamp_seconds: 360.0
+  image: frames/00_06_00.png
+  transcript: '表現法
+
+    都要練到一模一樣
+
+    唯一不一樣就是你配合那個題目去做調整
+
+    懂嗎
+
+    哦所以來這個禮拜的練習師話'
+  note: ''
+  title: 表現法練習與調整
+  summary: "- 目標：練習至表現方式完全一致\n  - 需要反覆練習，確保每一次表現都與範例相同\n- 調整方式：根據題目需求做微調\n  - 只在配合題目時做必要的變化\n\
+    - 本週重點：教師強調此練習的重要性"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 06:11
+  timestamp_seconds: 371.9
+  image: frames/00_06_11.png
+  transcript: '裡面圖
+
+    大家必須去計算
+
+    而且要不斷的加速不斷的加速練習到
+
+    看起來雖然醜醜的沒有很漂亮沒有很精緻
+
+    但是我能接受
+
+    上面的文字訊息跟表現法都已經做到
+
+    很穩定的狀態
+
+    時間變很固定
+
+    很短時間就可以畫出來
+
+    哦這個要練到
+
+    拜託拜託拜託
+
+    這個如果說大家要開始然後練習的話
+
+    請利用這段時間去練習這種
+
+    無腦但會讓你心煩
+
+    的步驟
+
+    然後也歡迎
+
+    你們有練習
+
+    就把這個
+
+    就拍照
+
+    用Line傳給我
+
+    寫下
+
+    我發現這樣的擺板還不錯'
+  note: ''
+  title: 快速練習簡易圖形繪製技巧
+  summary: "- 需要不斷計算與加速練習\n  - 目標是快速完成畫作，雖外觀簡陋但能接受\n  - 文字訊息與表現法已達到穩定狀態\n- 練習重點在於「無腦但會讓你心煩」的步驟\n\
+    \  - 透過短時間內完成，時間變化固定\n- 鼓勵學員利用此段時間練習並分享成果\n  - 拍照並用 Line 傳送給老師\n  - 老師表示擺板還不錯"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 07:00
+  timestamp_seconds: 420.0
+  image: frames/00_07_00.png
+  transcript: 應該算很清楚吧
+  note: ''
+  title: 說明已清楚，確認理解
+  summary: "- 影片講者確認前述內容已說明得足夠清楚\n  - 觀眾應已掌握關鍵概念\n- 鼓勵觀眾若仍有疑問可進一步提問或回顧影片"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 07:01
+  timestamp_seconds: 421.3
+  image: frames/00_07_01.png
+  transcript: '應該算很清楚吧
+
+    拍照傳給我
+
+    拜託
+
+    啊拍照傳給我你就存在項目裡面
+
+    那就是你的
+
+    這一年的練習累積
+
+    我們現在預計講一下哦
+
+    這個這個禮拜練習平面'
+  note: ''
+  title: 拍照提交與練習累積安排
+  summary: "- 學生需拍照並傳送給老師\n  - 以便將照片存入項目資料庫\n  - 強調「拜託」與「你就存在項目裡面」的緊迫感\n- 這是整年度練習的累積\n\
+    \  - 目標是將所有練習成果整合成一個完整的項目\n- 本週練習重點為「平面」\n  - 可能指平面設計或平面幾何的實作"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 07:17
+  timestamp_seconds: 437.8
+  image: frames/00_07_17.png
+  transcript: '這個這個禮拜練習平面
+
+    下一次可能就是練習沒意外的話就是練習頭面
+
+    然後要和透視
+
+    然後接下來就排版
+
+    哦然後表現法就是
+
+    然後接下來就是那個
+
+    哎
+
+    捧面立面透視
+
+    然後還有那個
+
+    哎對就這樣子了這樣就夠了'
+  note: ''
+  title: 課程安排與練習重點
+  summary: '- 本週練習平面
+
+    - 下一次可能練習頭面與透視
+
+    - 接下來排版
+
+    - 表現法
+
+    - 捧面立面透視'
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 07:41
+  timestamp_seconds: 461.6
+  image: frames/00_07_41.png
+  transcript: 然後可能會加一個景觀配置
+  note: ''
+  title: 景觀配置的可能性
+  summary: "- 可能在系統或場景中加入景觀配置\n  - 目的：提升視覺美感或功能性\n  - 需考量：配置的兼容性與效能影響"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 07:43
+  timestamp_seconds: 463.9
+  image: frames/00_07_43.png
+  transcript: '那你們的對於畫圖的事情就差不多結束了
+
+    前後大概兩個月
+
+    哦
+
+    不會像你
+
+    要要當建築師就讓你心慌了一個月
+
+    哈哈哈哈哈哈
+
+    他說
+
+    所以他們他們考上的'
+  note: ''
+  title: 畫圖學習與考試經驗
+  summary: "- 學習畫圖的時間\n  - 大約兩個月完成\n- 與建築師考試相關的壓力\n  - 需要準備的時間與心慌\n- 考試結果\n  - 他們通過考試"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 08:00
+  timestamp_seconds: 480.0
+  image: frames/00_08_00.png
+  transcript: '實際上還蠻長的
+
+    這里有一個簡單觀念分享一下
+
+    考上時間長長短跟你當
+
+    考不考上緣分有關
+
+    嗯哎但是
+
+    我們練習要做一件事情
+
+    第一件事情就是
+
+    我們一年之內要把所有的練習全部做完
+
+    你不能
+
+    我我蠻反對的他有看a 克 b 克 c 克
+
+    然後你a 可能就上了一年
+
+    啊終於a過了可以明天來上b 的課
+
+    ab cd 湊起來剛好四年你終於可以上場畫大
+
+    哦這個是有點
+
+    我覺得不太良不太
+
+    太痛苦了啦
+
+    所以你的練習都是一整年要把整套的技巧練起來
+
+    你第二年只是去加強
+
+    第二年開始是把你的解體的觀念
+
+    把它好好的
+
+    釐清
+
+    哦比如說你第一年'
+  note: ''
+  title: 一整年完成所有練習，第二年加強與釐清概念
+  summary: "- 完成所有練習的時間安排\n  - 一年內完成所有練習，避免分散學習\n  - 反對「a、b、c、d」分別一年學完的方式\n- 第二年的學習重點\n\
+    \  - 加強已學技巧\n  - 釐清解題觀念\n- 觀念分享\n  - 考試成功與練習時間長短、緣分有關"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 08:54
+  timestamp_seconds: 534.6
+  image: frames/00_08_54.png
+  transcript: '我畫圖的東西都一模一樣為什麼沒有過
+
+    那你第二你第二次沒過的時候應該說'
+  note: ''
+  title: 畫圖重複但未通過：原因與回應
+  summary: "- 作品重複但未通過\n  - 評審標準可能變化\n  - 作品缺乏細節或創意\n  - 可能存在技術或格式問題\n- 第二次未通過時的應對\n\
+    \  - 先詢問具體未通過原因\n  - 表達願意調整或改進\n  - 請求具體回饋以便改進"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 09:00
+  timestamp_seconds: 540.0
+  image: frames/00_09_00.png
+  transcript: '那你第二你第二次沒過的時候應該說
+
+    我可能是什麼樣的觀點不對
+
+    比如說你對流開放空間的方法好像不太好
+
+    我是說啊你對於解體沒注意到什麼
+
+    就是去調整這些事情
+
+    但是你的操作架構是一直重複重複重複
+
+    你只是去針對解體的方法跟
+
+    做設計的方法去做微調'
+  note: ''
+  title: 失敗後的觀點調整與設計方法改進
+  summary: "- 面對失敗時的自我反思\n  - 認識到自己的觀點可能不對\n  - 以「我可能是什麼樣的觀點不對」作為回應\n- 具體設計問題的檢視\n\
+    \  - 開放空間流動方法被指出不佳\n  - 解體（decomposition）未注意到的問題需調整\n- 操作架構的重複與微調\n  - 只在解體與設計方法上做微調\n\
+    \  - 避免重複同樣的操作框架，尋求更根本的改進"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 09:21
+  timestamp_seconds: 561.1
+  image: frames/00_09_21.png
+  transcript: 做設計絕對不是畫圖
+  note: ''
+  title: 設計的本質：不只是畫圖
+  summary: "- 設計不是單純的繪圖\n  - 目標是解決問題與創造價值\n- 重要元素包含概念、功能與用戶體驗\n  - 需要考慮使用者需求與情境\n\
+    - 畫圖是工具之一\n  - 只是表達設計思路的手段"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 09:24
+  timestamp_seconds: 564.2
+  image: frames/00_09_24.png
+  transcript: '畫圖就是畫圖
+
+    做設計是密集的思考動作
+
+    所以
+
+    哎
+
+    很有信今年又要繼續教了所以
+
+    我們就在一起來玩一年吧
+
+    哈哈哈哈
+
+    大家請你女朋友也要教什麼
+
+    他今天
+
+    他今天說很感冒不舒服
+
+    沒關係
+
+    有影片我相信我的影片應該是算清楚啦
+
+    哎就回去看著影片操作
+
+    目標這個禮拜或是兩週內
+
+    畫出五到'
+  note: ''
+  title: 設計思考與畫圖目標設定
+  summary: "- 画图与设计的基本概念\n  - 画图本身是绘制的动作\n  - 设计需要密集的思考与规划\n- 教學與學習動機\n  - 继续教学，鼓励持续学习\n\
+    \  - 鼓励与伴侣一起学习与分享\n- 目标与执行\n  - 通过观看教学视频进行操作\n  - 设定目标：在一到两周内完成五幅作品"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 09:57
+  timestamp_seconds: 597.8
+  image: frames/00_09_57.png
+  transcript: '實體的標準成品面圖
+
+    好嗎
+
+    哈這畫出來下次就會教大家
+
+    怎麼畫鵬麵跟透視
+
+    好好今天就上到這了'
+  note: ''
+  title: 實體標準成品面圖概述
+  summary: "- 介紹實體標準成品面圖的概念\n  - 何為成品面圖\n  - 為何需要標準化\n- 本影片內容簡述\n  - 畫出實體標準成品面圖\n\
+    \  - 提到未來將教鵬面與透視\n- 結束語\n  - 本次影片到此結束"
+  visual_analysis: ''
+  source: auto
+  analyzed: true

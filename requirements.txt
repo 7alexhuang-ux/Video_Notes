@@ -1,0 +1,26 @@
+# Video Notes - YouTube 影片轉互動筆記系統
+# 安裝：pip install -r requirements.txt
+
+# 影片下載 (yt-dlp.exe 也可放在專案根目錄)
+yt-dlp>=2024.1.0
+
+# 語音轉錄
+openai-whisper>=20231117
+
+# 資料處理
+PyYAML>=6.0
+requests>=2.32.0
+
+# 影像處理（場景偵測 / 截圖）
+opencv-python>=4.8.0
+numpy>=1.24.0
+
+# HTML 渲染
+Jinja2>=3.1.0
+
+# === 可選 LLM 提供者（按使用情境安裝） ===
+# Ollama 本地端：無需 Python 套件，安裝 Ollama CLI 即可
+# Gemini：
+#   pip install google-generativeai
+# Claude：
+#   pip install anthropic

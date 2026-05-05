@@ -1,0 +1,1178 @@
+video:
+  title: 2025 1227 01 繪圖 構成平面的元素與流程
+  url: https://www.youtube.com/watch?v=eO2hGi2bJME
+  duration: '33:50'
+  downloaded_at: '2026-02-21'
+  is_bilingual: false
+chapters:
+- title: 課程導入與基礎概念
+  start_index: 0
+  end_index: 5
+- title: 快速畫平面圖與考試技巧
+  start_index: 6
+  end_index: 15
+- title: 空間連結與設計思考
+  start_index: 16
+  end_index: 24
+- title: 空間構成與格子法
+  start_index: 25
+  end_index: 34
+- title: 面積計算與格子系統
+  start_index: 35
+  end_index: 44
+- title: 平面圖檢查與邏輯
+  start_index: 45
+  end_index: 49
+frames:
+- timestamp: 00:00
+  timestamp_seconds: 0.0
+  image: frames/00_00_00.png
+  transcript: '大家早安那我們今天來上我們的課
+
+    今天的課也開放給北戶大的教職員工一起上
+
+    然後我今天主要要講的東西是'
+  note: ''
+  title: 課程開放與簡介
+  summary: '- 早安問候，開場致意
+
+    - 課程對北戶大教職員工開放
+
+    - 主要講授內容尚未說明'
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 00:13
+  timestamp_seconds: 13.3
+  image: frames/00_00_13.png
+  transcript: '教大家怎麼畫出建築的平面圖
+
+    那如果說你自己在家裡來你想要做一下如果針對那些不是要考建築師的人
+
+    你可以看看我這個
+
+    等一下我操作東西如何去產生平面圖'
+  note: ''
+  title: 教學：非建築師如何畫建築平面圖
+  summary: "- 目標對象\n  - 針對非考取建築師資格的人士\n- 教學內容概覽\n  - 如何在家中自行製作建築平面圖\n  - 示範操作步驟與工具使用\n\
+    - 重點技巧\n  - 產生平面圖的實際操作流程\n  - 重要參考資料與範例展示"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 00:24
+  timestamp_seconds: 24.6
+  image: frames/00_00_24.png
+  transcript: '等一下我操作東西如何去產生平面圖
+
+    那平面圖裡面怎麼放家具怎麼去布置結構'
+  note: ''
+  title: 產生平面圖與家具布置
+  summary: "- 產生平面圖\n  - 操作流程：點擊「產生平面圖」按鈕\n  - 需要先設定房間尺寸與牆面\n- 放置家具\n  - 在平面圖上拖曳家具圖示\n\
+    \  - 可調整位置、角度與尺寸\n- 布置結構\n  - 依照功能區域劃分（如客廳、餐廳）\n  - 考慮動線與空間利用"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 00:28
+  timestamp_seconds: 28.9
+  image: frames/00_00_28.png
+  transcript: '那平面圖裡面怎麼放家具怎麼去布置結構
+
+    然後那是我們去構成建築物的一個基本的一個手法
+
+    那如果你是建築師考試要參加建築師考試的人啊
+
+    那你也可以'
+  note: ''
+  title: 平面圖家具布置與結構設計基礎
+  summary: "- 在平面圖中放置家具與布置結構\n  - 透過合理佈局提升空間功能與美感\n  - 考慮使用者流動與功能區分\n- 這是構成建築物的基本手法\n\
+    \  - 以平面圖為基礎，進一步延伸至立面與剖面\n  - 形成整體建築設計的核心框架\n- 適用於建築師考試\n  - 了解並掌握此手法可提升考試實務題目表現\n\
+    \  - 可作為考試範例與實務應用的參考"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 00:43
+  timestamp_seconds: 43.0
+  image: frames/00_00_43.png
+  transcript: '你更可以去參考一下這個畫圖的原則那如果你有買我書的人這些你也可以用今天的影片去做為書上面文字無法
+
+    很清楚
+
+    表達我的概念的部分去做一個補充的一個影片說明'
+  note: ''
+  title: 影片作為書本畫圖原則的補充說明
+  summary: "- 參考畫圖原則\n  - 影片提供可視化的說明方式\n- 針對購買書籍的觀眾\n  - 影片補充書中文字難以清楚表達的概念\n- 影片作為額外學習資源\n\
+    \  - 方便讀者更深入理解畫圖技巧"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 01:00
+  timestamp_seconds: 60.0
+  image: frames/00_01_00.png
+  transcript: '另一個最重要的地方就是說我們今天我們這些考生啊
+
+    我們這些考生或者是想畫平面圖的人呢'
+  note: ''
+  title: 考生與平面圖繪製者的關鍵重點
+  summary: "- 重要性說明\n  - 這是另一個最重要的地方\n- 目標對象\n  - 考生\n  - 想畫平面圖的人"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 01:06
+  timestamp_seconds: 66.3
+  image: frames/00_01_06.png
+  transcript: '我們這些考生或者是想畫平面圖的人呢
+
+    他們可以去利用我等一下會示範的一個快速的方法
+
+    讓你可以很快的去掌握建築物的量體
+
+    重點是
+
+    不會花太多的時間不用花太多的時間可以去畫出平面圖'
+  note: ''
+  title: 快速掌握建築物量體畫平面圖技巧
+  summary: "- 目標\n  - 讓考生或想畫平面圖的人快速掌握建築物的量體\n- 方法\n  - 示範一個快速技巧，節省時間\n- 重點\n  - 不需要花太多時間即可完成平面圖"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 01:21
+  timestamp_seconds: 81.6
+  image: frames/00_01_21.png
+  transcript: '不會花太多的時間不用花太多的時間可以去畫出平面圖
+
+    可以去畫出平面圖'
+  note: ''
+  title: 快速畫平面圖
+  summary: "- 這段說明不需要花費太多時間\n  - 可以直接畫出平面圖\n- 建議先簡化流程，避免冗長步驟"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 01:26
+  timestamp_seconds: 86.5
+  image: frames/00_01_26.png
+  transcript: '可以去畫出平面圖
+
+    我們在考場上尤其是在考場上
+
+    我們在考場上啊
+
+    我們應該去好好地去思考我們拿到一個建築師考試的題目它裡面有個重點是什麼
+
+    就是我們要去把基地裡面
+
+    最好的地方流出來
+
+    當做開放空間把這些開放空間拿去回應環境還有題目
+
+    的要求
+
+    然後這些開放空間就是我們在任去參觀任何一個公共工程裡面卻最美好的空間'
+  note: ''
+  title: 考場上設計開放空間的關鍵思考
+  summary: "- 在考場上思考建築師考試題目時，首要步驟是畫出平面圖\n  - 透過平面圖快速掌握基地佈局\n- 針對基地中最具優勢的區域\n  - 將其轉化為開放空間\n\
+    \  - 以此回應環境與題目要求\n- 這些開放空間在公共工程中往往是最具美感與功能性的區域"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 02:00
+  timestamp_seconds: 120.0
+  image: frames/00_02_00.png
+  transcript: '然後這些開放空間就是我們在任去參觀任何一個公共工程裡面卻最美好的空間
+
+    那剩下的地方是建築物的量體
+
+    扣掉一個基地裡面扣掉開放空間之後剩下的地方是建築物的量體
+
+    那我們不應該花太多的時間
+
+    去
+
+    畫那個
+
+    建築物裡面的東西
+
+    他要能夠快速的讓你去
+
+    把你對於空間的想法使用的機能如何跟外面的開放空間結合能夠快速的產生融合
+
+    而你不應該花時間去雕琢裡面的步行距離對不對結構到底好不好
+
+    結構有沒有問題構造有沒有問題
+
+    這些東西叫做細部設計或進一步設計我們在
+
+    我們現在做的是概念式的設計'
+  note: ''
+  title: 概念設計聚焦開放空間
+  summary: "- 開放空間是公共工程中最美好的空間\n  - 應優先考慮其功能與外部開放空間的融合\n- 站在基地上扣除開放空間後剩餘的即為建築量體\n\
+    \  - 這部分不需過度雕琢內部細部\n- 概念設計階段重點在於快速產生空間概念\n  - 避免過度關注步行距離、結構可行性等細部設計\n- 細部設計（構造、步行距離等）屬於後續階段"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 02:45
+  timestamp_seconds: 165.8
+  image: frames/00_02_45.png
+  transcript: '所以呢我們應該要很熟悉的去把建築物的平面圖畫出來
+
+    畫出來以後可以讓大家可以感覺到這個室內的空間如何跟室外的開放空間結合
+
+    然後
+
+    室內的平面有很明顯的可以透過家具的配置透過文字的描述去看出他裡面使用者他的機能'
+  note: ''
+  title: 建築平面圖在室內外空間連結與功能配置中的重要性
+  summary: "- 熟悉畫建築物的平面圖\n  - 讓觀者能感受室內空間與室外開放空間的結合\n- 透過平面圖可觀察家具配置\n  - 文字描述協助辨識使用者的功能需求"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 02:58
+  timestamp_seconds: 178.4
+  image: frames/00_02_58.png
+  transcript: 室內的平面有很明顯的可以透過家具的配置透過文字的描述去看出他裡面使用者他的機能
+  note: ''
+  title: 透過家具配置與文字描述辨識室內使用者功能
+  summary: "- 室內平面設計\n  - 透過家具配置可直觀辨識空間功能\n  - 文字描述能補充視覺資訊，協助理解使用者需求\n- 使用者功能辨識\n\
+    \  - 家具擺放方式反映日常活動與使用習慣\n  - 空間布局與家具比例暗示主要使用者角色\n- 設計實務\n  - 在規劃時結合視覺與文字說明，提升空間可讀性\n\
+    \  - 透過家具配置與文字描述共同呈現使用者需求"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 03:00
+  timestamp_seconds: 180.0
+  image: frames/00_03_00.png
+  transcript: '室內的平面有很明顯的可以透過家具的配置透過文字的描述去看出他裡面使用者他的機能
+
+    如何去跟外部的開放空間做串聯
+
+    那甚至你進一步去畫透視圖的時候可以讓人感覺到'
+  note: ''
+  title: 室內平面與外部空間連結的設計思考
+  summary: "- 室內平面設計\n  - 透過家具配置揭示使用者功能\n  - 文字描述可視化空間用途\n- 與外部開放空間的串聯\n  - 設計策略促進空間流動\n\
+    \  - 強調內外空間的連續感\n- 透視圖的應用\n  - 進一步呈現空間層次\n  - 讓觀者感受到空間深度與連結"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 03:07
+  timestamp_seconds: 187.9
+  image: frames/00_03_07.png
+  transcript: '那甚至你進一步去畫透視圖的時候可以讓人感覺到
+
+    有有趣的立體的開放空間三向度的空間有不同的高度不一樣的開放空間形式穿梭
+
+    穿梭在我們的透視圖裡面'
+  note: ''
+  title: 透視圖創造三維開放空間
+  summary: "- 透視圖能呈現立體感\n  - 透視線與消失點創造深度\n- 可表現不同高度與空間形式\n  - 高度差異帶來層次感\n  - 空間形態多樣化\n\
+    - 觀者在透視圖中感受穿梭感\n  - 空間流動感強化視覺體驗"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 03:21
+  timestamp_seconds: 201.0
+  image: frames/00_03_21.png
+  transcript: '穿梭在我們的透視圖裡面
+
+    並且利用透視圖的設計去轉譯成我們在平面圖上面的一些漂亮的平面圖'
+  note: ''
+  title: 透視圖轉譯平面圖
+  summary: "- 穿梭於透視圖\n  - 透視圖的結構與視角\n  - 觀察遠近、消失點與比例\n- 利用透視圖設計轉譯\n  - 把三維構造映射到二維平面\n\
+    \  - 調整比例、角度以保持真實感\n- 產生漂亮的平面圖\n  - 強調美感與實用性\n  - 運用透視原則提升圖紙的視覺效果"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 03:23
+  timestamp_seconds: 203.1
+  image: frames/00_03_23.png
+  transcript: '並且利用透視圖的設計去轉譯成我們在平面圖上面的一些漂亮的平面圖
+
+    好
+
+    話不多說這是前面關於我對於畫平面圖這件事要求第一件事情'
+  note: ''
+  title: 透視圖設計轉譯平面圖
+  summary: "- 透視圖設計作為平面圖美化的基礎\n  - 透視圖能將三維空間轉換為平面圖\n  - 透視圖提供視覺層次與比例\n- 這是畫平面圖的第一個要求\n\
+    \  - 先確定透視圖，再進行平面圖繪製"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 03:30
+  timestamp_seconds: 210.7
+  image: frames/00_03_30.png
+  transcript: '話不多說這是前面關於我對於畫平面圖這件事要求第一件事情
+
+    他
+
+    我們在做這一種考試的概念設計
+
+    平面圖'
+  note: ''
+  title: 畫平面圖的第一步：概念設計
+  summary: "- 先說明畫平面圖的第一件事：概念設計\n  - 這是考試的基本要求\n  - 需要先確定整體結構與功能分配\n- 在進行實際繪製前，先完成概念設計階段\n\
+    \  - 以確保後續細節能符合設計目標"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 03:40
+  timestamp_seconds: 220.7
+  image: frames/00_03_40.png
+  transcript: '平面圖
+
+    他只是一個
+
+    體驗
+
+    他不用
+
+    畫的很正確
+
+    他不用很仔細他不用去檢討很多複雜的結構啊法規的細節
+
+    他只要合理可以顯示出你的想法跟這個想法說隱身出來的空間機能使用者'
+  note: ''
+  title: 平面圖：體驗式表達而非精確技術
+  summary: "- 平面圖作為體驗工具\n  - 主要用於傳達概念與空間感受\n- 不必追求精確或細節\n  - 不需要畫得很正確\n  - 不需仔細檢討複雜結構或法規細節\n\
+    - 只要合理即可\n  - 能顯示設計想法\n  - 能呈現隱藏的空間功能給使用者"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 04:00
+  timestamp_seconds: 240.0
+  image: frames/00_04_00.png
+  transcript: '他只要合理可以顯示出你的想法跟這個想法說隱身出來的空間機能使用者
+
+    這樣就夠了
+
+    這是我們今天會教給大家的
+
+    然後來
+
+    今天我回去示範一下怎麼利用去年的考古題去年的考試題目來去做一個建築物量體的預估
+
+    那預估完之後在設計都還沒解的情況我們就可以去畫出一個'
+  note: ''
+  title: 利用考古題估算建築量體與空間功能示範
+  summary: "- 以合理方式呈現個人想法與空間功能\n  - 透過隱身式展示，讓使用者能直觀理解設計概念\n- 示範如何利用去年的考古題作為參考\n  -\
+    \ 以考題為基礎，估算建築物的量體\n- 估算完成後，即使設計尚未解決，也能畫出初步圖\n  - 先行繪製量體圖，為後續設計提供參考"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 04:19
+  timestamp_seconds: 259.7
+  image: frames/00_04_19.png
+  transcript: '那個題目的標準層平面標準層平面
+
+    那我希望各位來今天看這影片如果覺得我的影片還不錯咧
+
+    可以去
+
+    翻出
+
+    近五年的考古題
+
+    考題
+
+    把這五題的考題
+
+    的'
+  note: ''
+  title: 標準層平面與近五年考古題回顧
+  summary: "- 標準層平面概念\n  - 影片中重複提及「標準層平面」的定義與應用\n- 近五年考古題的介紹\n  - 鼓勵觀眾翻閱並分析近五年的考題\n\
+    \  - 提及將「這五題」作為學習參考"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 04:37
+  timestamp_seconds: 277.8
+  image: frames/00_04_37.png
+  transcript: '標準層平面把它畫出來
+
+    好
+
+    那請記住標準層平面不會設計'
+  note: ''
+  title: 標準層平面概念
+  summary: "- 標準層平面（Standard Layer Plane）\n  - 必須在圖中畫出來\n  - 不是設計項目，屬於預設層\n  - 重要提醒：不要嘗試設計或修改"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 04:41
+  timestamp_seconds: 281.2
+  image: frames/00_04_41.png
+  transcript: 那請記住標準層平面不會設計
+  note: ''
+  title: 標準層平面設計限制
+  summary: "- 標準層平面不會被設計\n  - 這是設計流程中的一項規定\n  - 可能是因為層平面已預先設定或不需要再調整"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 04:44
+  timestamp_seconds: 284.3
+  image: frames/00_04_44.png
+  transcript: 我們在做設計的時候標準層平面都先不要去設計配置的正確性
+  note: ''
+  title: 設計流程中先不驗證配置正確性
+  summary: "- 在設計階段，先確定標準層平面\n  - 不先檢查配置的正確性\n- 後續階段再進行配置驗證"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 04:49
+  timestamp_seconds: 289.1
+  image: frames/00_04_49.png
+  transcript: '他就是標準層平面
+
+    那我等一下要跟大家說為什麼標準層平面就是標準層平面他跟地面層配置'
+  note: ''
+  title: 標準層平面與地面層配置
+  summary: "- 標準層平面\n  - 定義：以固定參考平面為基準的層面設計，常用於建築或設計規範。\n  - 特色：便於比較、重複使用，形成統一的設計標準。\n\
+    - 為什麼稱為「標準層平面」\n  - 其設計遵循固定比例與參考點，確保層面之間的一致性。\n  - 與地面層配置的關聯：標準層平面作為地面層的延伸或基準，維持整體結構的統一與協調。"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 04:50
+  timestamp_seconds: 290.9
+  image: frames/00_04_50.png
+  transcript: '那我等一下要跟大家說為什麼標準層平面就是標準層平面他跟地面層配置
+
+    可以沒有
+
+    他可以沒有這麼強烈的'
+  note: ''
+  title: 標準層平面與地面層配置
+  summary: "- 標準層平面（Standard Layer Plane）是設計中用來定義層級關係的基準面。\n  - 它本身不必依賴於地面層（Ground\
+    \ Layer）的存在。\n  - 可選擇不與地面層配置強烈耦合，保持較低的影響力。\n- 這種設計允許在不同的層級結構中靈活使用標準層平面，減少對地面層的依賴。"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 05:00
+  timestamp_seconds: 300.0
+  image: frames/00_05_00.png
+  transcript: 他可以沒有這麼強烈的
+  note: ''
+  title: 情緒強度可調整
+  summary: "- 他可以沒有這麼強烈的情緒或反應\n  - 允許個體根據情境調整情緒強度\n  - 透過自我調節技巧降低情緒衝擊\n- 情緒強度的調整對行為與決策有影響"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 05:03
+  timestamp_seconds: 303.7
+  image: frames/00_05_03.png
+  transcript: '一個配置上面的一個關係
+
+    好那先這樣我就開始示範
+
+    首先
+
+    我要讓大家了解一件事情
+
+    我們任何一個建築物都是由
+
+    結構
+
+    鑄
+
+    兩
+
+    板
+
+    去構成他的建築物的一個框架這個鑄
+
+    兩板
+
+    牆裡面包含的空間
+
+    這個空間裡面
+
+    鑄
+
+    兩
+
+    板
+
+    牆
+
+    好
+
+    我們任何一個空間
+
+    現在指的空間不是那種很哲學的空間我現在指的空間就是考試裡面
+
+    有鑄兩板牆去維塑出來的一個室內空間就是這麼單純而已
+
+    那'
+  note: ''
+  title: 建築物結構與空間定義
+  summary: "- 建築物的框架由結構（鑄兩板）構成\n  - 鑄兩板牆是構成建築物框架的核心元素\n- 空間的定義\n  - 不是哲學層面的空間，而是由鑄兩板牆形成的室內空間\n\
+    \  - 這種空間是簡單、直接的室內環境"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 06:00
+  timestamp_seconds: 360.0
+  image: frames/00_06_00.png
+  transcript: '鑄兩板牆這件事情
+
+    這是我以前的收稿先放在房間今天可以講
+
+    所以我們先了解一件事情
+
+    最基本的鑄兩板牆的構成單元是什麼
+
+    是四根柱子'
+  note: ''
+  title: 鑄兩板牆構成單元
+  summary: '- 四根柱子是鑄兩板牆的基本構成單元
+
+    - 影片先以此作為基礎說明的起點'
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 06:30
+  timestamp_seconds: 390.0
+  image: frames/00_06_30.png
+  transcript: '最基本的空間構成
+
+    是這個樣子
+
+    四根柱子
+
+    然後有牆壁
+
+    有牆壁
+
+    有牆壁
+
+    有牆壁
+
+    然後有板
+
+    有天花板有樓板
+
+    好
+
+    這就是一個我們構成空間的最基本單元
+
+    那當然你要很認真去開窗戶啊或是家窗
+
+    家門啊都是可以的但是我們先不討論這個'
+  note: ''
+  title: 最基本的空間構成
+  summary: "- 基本空間單元\n  - 四根柱子作為支撐\n  - 四面牆壁包圍\n  - 樓板（地板）與天花板構成上下層\n- 進一步設計要素（未討論）\n\
+    \  - 開窗戶、家窗、家門等可加入"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 07:00
+  timestamp_seconds: 420.0
+  image: frames/00_07_00.png
+  transcript: '家門啊都是可以的但是我們先不討論這個
+
+    好那這一個基本的構成單元來
+
+    這個最基本的構成單元
+
+    我們可以去設定一個他的尺度
+
+    那合理的經濟垮距我們可以假設是8米
+
+    8米
+
+    好那為什麼是8米呢為什麼不是10米或9米
+
+    當初我在考試的時候
+
+    因為我們在我那個年代我們去參加考試
+
+    我們都需要去畫打格子
+
+    在整張大圖紙上去打滿'
+  note: ''
+  title: 構成單元尺度設定與格子畫法
+  summary: "- 基本構成單元概念\n  - 先不討論家門等細節，聚焦於最基本的構成單元\n- 設定尺度\n  - 以「合理的經濟垮距」為例，假設為 8\
+    \ 米\n  - 解析為何選 8 米而非 10 米或 9 米\n- 考試時的格子畫法\n  - 需要在整張大圖紙上打滿格子\n  - 這種做法影響尺度選擇與設計流程"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 07:34
+  timestamp_seconds: 454.1
+  image: frames/00_07_34.png
+  transcript: '在整張大圖紙上去打滿
+
+    2公分成2公分的格子
+
+    2公分成2公分的格子
+
+    然後2公分在400分之一的情況下
+
+    比例是400分之一的情況下
+
+    2公分成2公分大概就是8米
+
+    成語8米
+
+    對啦
+
+    好8米成8米
+
+    那我只要去對格子
+
+    我就可以畫出一個空間'
+  note: ''
+  title: 利用格子法在比例圖紙上繪製空間
+  summary: "- 在整張大圖紙上打滿 2 公分 × 2 公分 的格子\n  - 每格代表實際 8 公尺（2 公分 × 400 = 800 公分 = 8 公尺）\n\
+    - 以 1:400 的比例將實際尺寸轉換為紙上尺寸\n  - 2 公分紙上對應 8 公尺實際距離\n- 對齊格子即可快速繪製出空間的比例圖"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 08:00
+  timestamp_seconds: 480.0
+  image: frames/00_08_00.png
+  transcript: '我就可以畫出一個空間
+
+    就可以是
+
+    我把這個柱子點上去
+
+    他是不是就變成一個基本的平面了對不對'
+  note: ''
+  title: 利用柱子點建立基本平面
+  summary: "- 在三維空間中畫出一個空間\n  - 先建立空間框架\n  - 以柱子作為參考點\n- 點擊柱子以形成平面\n  - 柱子被視為點或線\n\
+    \  - 透過點擊操作將其轉化為平面\n- 這個操作產生一個基本平面\n  - 平面可作為後續建模的基礎\n  - 確認操作正確性時可進行對照檢查"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 08:06
+  timestamp_seconds: 486.5
+  image: frames/00_08_06.png
+  transcript: '他是不是就變成一個基本的平面了對不對
+
+    然後好
+
+    所以來我們我那時候就把定成8米8米是一個
+
+    跨去那8米成8米還有另外
+
+    8米成8米還有另外一個意義
+
+    大家可以想像一下一間教室
+
+    一間教室
+
+    大概有多大
+
+    我有的人說10米成10米
+
+    照以前的考試要求曾經有出過一題
+
+    他會說一間教室是9米成9米
+
+    好這些都可以都可以
+
+    但是為什麼用教室來舉例呢
+
+    因為教室大概是我們生命中最
+
+    印象最深刻的
+
+    嗨
+
+    好有同學進來啦請坐請坐'
+  note: ''
+  title: 以教室尺寸說明基本平面概念
+  summary: "- 基本平面概念\n  - 以「教室」作為實際範例，說明平面尺寸的概念\n- 教室尺寸範例\n  - 8米 × 8米、9米 × 9米、10米\
+    \ × 10米等不同尺寸皆可作為示例\n- 使用教室作為例子之原因\n  - 教室是學生生活中最常見、最具象徵性的空間，易於理解與記憶"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 08:52
+  timestamp_seconds: 532.6
+  image: frames/00_08_52.png
+  transcript: '好有同學進來啦請坐請坐
+
+    有沒有直接出事
+
+    擺一心
+
+    有點操作控制'
+  note: ''
+  title: 課堂安全與操作控制
+  summary: "- 歡迎學生進入課堂\n  - 讓學生坐下，營造安靜學習環境\n- 關注安全與操作控制\n  - 提醒避免直接事故\n  - 強調操作控制的重要性"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: 09:00
+  timestamp_seconds: 540.0
+  image: frames/00_09_00.png
+  transcript: '好
+
+    我們的課程特色就是隨時會有人進來
+
+    好我就去講
+
+    那一個空間這樣8米8米的構成
+
+    拿他最大的一個特色就是他是
+
+    我先把它設定成一個他是一個教室的大小
+
+    基本大小那為什麼
+
+    為什麼用教室來類比
+
+    因為教室就是我們在生活中最容易去
+
+    印象最深刻的一個空間
+
+    一個教室我們可以用教室來類比很多空間
+
+    比如說如果說你今天要說
+
+    很多考試的情況下面
+
+    8米成都會叫你去要
+
+    要你去做一個辦公室或是一間
+
+    或是一個什麼什麼樣的空間
+
+    哦那8米8米就可以用教室去想像
+
+    好那我們現在有這8米成8米之後呢
+
+    我們再來看下一件事情'
+  note: ''
+  title: 以教室為比喻說明 8x8 米空間規劃
+  summary: "- 8x8 米空間的核心特色\n  - 以教室尺寸作為基本參考\n  - 方便理解與應用\n- 教室作為類比的原因\n  - 生活中最容易產生深刻印象的空間\n\
+    \  - 可延伸至多種實際場景\n- 教室類比的實際應用\n  - 例如考試、辦公室、其他空間的想像\n  - 讓學員快速把握空間規劃概念"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: '10:02'
+  timestamp_seconds: 602.9
+  image: frames/00_10_02.png
+  transcript: '好
+
+    調一下亮度'
+  note: ''
+  title: 亮度調整
+  summary: "- 調整畫面亮度\n  - 確認畫面不過暗或過亮\n  - 使用亮度調整工具或滑桿"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: '10:15'
+  timestamp_seconds: 615.7
+  image: frames/00_10_15.png
+  transcript: '好假設今天我們拿到一個
+
+    一個我們照一下
+
+    今年的建築師考試的題目
+
+    哎請坐請坐
+
+    哎真的
+
+    我已經在錄影了你就坐著聽啊
+
+    好好好
+
+    像我們今天今天要示範的建築師考試的題目
+
+    大理堂
+
+    大理堂要怎麼畫呢
+
+    來
+
+    大理堂一間400嘿呃
+
+    哦
+
+    大理堂一間400嘿呃
+
+    好那我們8米成8米
+
+    這樣的空間一格是64嘿呃
+
+    那請問400嘿呃
+
+    是幾個64嘿呃產生的
+
+    所以64
+
+    6
+
+    今年的考試可以待計算級
+
+    我沒有太
+
+    哎不小心洩漏
+
+    好沒事
+
+    400嘿呃除以64'
+  note: ''
+  title: 建築師考試：面積分割計算示範
+  summary: "- 以 8m × 8m 為單位面積\n  - 單位面積為 64 平方米\n- 計算 400 平方米可分為多少個單位\n  - 400 ÷ 64\
+    \ = 6.25\n  - 代表 6 個完整單位 + 0.25 單位（剩餘面積）\n- 重要概念\n  - 面積除法\n  - 單位面積的選擇\n  - 剩餘面積的處理方式\n\
+    - 試題類型\n  - 需要快速算出面積分割數量\n  - 可能涉及剩餘面積的實務應用"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: '11:17'
+  timestamp_seconds: 677.1
+  image: frames/00_11_17.png
+  transcript: '400嘿呃除以64
+
+    6
+
+    25
+
+    大概6.25個這個樣子的
+
+    這個樣子的空間
+
+    那我們可以先假設成接近6個
+
+    那有些人
+
+    然後來通常呢這個時候我就說
+
+    我會把它設定這個叫做一個6
+
+    8米成8米的一個格子我會叫他叫做一居
+
+    一居哦
+
+    那為什麼有叫居咧
+
+    這個是
+
+    鞋鷹梗啊哦
+
+    我就說這是一格
+
+    一格住耐線垮距
+
+    哦住耐線垮距
+
+    一個住耐線垮距所構成的一格的'
+  note: ''
+  title: 空間格子尺寸估算與「一居」定義
+  summary: "- 400 ÷ 64 ≈ 6.25，近似為 6\n  - 以此作為空間格子數量的估算基礎\n- 以 8 米 × 8 米 的格子作為一個「一居」單位\n\
+    \  - 「一居」代表一格的空間範圍\n- 「一居」的名稱來源於「住耐線垮距」概念\n  - 指由線距所構成的單一格子"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: '11:59'
+  timestamp_seconds: 719.8
+  image: frames/00_11_59.png
+  transcript: '一個住耐線垮距所構成的一格的
+
+    空間我叫一格
+
+    然後一居就是他的鞋印
+
+    所以這時候我就會說呢
+
+    我這個400嘿呃大理堂
+
+    大理堂他的
+
+    格數大概是6居
+
+    大概是6居
+
+    那有些人會說那你剩下0.25居怎麼辦呢
+
+    那沒關係你會在意的話你也可以變成
+
+    8居
+
+    你也可以變成7居
+
+    那為什麼我要用6居呢
+
+    因為6居的話他可以很容易變成'
+  note: ''
+  title: 使用 6 居格系統測量空間
+  summary: "- 定義「格」與「居」  \n  - 「格」：由住耐線垮距構成的空間單位  \n  - 「居」：對應鞋印的單位  \n- 以 400 大理堂為例\
+    \  \n  - 格數約為 6 居  \n- 處理剩餘 0.25 居  \n  - 可調整為 7 或 8 居  \n- 為何選擇 6 居  \n  - 6\
+    \ 居易於轉換與計算"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: '12:40'
+  timestamp_seconds: 760.8
+  image: frames/00_12_40.png
+  transcript: '這樣子就6居對不對
+
+    一個2格3格4格5格6格
+
+    然後這邊是2居
+
+    也就是8米乘216米
+
+    這邊的話是3居
+
+    也就是8米
+
+    乘以3
+
+    24米
+
+    然後我把住宅打上去
+
+    然後因為大理堂中間不能有住宅嘛
+
+    有住宅就不太像大理堂嘛對不對
+
+    所以我就把住宅放上去
+
+    好'
+  note: ''
+  title: 住宅格數與面積計算及大理堂佈局
+  summary: "- 住宅格數與面積\n  - 2居：8米 × 216米（示例計算）\n  - 3居：8米 × 3 = 24米\n  - 4格、5格、6格等按格數相應計算\n\
+    - 大理堂佈局規則\n  - 大理堂中間不應設置住宅\n  - 住宅放置於大理堂會削弱其功能與特色\n  - 影片中將住宅放置於合適位置以符合規範"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: '13:22'
+  timestamp_seconds: 802.2
+  image: frames/00_13_22.png
+  transcript: 垮度長一點所以我住宅畫的可以再給他畫面一點
+  note: ''
+  title: 住宅畫面調整
+  summary: "- 作品長度調整\n  - 需要延長畫幅以增加畫面感\n- 住宅畫面細節增補\n  - 讓住宅畫面更豐富"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: '13:31'
+  timestamp_seconds: 811.4
+  image: frames/00_13_31.png
+  transcript: '大垮距的設計
+
+    然後我把
+
+    外牆線畫上去
+
+    加個開口
+
+    加個門
+
+    這樣他就變成大理堂
+
+    能夠理解嗎
+
+    然後來如果說你今天覺得這個照這個結構你不喜歡
+
+    那我們也可以這樣子
+
+    我們不是還剩0.25G嗎
+
+    還剩0.25G那我可以稍微把它拖開一點
+
+    拖開一點
+
+    往大往往這邊去
+
+    往這個方向去放大
+
+    往這個方向方向去放大
+
+    放大以後一樣把住宅畫進去
+
+    那為什麼要放大呢因為我要加雙排住
+
+    一樣我把那個外牆畫上去'
+  note: ''
+  title: 大垮距設計與空間調整
+  summary: "- 大垮距設計\n  - 畫外牆線並加入開口與門，形成大理堂空間\n- 結構不滿意時的調整方法\n  - 留下 0.25G 的空間可用於微調\n\
+    \  - 透過拖開、放大等方式調整空間方向\n- 放大空間的目的\n  - 為了加入雙排住宅（雙排住）\n- 調整後的重繪\n  - 再次畫外牆線以完成新設計"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: '14:32'
+  timestamp_seconds: 872.3
+  image: frames/00_14_32.png
+  transcript: '一樣我把那個外牆畫上去
+
+    我習慣畫雙線然後
+
+    我
+
+    我突出去一點點
+
+    假設今天這個大理堂是一個獨立的建築物那我這樣是不是就
+
+    加上門
+
+    前後逃生
+
+    然後來必要的時候來
+
+    把這住那些
+
+    哎有時候會留下來因為這幾年的考題都會叫你畫住那些
+
+    要去確認你的結構詞
+
+    所以不是非常的正確
+
+    因為這幾年考是
+
+    大設計很像在考建造圖小設計好像在考讀成報告書'
+  note: ''
+  title: 外牆繪製與考題要求概述
+  summary: "- 外牆繪製技巧\n  - 以雙線方式標示外牆\n  - 畫外牆時可略微突出細節\n- 建築功能與逃生設計\n  - 若大理堂為獨立建築，需加設門\n\
+    \  - 前後逃生路徑需明確標示\n- 考題重點與繪圖要求\n  - 近年考題常要求畫出結構要點\n  - 需確認結構詞與關鍵細節\n  - 考試偏重於大設計與建造圖，並附報告書"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: '15:08'
+  timestamp_seconds: 908.7
+  image: frames/00_15_08.png
+  transcript: '大設計很像在考建造圖小設計好像在考讀成報告書
+
+    好那這樣畫出來
+
+    這邊再寫上大理堂
+
+    這樣你是不是就很快速的去產生
+
+    大理堂這個空間了
+
+    對不對
+
+    好啊如果旁邊還有其他空間譬如說我旁邊走到
+
+    那我們也可以我們剛才說這一條線
+
+    這個距離是8米對不對
+
+    那外面可能要有個4米的或6米的走廊
+
+    那我可以利用這個類比這個6米
+
+    這6米的走廊就跑出來
+
+    然後假設旁邊還有教室
+
+    8米一間的教室'
+  note: ''
+  title: 快速空間設計與尺寸類比
+  summary: "- 大設計與小設計的區別\n  - 大設計像考建造圖，聚焦整體空間佈局\n  - 小設計像考報告書，重點在細節與說明\n- 以「大理堂」為例快速產生空間\n\
+    \  - 在圖面上直接標註名稱即可形成空間概念\n- 使用實際距離來規劃空間\n  - 以 8 公尺為基準，決定走廊寬度（4-6 公尺）\n  - 透過類比延伸走廊長度（如\
+    \ 6 公尺走廊）\n- 加入鄰近空間的佈局\n  - 例如在旁邊設置 8 公尺寬的教室"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: '16:02'
+  timestamp_seconds: 962.7
+  image: frames/00_16_02.png
+  transcript: '開上門門要小一點
+
+    教室教室'
+  note: ''
+  title: 教室門尺寸調整
+  summary: "- 調整門的開口尺寸\n  - 將上門門的開口縮小以符合教室空間需求\n  - 可能提升安全性與空間利用率\n- 強調教室環境的重要性\n\
+    \  - 影片重複「教室教室」以提醒觀眾聚焦於教室設計"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: '16:06'
+  timestamp_seconds: 966.1
+  image: frames/00_16_06.png
+  transcript: '那我這樣子我是不是就構成我的平面圖就產生了
+
+    對不對'
+  note: ''
+  title: 確認平面圖是否已產生
+  summary: "- 詢問是否完成平面圖生成\n  - 需要確認操作是否正確\n  - 確認平面圖是否已成功產生\n- 進一步確認流程或下一步動作"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: '16:10'
+  timestamp_seconds: 970.9
+  image: frames/00_16_10.png
+  transcript: '啊這就是畫平面圖方法但不會這麼這麼蠢啊
+
+    這個是一個很沒有邏輯的拼法'
+  note: ''
+  title: 畫平面圖的邏輯性與避免蠢方法
+  summary: "- 介紹畫平面圖的方法\n  - 以簡單步驟呈現平面圖\n- 警示不應使用「沒有邏輯」的拼法\n  - 這種方法會導致錯誤或混亂\n- 強調邏輯性在繪圖中的重要性\n\
+    \  - 合理的步驟能提升準確度與效率"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: '16:17'
+  timestamp_seconds: 977.5
+  image: frames/00_16_17.png
+  transcript: '那今天會教到大家如何去比較有邏輯的去拼出這個平面
+
+    把畫面放在一些
+
+    好
+
+    好
+
+    這樣子
+
+    是不是還蠻簡單的
+
+    你剛好去年沒聽到這個
+
+    對
+
+    去年去年我會CAT會單顧了兩個月
+
+    我來的時候已經中間了
+
+    不好意思不好意思
+
+    我們現在可以馬上這個圓分了'
+  note: ''
+  title: 邏輯拼出平面圖形的教學
+  summary: "- 目的：教學如何以有邏輯的方式拼出平面圖形\n  - 透過將畫面放置於特定位置來組合\n- 先前學習經驗\n  - 去年學習過 CAT，僅兩個月\n\
+    \  - 目前已進入中間階段\n- 立即實作\n  - 直接進行圓形分割練習"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: '16:51'
+  timestamp_seconds: 1011.4
+  image: frames/00_16_51.png
+  transcript: 好那我這邊有一些圖我們就可以來一樣類比一下
+  note: ''
+  title: 利用圖像進行類比說明
+  summary: "- 使用圖像作為教學輔助\n  - 透過視覺化資料幫助理解\n  - 與實際概念做類比\n- 目的在於提升學習者的直觀感受"
+  visual_analysis: ''
+  source: auto
+  analyzed: true
+- timestamp: '16:57'
+  timestamp_seconds: 1017.0
+  image: frames/00_16_57.png
+  transcript: '這個圖給大家看一下
+
+    剛才講的一句8米成8米是一個大概長這樣子對不對
+
+    然後8米成8米
+
+    然後呢
+
+    如果說剛才也示範給大家假設今天是一個需要3G的一個空間
+
+    大概是190Heb的空間的話那他就變成
+
+    8米8米加個走廊對不對
+
+    假設他是一個需要240Heb的空間那一樣我可以變成1.25G
+
+    1.5G乘2.5G
+
+    3.5G'
+  note: ''
+  title: 空間尺寸與 G 單位轉換示範
+  summary: "- 8m x 8m 圖示說明\n  - 先前提到的「8米成8米」概念\n- 3G 需求對應約 190 Heb 空間\n  - 加上走廊後仍維持\
+    \ 8m x 8m\n- 240 Heb 空間可轉換為不同 G 值\n  - 1.25G、1.5G、2.5G、3.5G"
+  visual_analysis: ''
+  source: auto
+  analyzed: true

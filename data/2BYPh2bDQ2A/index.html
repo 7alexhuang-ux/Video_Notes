@@ -1,0 +1,4658 @@
+<!DOCTYPE html>
+<html lang="zh-TW" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 0124 07 本週練習說明</title>
+    <style>
+        /* ========================================
+           v0.3.2 左右分欄 + 點擊播放 + 滿版截圖
+           ======================================== */
+
+        :root {
+            /* 淺色主題 (預設) */
+            --bg-gradient: linear-gradient(135deg, #e8f0fe 0%, #f5e6f3 50%, #fef3e8 100%);
+            --glass-bg: rgba(255, 255, 255, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.8);
+            --glass-blur: 20px;
+            --text-color: #1a1a2e;
+            --text-secondary: #555;
+            --accent-color: #e94560;
+            --accent-light: rgba(233, 69, 96, 0.1);
+            --success-color: #2ecc71;
+            --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.1);
+            --shadow-glow: 0 0 40px rgba(233, 69, 96, 0.1);
+            --card-bg: rgba(255, 255, 255, 0.7);
+            --header-bg: rgba(255, 255, 255, 0.8);
+            --resizer-color: rgba(0, 0, 0, 0.1);
+            --left-panel-width: 45%;
+        }
+
+        [data-theme="dark"] {
+            /* 深色主題 */
+            --bg-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.12);
+            --text-color: #eee;
+            --text-secondary: #aaa;
+            --accent-light: rgba(233, 69, 96, 0.15);
+            --shadow-soft: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-glow: 0 0 40px rgba(233, 69, 96, 0.15);
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --header-bg: rgba(22, 33, 62, 0.9);
+            --resizer-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .chapter-divider {
+            grid-column: 1 / -1;
+            padding: 40px 0 20px 0;
+            margin-top: 40px;
+            border-bottom: 2px solid var(--accent-color);
+            position: sticky;
+            top: -20px;
+            background: var(--bg-gradient);
+            z-index: 50;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .chapter-divider h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin: 0;
+            color: var(--accent-color);
+            text-shadow: 0 0 20px rgba(233, 69, 96, 0.4);
+        }
+        .chapter-divider .chapter-range {
+            font-size: 0.8rem;
+            background: rgba(255,255,255,0.1);
+            padding: 4px 12px;
+            border-radius: 99px;
+            color: var(--text-secondary);
+        }
+
+        .frame-chapter-breadcrumb {
+            font-size: 0.75rem;
+            color: var(--accent-color);
+            margin-bottom: 4px;
+            font-weight: 600;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .star-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            filter: grayscale(1);
+            opacity: 0.3;
+            transition: all 0.2s;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        .star-btn.active {
+            filter: grayscale(0);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+        .star-btn:hover {
+            opacity: 0.8;
+            transform: scale(1.2);
+        }
+
+        /* Editor Styles */
+        .summary-editor {
+            width: 100%;
+            min-height: 150px;
+            padding: 12px;
+            background: var(--card-bg);
+            border: 1px solid var(--accent-color);
+            border-radius: 8px;
+            color: var(--text-color);
+            font-size: 0.95rem;
+            font-family: inherit;
+            line-height: 1.7;
+            resize: vertical;
+            display: none;
+            margin-bottom: 10px;
+            outline: none;
+            box-shadow: 0 0 10px var(--accent-light);
+        }
+
+        .edit-controls {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .save-btn {
+            background: var(--success-color);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .save-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
+        }
+
+        .edit-toggle-btn {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            color: var(--text-secondary);
+            padding: 4px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            transition: all 0.2s ease;
+        }
+
+        .edit-toggle-btn:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft JhengHei', -apple-system, sans-serif;
+            background: var(--bg-gradient);
+            background-attachment: fixed;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           主容器 - 左右分欄
+           ======================================== */
+
+        .main-container {
+            display: flex;
+            height: 100vh;
+            width: 100%;
+        }
+
+        /* 左側面板 - 影片 + 時間軸 */
+        .left-panel {
+            width: var(--left-panel-width);
+            min-width: 300px;
+            max-width: 70%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background: var(--header-bg);
+            backdrop-filter: blur(var(--glass-blur));
+            -webkit-backdrop-filter: blur(var(--glass-blur));
+            border-right: 1px solid var(--glass-border);
+        }
+
+        /* 可拖曳分隔線 */
+        .resizer {
+            width: 8px;
+            cursor: col-resize;
+            background: var(--resizer-color);
+            flex-shrink: 0;
+            transition: background 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .resizer:hover, .resizer.dragging {
+            background: var(--accent-color);
+        }
+
+        .resizer::after {
+            content: '';
+            width: 2px;
+            height: 40px;
+            background: var(--text-secondary);
+            border-radius: 2px;
+            opacity: 0.5;
+        }
+
+        .resizer:hover::after, .resizer.dragging::after {
+            background: white;
+            opacity: 1;
+        }
+
+        /* 右側面板 - 卡片流 */
+        .right-panel {
+            flex: 1;
+            height: 100%;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        /* ========================================
+           左側面板內容
+           ======================================== */
+
+        .video-header {
+            padding: 15px 20px;
+            background: var(--glass-bg);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .video-header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .video-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-color);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex: 1;
+            margin-right: 12px;
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .theme-toggle {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            background: var(--accent-light);
+            border-color: var(--accent-color);
+        }
+
+        .youtube-link {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            text-decoration: none;
+        }
+
+        .youtube-link:hover {
+            color: var(--accent-color);
+        }
+
+        .back-link {
+            text-decoration: none;
+            font-size: 1.2rem;
+            background: var(--glass-bg);
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .back-link:hover {
+            transform: scale(1.1);
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+            color: white;
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3);
+        }
+
+        /* 影片區域 */
+        .video-area {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background: #000;
+            position: relative;
+            min-height: 0;
+        }
+
+        .video-area video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #000;
+        }
+
+        /* 字幕 */
+        .subtitle-display {
+            position: absolute;
+            bottom: 40px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            padding: 10px 20px;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 500;
+            line-height: 1.4;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            /* 使用文字陰影替代黑底，避免閃爍感 */
+            text-shadow: 
+                -1.5px -1.5px 0 #000,  
+                 1.5px -1.5px 0 #000,
+                -1.5px  1.5px 0 #000,
+                 1.5px  1.5px 0 #000,
+                 0px 2px 4px rgba(0,0,0,0.8);
+            z-index: 100;
+        }
+
+        .subtitle-display.visible {
+            opacity: 1;
+        }
+
+        /* 時間軸區域 */
+        .timeline-area {
+            padding: 15px 20px;
+            background: var(--glass-bg);
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .timeline-controls {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .play-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            border: none;
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 15px rgba(233, 69, 96, 0.3);
+        }
+
+        .play-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(233, 69, 96, 0.4);
+        }
+
+        .mark-btn {
+            background: var(--success-color);
+            border: none;
+            color: white;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+        }
+
+        .mark-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+        }
+
+        .time-display {
+            font-family: monospace;
+            font-size: 0.9rem;
+            color: var(--text-color);
+            min-width: 100px;
+        }
+
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-left: auto;
+        }
+
+        .volume-control input {
+            width: 80px;
+            accent-color: var(--accent-color);
+        }
+
+        /* 時間軸軌道 */
+        .timeline-track {
+            height: 12px;
+            background: var(--glass-bg);
+            border-radius: 6px;
+            position: relative;
+            cursor: pointer;
+            border: 1px solid var(--glass-border);
+        }
+
+        .timeline-progress {
+            height: 100%;
+            background: var(--accent-color);
+            border-radius: 6px;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            top: 50%;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--accent-color);
+            border: 2px solid white;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.55rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .timeline-marker:hover {
+            transform: translate(-50%, -50%) scale(1.3);
+            z-index: 20;
+        }
+
+        .timeline-marker.manual {
+            background: var(--success-color);
+        }
+
+        .timeline-marker.starred {
+            background: #fbbf24; /* Star gold */
+            border-color: #fff;
+            box-shadow: 0 0 10px rgba(251, 191, 36, 0.8);
+            z-index: 15;
+        }
+
+        .timeline-marker.active {
+            transform: translate(-50%, -50%) scale(1.5);
+            box-shadow: 0 0 0 3px var(--accent-light), 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        /* 章節目錄 */
+        .chapter-nav {
+            max-height: 280px;
+            overflow-y: auto;
+            padding: 12px 20px;
+            background: var(--card-bg);
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .chapter-nav h3 {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .chapter-list {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .chapter-item {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .chapter-header {
+            padding: 8px 12px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+
+        .chapter-header:hover {
+            background: var(--accent-light);
+        }
+
+        .chapter-title {
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .chapter-count {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .chapter-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.2s ease;
+        }
+
+        .chapter-item.open .chapter-arrow {
+            transform: rotate(180deg);
+        }
+
+        .chapter-frames {
+            display: none;
+            padding: 0 12px 8px;
+        }
+
+        .chapter-item.open .chapter-frames {
+            display: block;
+        }
+
+        .chapter-frame-link {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 10px;
+            margin: 2px 0;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .chapter-frame-link:hover,
+        .chapter-frame-link.active {
+            background: var(--accent-light);
+        }
+
+        .chapter-frame-link.active {
+            border-left: 3px solid var(--accent-color);
+        }
+
+        .chapter-frame-id {
+            font-family: monospace;
+            font-size: 0.7rem;
+            font-weight: bold;
+            color: white;
+            background: var(--accent-color);
+            padding: 2px 6px;
+            border-radius: 4px;
+            min-width: 28px;
+            text-align: center;
+        }
+
+        .chapter-frame-time {
+            font-family: monospace;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            padding: 2px 4px;
+        }
+
+        .link-title {
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .mini-score {
+            font-size: 0.65rem;
+            font-weight: bold;
+            padding: 1px 4px;
+            border-radius: 3px;
+            min-width: 24px;
+            text-align: center;
+        }
+
+        .mini-score.pass { background: var(--success-color); color: white; }
+        .mini-score.fail { background: var(--accent-color); color: white; }
+
+        .chapter-frame-link.frame-passed { border-right: 3px solid var(--success-color); }
+        .chapter-frame-link.frame-failed { border-right: 3px solid var(--accent-color); }
+
+        /* ========================================
+           右側面板 - 卡片流
+           ======================================== */
+
+        .frame-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(var(--glass-blur));
+            -webkit-backdrop-filter: blur(var(--glass-blur));
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+        }
+
+        .frame-card:hover {
+            box-shadow: var(--shadow-soft), var(--shadow-glow);
+        }
+
+        .frame-card.active {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 2px var(--accent-color), var(--shadow-soft);
+        }
+
+        .frame-header {
+            padding: 14px 18px;
+            background: var(--glass-bg);
+            border-bottom: 1px solid var(--glass-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .frame-title {
+            font-size: 1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .frame-number {
+            background: var(--accent-color);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .frame-badges {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .badge.auto { 
+            background: linear-gradient(135deg, rgba(155, 89, 182, 0.3), rgba(155, 89, 182, 0.1)); 
+            border-color: rgba(155, 89, 182, 0.4);
+            color: #d2a8ff;
+        }
+
+        .badge.manual { 
+            background: linear-gradient(135deg, rgba(233, 69, 96, 0.3), rgba(233, 69, 96, 0.1)); 
+            border-color: rgba(233, 69, 96, 0.4);
+            color: #ff9fb1;
+        }
+
+        .badge.analyzed { 
+            background: linear-gradient(135deg, rgba(46, 204, 113, 0.3), rgba(46, 204, 113, 0.1)); 
+            border-color: rgba(46, 204, 113, 0.4);
+            color: #85ffc7;
+        }
+
+        .student-tag {
+            margin-top: 10px;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 3px solid var(--accent-color);
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+
+        .student-tag strong {
+            color: var(--accent-light);
+            margin-left: 5px;
+        }
+
+        /* 卡片主體 */
+        .frame-body {
+            display: grid;
+            grid-template-columns: 55% 1fr;
+            gap: 0;
+        }
+
+        @media (max-width: 1200px) {
+            .frame-body {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 左側圖片區 */
+        .frame-image-area {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            background: var(--glass-bg);
+        }
+
+        .image-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            flex: 1;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .image-wrapper:hover {
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .play-overlay {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            opacity: 0;
+            transform: translateY(8px);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(233, 69, 96, 0.4);
+        }
+
+        .image-wrapper:hover .play-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .zoom-hint {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0,0,0,0.6);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-wrapper:hover .zoom-hint {
+            opacity: 1;
+        }
+
+        .frame-timestamp {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: white;
+            background: rgba(0,0,0,0.7);
+            padding: 4px 10px;
+            border-radius: 4px;
+            z-index: 5;
+        }
+
+        /* 右側分析區 */
+        .frame-analysis {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .analysis-section h4 {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .analysis-summary {
+            font-size: 0.95rem;
+            line-height: 1.7;
+            color: var(--text-color);
+        }
+
+        .analysis-visual {
+            background: var(--accent-light);
+            border-left: 3px solid var(--accent-color);
+            padding: 12px 16px;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .analysis-visual p, .analysis-visual div {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        .user-note {
+            background: rgba(46, 204, 113, 0.1);
+            border-left: 3px solid var(--success-color);
+            padding: 12px 16px;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .user-note h5 {
+            color: var(--success-color);
+            margin-bottom: 6px;
+            font-size: 0.85rem;
+        }
+
+        /* 逐字稿折疊區 */
+        .transcript-toggle {
+            border-top: 1px solid var(--glass-border);
+        }
+
+        .transcript-toggle summary {
+            padding: 12px 18px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.2s ease;
+        }
+
+        .transcript-toggle summary:hover {
+            background: var(--glass-bg);
+            color: var(--text-color);
+        }
+
+        .transcript-content {
+            padding: 15px;
+            background: var(--glass-bg);
+        }
+
+        .transcript-text {
+            background: var(--card-bg);
+            padding: 15px;
+            border-radius: 10px;
+            white-space: pre-wrap;
+            font-size: 0.85rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid var(--glass-border);
+        }
+
+        /* 雙語模式樣式 */
+        .zh-lang, .en-lang { display: block; margin-bottom: 8px; }
+        .zh-lang { color: var(--text-color); font-weight: 500; }
+        .en-lang { color: var(--text-secondary); opacity: 0.8; font-family: 'Inter', sans-serif; }
+        
+        body.sub-mode-zh .en-lang { display: none; }
+        body.sub-mode-en .zh-lang { display: none; }
+        body.sub-mode-bilingual .en-lang { border-top: 1px solid var(--glass-border); padding-top: 8px; margin-top: 8px; }
+
+        /* ========================================
+           Lightbox 圖片放大
+           ======================================== */
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 95%;
+            max-height: 95%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .lightbox-close:hover {
+            opacity: 1;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 3rem;
+            cursor: pointer;
+            padding: 20px;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+
+        .lightbox-nav:hover {
+            opacity: 1;
+        }
+
+        .lightbox-prev { left: 20px; }
+        .lightbox-next { right: 20px; }
+
+        .lightbox-info {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            text-align: center;
+            background: rgba(0,0,0,0.6);
+            padding: 10px 20px;
+            border-radius: 25px;
+        }
+
+        /* ========================================
+           Footer
+           ======================================== */
+
+        .right-panel footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
+
+        .right-panel footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        /* ========================================
+           響應式 - 小螢幕改為上下佈局
+           ======================================== */
+
+        @media (max-width: 900px) {
+            .main-container {
+                flex-direction: column;
+            }
+
+            .left-panel {
+                width: 100% !important;
+                min-width: unset;
+                max-width: unset;
+                height: 50vh;
+            }
+
+            .resizer {
+                display: none;
+            }
+
+            .right-panel {
+                height: 50vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <!-- 左側面板：影片 + 時間軸 -->
+        <div class="left-panel" id="leftPanel">
+            <!-- 標題列 -->
+            <div class="video-header">
+                <div class="video-header-top">
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <a href="../index.html" class="back-link" title="回主索引">🏠</a>
+                        <h1 class="video-title">2026 0124 07 本週練習說明</h1>
+                    </div>
+                    <div class="header-controls">
+                        <a href="https://www.youtube.com/watch?v=2BYPh2bDQ2A" target="_blank" class="youtube-link">📺 YouTube</a>
+                        <button class="theme-toggle" onclick="toggleTheme()">
+                            <span id="themeIcon">🌙</span>
+                            <span id="themeText">深色</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 影片區域 -->
+            <div class="video-area">
+                <video id="mainVideo" controls preload="metadata" poster="frames/00_00_00.png">
+                    <source src="video.mp4" type="video/mp4">
+                </video>
+                <div class="subtitle-display" id="subtitleDisplay"></div>
+            </div>
+
+            <!-- 時間軸控制 -->
+            <div class="timeline-area">
+                <div class="timeline-controls">
+                    <button class="play-btn" id="playBtn" onclick="togglePlay()">▶</button>
+                    <span class="time-display">
+                        <span id="currentTime">00:00</span> / 04:21
+                    </span>
+                    
+                    <!-- 播放速度調整 -->
+                    <div class="speed-control" style="display: flex; align-items: center; gap: 5px; margin-left: 10px;">
+                        <span style="font-size: 0.8rem; color: var(--text-secondary);">⚡</span>
+                        <select id="speedSelector" onchange="setPlaybackRate(this.value)" style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 4px; color: var(--text-color); font-size: 0.8rem; padding: 2px 5px; cursor: pointer;">
+                            <option value="0.5">0.5x</option>
+                            <option value="0.75">0.75x</option>
+                            <option value="1" selected>1.0x</option>
+                            <option value="1.25">1.25x</option>
+                            <option value="1.5">1.5x</option>
+                            <option value="2">2.0x</option>
+                        </select>
+                    </div>
+
+                    
+
+                    <button class="mark-btn" id="markBtn" onclick="addManualMark()" title="按 M 鍵添加手動戳記" style="margin-left: 10px;">
+                        📍 戳記
+                    </button>
+                    <div class="volume-control">
+                        <span>🔊</span>
+                        <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="1" onchange="setVolume(this.value)">
+                    </div>
+                </div>
+                <div class="timeline-track" id="timelineTrack" onclick="handleTimelineClick(event)">
+                    <div class="timeline-progress" id="timelineProgress"></div>
+                    
+                    <div class="timeline-marker auto "
+                         id="marker-1"
+                         style="left: 0.0%"
+                         onclick="event.stopPropagation(); jumpToFrame(1, 0.0, findChapterForFrame(1))"
+                         title="1-1: 00:00 - 面對創作痛苦與自我認知">
+                        1-1
+                    </div>
+                    
+                    <div class="timeline-marker auto "
+                         id="marker-2"
+                         style="left: 2.53%"
+                         onclick="event.stopPropagation(); jumpToFrame(2, 6.6, findChapterForFrame(2))"
+                         title="1-2: 00:06 - 閱讀題目與關鍵字映射練習">
+                        1-2
+                    </div>
+                    
+                    <div class="timeline-marker auto "
+                         id="marker-3"
+                         style="left: 19.16%"
+                         onclick="event.stopPropagation(); jumpToFrame(3, 50.0, findChapterForFrame(3))"
+                         title="1-3: 00:50 - 圖面標題副標題的產生方法">
+                        1-3
+                    </div>
+                    
+                    <div class="timeline-marker auto "
+                         id="marker-4"
+                         style="left: 22.99%"
+                         onclick="event.stopPropagation(); jumpToFrame(4, 60.0, findChapterForFrame(4))"
+                         title="1-4: 01:00 - 簡短回應">
+                        1-4
+                    </div>
+                    
+                    <div class="timeline-marker auto "
+                         id="marker-5"
+                         style="left: 23.18%"
+                         onclick="event.stopPropagation(); jumpToFrame(5, 60.5, findChapterForFrame(5))"
+                         title="1-5: 01:00 - 句子作為圖表副標題的應用">
+                        1-5
+                    </div>
+                    
+                    <div class="timeline-marker auto "
+                         id="marker-6"
+                         style="left: 25.06%"
+                         onclick="event.stopPropagation(); jumpToFrame(6, 65.4, findChapterForFrame(6))"
+                         title="1-6: 01:05 - 包圍圖副標題在基地環境分析中的應用">
+                        1-6
+                    </div>
+                    
+                    <div class="timeline-marker auto "
+                         id="marker-7"
+                         style="left: 29.27%"
+                         onclick="event.stopPropagation(); jumpToFrame(7, 76.4, findChapterForFrame(7))"
+                         title="2-1: 01:16 - 同時畫圖與思考的痛苦">
+                        2-1
+                    </div>
+                    
+                    <div class="timeline-marker auto "
+                         id="marker-8"
+                         style="left: 30.5%"
+                         onclick="event.stopPropagation(); jumpToFrame(8, 79.6, findChapterForFrame(8))"
+                         title="2-2: 01:19 - 思考不需畫圖">
+                        2-2
+                    </div>
+                    
+                    <div class="timeline-marker auto "
+                         id="marker-9"
+                         style="left: 32.72%"
+                         onclick="event.stopPropagation(); jumpToFrame(9, 85.4, findChapterForFrame(9))"
+                         title="2-3: 01:25 - 簡易開啟功能指令">
+                        2-3
+                    </div>
+                    
+                    <div class="timeline-marker auto "
+                         id="marker-10"
+                         style="left: 33.52%"
+                         onclick="event.stopPropagation(); jumpToFrame(10, 87.5, findChapterForFrame(10))"
+                         title="2-4: 01:27 - 畫圖不思考即排版練習">
+                        2-4
+                    </div>
+                    
+                    <div class="timeline-marker auto "
+                         id="marker-11"
+                         style="left: 34.83%"
+                         onclick="event.stopPropagation(); jumpToFrame(11, 90.9, findChapterForFrame(11))"
+                         title="2-5: 01:30 - 獨題練習：不畫圖的思考方法">
+                        2-5
+                    </div>
+                    
+                    <div class="timeline-marker auto "
+                         id="marker-12"
+                         style="left: 36.59%"
+                         onclick="event.stopPropagation(); jumpToFrame(12, 95.5, findChapterForFrame(12))"
+                         title="2-6: 01:35 - 獨題不畫圖的思考練習">
+                        2-6
+                    </div>
+                    
+                    <div class="timeline-marker auto "
+                         id="marker-13"
+                         style="left: 37.66%"
+                         onclick="event.stopPropagation(); jumpToFrame(13, 98.3, findChapterForFrame(13))"
+                         title="2-7: 01:38 - 思考不畫圖">
+                        2-7
+                    </div>
+                    
+                    <div class="timeline-marker auto "
+                         id="marker-14"
+                         style="left: 38.81%"
+                         onclick="event.stopPropagation(); jumpToFrame(14, 101.3, findChapterForFrame(14))"
+                         title="2-8: 01:41 - 畫圖與思考的雙重挑戰">
+                        2-8
+                    </div>
+                    
+                    <div class="timeline-marker auto "
+                         id="marker-15"
+                         style="left: 42.03%"
+                         onclick="event.stopPropagation(); jumpToFrame(15, 109.7, findChapterForFrame(15))"
+                         title="3-1: 01:49 - 本週重要任務與未來展望">
+                        3-1
+                    </div>
+                    
+                    <div class="timeline-marker auto "
+                         id="marker-16"
+                         style="left: 45.98%"
+                         onclick="event.stopPropagation(); jumpToFrame(16, 120.0, findChapterForFrame(16))"
+                         title="3-2: 02:00 - 課程作業安排與練習目標">
+                        3-2
+                    </div>
+                    
+                    <div class="timeline-marker auto "
+                         id="marker-17"
+                         style="left: 53.37%"
+                         onclick="event.stopPropagation(); jumpToFrame(17, 139.3, findChapterForFrame(17))"
+                         title="3-3: 02:19 - 圖面寫作與空間重點辨識練習">
+                        3-3
+                    </div>
+                    
+                    <div class="timeline-marker auto "
+                         id="marker-18"
+                         style="left: 65.86%"
+                         onclick="event.stopPropagation(); jumpToFrame(18, 171.9, findChapterForFrame(18))"
+                         title="3-4: 02:51 - 對圖面副標題的忽視與理由">
+                        3-4
+                    </div>
+                    
+                    <div class="timeline-marker auto "
+                         id="marker-19"
+                         style="left: 68.97%"
+                         onclick="event.stopPropagation(); jumpToFrame(19, 180.0, findChapterForFrame(19))"
+                         title="3-5: 03:00 - 重溫舊練習以對照新題目">
+                        3-5
+                    </div>
+                    
+                    <div class="timeline-marker auto "
+                         id="marker-20"
+                         style="left: 72.41%"
+                         onclick="event.stopPropagation(); jumpToFrame(20, 189.0, findChapterForFrame(20))"
+                         title="3-6: 03:09 - 關注學員配置">
+                        3-6
+                    </div>
+                    
+                    <div class="timeline-marker auto "
+                         id="marker-21"
+                         style="left: 73.68%"
+                         onclick="event.stopPropagation(); jumpToFrame(21, 192.3, findChapterForFrame(21))"
+                         title="3-7: 03:12 - 輸出導向的練習與影片對照教學">
+                        3-7
+                    </div>
+                    
+                    <div class="timeline-marker auto "
+                         id="marker-22"
+                         style="left: 87.36%"
+                         onclick="event.stopPropagation(); jumpToFrame(22, 228.0, findChapterForFrame(22))"
+                         title="4-1: 03:48 - 先試課再決定付費">
+                        4-1
+                    </div>
+                    
+                    <div class="timeline-marker auto "
+                         id="marker-23"
+                         style="left: 91.95%"
+                         onclick="event.stopPropagation(); jumpToFrame(23, 240.0, findChapterForFrame(23))"
+                         title="4-2: 04:00 - 影片推廣請求">
+                        4-2
+                    </div>
+                    
+                </div>
+            </div>
+
+            <!-- 章節目錄 -->
+            
+            <div class="chapter-nav">
+                <h3>📑 章節目錄</h3>
+                <div class="chapter-list">
+                    
+                    <div id="chapter-item-1" class="chapter-item open">
+                        <div class="chapter-header" onclick="toggleChapter(1)">
+                            <span class="chapter-title">
+                                <span class="chapter-number">1.</span>
+                                創作起點：痛苦、關鍵字與標題產生
+                            </span>
+                            <span class="chapter-count">6</span>
+                            <span class="chapter-arrow">▼</span>
+                        </div>
+                        <div class="chapter-frames" data-chapter-index="1">
+                            
+                            
+                            <a class="chapter-frame-link " href="#frame-1" data-frame-index="1" onclick="jumpToFrame(1, 0.0, this.closest('.chapter-frames').dataset.chapterIndex); return false;">
+                                <span class="chapter-frame-id">1-1</span>
+                                <span class="chapter-frame-time">00:00</span>
+                                <span class="link-title">面對創作痛苦與自我認知</span>
+                                
+                            </a>
+                            
+                            
+                            <a class="chapter-frame-link " href="#frame-2" data-frame-index="2" onclick="jumpToFrame(2, 6.6, this.closest('.chapter-frames').dataset.chapterIndex); return false;">
+                                <span class="chapter-frame-id">1-2</span>
+                                <span class="chapter-frame-time">00:06</span>
+                                <span class="link-title">閱讀題目與關鍵字映射練習</span>
+                                
+                            </a>
+                            
+                            
+                            <a class="chapter-frame-link " href="#frame-3" data-frame-index="3" onclick="jumpToFrame(3, 50.0, this.closest('.chapter-frames').dataset.chapterIndex); return false;">
+                                <span class="chapter-frame-id">1-3</span>
+                                <span class="chapter-frame-time">00:50</span>
+                                <span class="link-title">圖面標題副標題的產生方法</span>
+                                
+                            </a>
+                            
+                            
+                            <a class="chapter-frame-link " href="#frame-4" data-frame-index="4" onclick="jumpToFrame(4, 60.0, this.closest('.chapter-frames').dataset.chapterIndex); return false;">
+                                <span class="chapter-frame-id">1-4</span>
+                                <span class="chapter-frame-time">01:00</span>
+                                <span class="link-title">簡短回應</span>
+                                
+                            </a>
+                            
+                            
+                            <a class="chapter-frame-link " href="#frame-5" data-frame-index="5" onclick="jumpToFrame(5, 60.5, this.closest('.chapter-frames').dataset.chapterIndex); return false;">
+                                <span class="chapter-frame-id">1-5</span>
+                                <span class="chapter-frame-time">01:00</span>
+                                <span class="link-title">句子作為圖表副標題的應用</span>
+                                
+                            </a>
+                            
+                            
+                            <a class="chapter-frame-link " href="#frame-6" data-frame-index="6" onclick="jumpToFrame(6, 65.4, this.closest('.chapter-frames').dataset.chapterIndex); return false;">
+                                <span class="chapter-frame-id">1-6</span>
+                                <span class="chapter-frame-time">01:05</span>
+                                <span class="link-title">包圍圖副標題在基地環境分析中的應用</span>
+                                
+                            </a>
+                            
+                        </div>
+                    </div>
+                    
+                    <div id="chapter-item-2" class="chapter-item ">
+                        <div class="chapter-header" onclick="toggleChapter(2)">
+                            <span class="chapter-title">
+                                <span class="chapter-number">2.</span>
+                                思考與繪圖的分離：痛苦、方法與練習
+                            </span>
+                            <span class="chapter-count">8</span>
+                            <span class="chapter-arrow">▼</span>
+                        </div>
+                        <div class="chapter-frames" data-chapter-index="2">
+                            
+                            
+                            <a class="chapter-frame-link " href="#frame-7" data-frame-index="7" onclick="jumpToFrame(7, 76.4, this.closest('.chapter-frames').dataset.chapterIndex); return false;">
+                                <span class="chapter-frame-id">2-1</span>
+                                <span class="chapter-frame-time">01:16</span>
+                                <span class="link-title">同時畫圖與思考的痛苦</span>
+                                
+                            </a>
+                            
+                            
+                            <a class="chapter-frame-link " href="#frame-8" data-frame-index="8" onclick="jumpToFrame(8, 79.6, this.closest('.chapter-frames').dataset.chapterIndex); return false;">
+                                <span class="chapter-frame-id">2-2</span>
+                                <span class="chapter-frame-time">01:19</span>
+                                <span class="link-title">思考不需畫圖</span>
+                                
+                            </a>
+                            
+                            
+                            <a class="chapter-frame-link " href="#frame-9" data-frame-index="9" onclick="jumpToFrame(9, 85.4, this.closest('.chapter-frames').dataset.chapterIndex); return false;">
+                                <span class="chapter-frame-id">2-3</span>
+                                <span class="chapter-frame-time">01:25</span>
+                                <span class="link-title">簡易開啟功能指令</span>
+                                
+                            </a>
+                            
+                            
+                            <a class="chapter-frame-link " href="#frame-10" data-frame-index="10" onclick="jumpToFrame(10, 87.5, this.closest('.chapter-frames').dataset.chapterIndex); return false;">
+                                <span class="chapter-frame-id">2-4</span>
+                                <span class="chapter-frame-time">01:27</span>
+                                <span class="link-title">畫圖不思考即排版練習</span>
+                                
+                            </a>
+                            
+                            
+                            <a class="chapter-frame-link " href="#frame-11" data-frame-index="11" onclick="jumpToFrame(11, 90.9, this.closest('.chapter-frames').dataset.chapterIndex); return false;">
+                                <span class="chapter-frame-id">2-5</span>
+                                <span class="chapter-frame-time">01:30</span>
+                                <span class="link-title">獨題練習：不畫圖的思考方法</span>
+                                
+                            </a>
+                            
+                            
+                            <a class="chapter-frame-link " href="#frame-12" data-frame-index="12" onclick="jumpToFrame(12, 95.5, this.closest('.chapter-frames').dataset.chapterIndex); return false;">
+                                <span class="chapter-frame-id">2-6</span>
+                                <span class="chapter-frame-time">01:35</span>
+                                <span class="link-title">獨題不畫圖的思考練習</span>
+                                
+                            </a>
+                            
+                            
+                            <a class="chapter-frame-link " href="#frame-13" data-frame-index="13" onclick="jumpToFrame(13, 98.3, this.closest('.chapter-frames').dataset.chapterIndex); return false;">
+                                <span class="chapter-frame-id">2-7</span>
+                                <span class="chapter-frame-time">01:38</span>
+                                <span class="link-title">思考不畫圖</span>
+                                
+                            </a>
+                            
+                            
+                            <a class="chapter-frame-link " href="#frame-14" data-frame-index="14" onclick="jumpToFrame(14, 101.3, this.closest('.chapter-frames').dataset.chapterIndex); return false;">
+                                <span class="chapter-frame-id">2-8</span>
+                                <span class="chapter-frame-time">01:41</span>
+                                <span class="link-title">畫圖與思考的雙重挑戰</span>
+                                
+                            </a>
+                            
+                        </div>
+                    </div>
+                    
+                    <div id="chapter-item-3" class="chapter-item ">
+                        <div class="chapter-header" onclick="toggleChapter(3)">
+                            <span class="chapter-title">
+                                <span class="chapter-number">3.</span>
+                                課程實踐：任務、寫作、回顧與輸出
+                            </span>
+                            <span class="chapter-count">7</span>
+                            <span class="chapter-arrow">▼</span>
+                        </div>
+                        <div class="chapter-frames" data-chapter-index="3">
+                            
+                            
+                            <a class="chapter-frame-link " href="#frame-15" data-frame-index="15" onclick="jumpToFrame(15, 109.7, this.closest('.chapter-frames').dataset.chapterIndex); return false;">
+                                <span class="chapter-frame-id">3-1</span>
+                                <span class="chapter-frame-time">01:49</span>
+                                <span class="link-title">本週重要任務與未來展望</span>
+                                
+                            </a>
+                            
+                            
+                            <a class="chapter-frame-link " href="#frame-16" data-frame-index="16" onclick="jumpToFrame(16, 120.0, this.closest('.chapter-frames').dataset.chapterIndex); return false;">
+                                <span class="chapter-frame-id">3-2</span>
+                                <span class="chapter-frame-time">02:00</span>
+                                <span class="link-title">課程作業安排與練習目標</span>
+                                
+                            </a>
+                            
+                            
+                            <a class="chapter-frame-link " href="#frame-17" data-frame-index="17" onclick="jumpToFrame(17, 139.3, this.closest('.chapter-frames').dataset.chapterIndex); return false;">
+                                <span class="chapter-frame-id">3-3</span>
+                                <span class="chapter-frame-time">02:19</span>
+                                <span class="link-title">圖面寫作與空間重點辨識練習</span>
+                                
+                            </a>
+                            
+                            
+                            <a class="chapter-frame-link " href="#frame-18" data-frame-index="18" onclick="jumpToFrame(18, 171.9, this.closest('.chapter-frames').dataset.chapterIndex); return false;">
+                                <span class="chapter-frame-id">3-4</span>
+                                <span class="chapter-frame-time">02:51</span>
+                                <span class="link-title">對圖面副標題的忽視與理由</span>
+                                
+                            </a>
+                            
+                            
+                            <a class="chapter-frame-link " href="#frame-19" data-frame-index="19" onclick="jumpToFrame(19, 180.0, this.closest('.chapter-frames').dataset.chapterIndex); return false;">
+                                <span class="chapter-frame-id">3-5</span>
+                                <span class="chapter-frame-time">03:00</span>
+                                <span class="link-title">重溫舊練習以對照新題目</span>
+                                
+                            </a>
+                            
+                            
+                            <a class="chapter-frame-link " href="#frame-20" data-frame-index="20" onclick="jumpToFrame(20, 189.0, this.closest('.chapter-frames').dataset.chapterIndex); return false;">
+                                <span class="chapter-frame-id">3-6</span>
+                                <span class="chapter-frame-time">03:09</span>
+                                <span class="link-title">關注學員配置</span>
+                                
+                            </a>
+                            
+                            
+                            <a class="chapter-frame-link " href="#frame-21" data-frame-index="21" onclick="jumpToFrame(21, 192.3, this.closest('.chapter-frames').dataset.chapterIndex); return false;">
+                                <span class="chapter-frame-id">3-7</span>
+                                <span class="chapter-frame-time">03:12</span>
+                                <span class="link-title">輸出導向的練習與影片對照教學</span>
+                                
+                            </a>
+                            
+                        </div>
+                    </div>
+                    
+                    <div id="chapter-item-4" class="chapter-item ">
+                        <div class="chapter-header" onclick="toggleChapter(4)">
+                            <span class="chapter-title">
+                                <span class="chapter-number">4.</span>
+                                學員與行銷：配置、試課與推廣
+                            </span>
+                            <span class="chapter-count">2</span>
+                            <span class="chapter-arrow">▼</span>
+                        </div>
+                        <div class="chapter-frames" data-chapter-index="4">
+                            
+                            
+                            <a class="chapter-frame-link " href="#frame-22" data-frame-index="22" onclick="jumpToFrame(22, 228.0, this.closest('.chapter-frames').dataset.chapterIndex); return false;">
+                                <span class="chapter-frame-id">4-1</span>
+                                <span class="chapter-frame-time">03:48</span>
+                                <span class="link-title">先試課再決定付費</span>
+                                
+                            </a>
+                            
+                            
+                            <a class="chapter-frame-link " href="#frame-23" data-frame-index="23" onclick="jumpToFrame(23, 240.0, this.closest('.chapter-frames').dataset.chapterIndex); return false;">
+                                <span class="chapter-frame-id">4-2</span>
+                                <span class="chapter-frame-time">04:00</span>
+                                <span class="link-title">影片推廣請求</span>
+                                
+                            </a>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- 可拖曳分隔線 -->
+        <div class="resizer" id="resizer"></div>
+
+        <!-- 右側面板：卡片流 -->
+        <div class="right-panel" id="rightPanel">
+            
+            
+            
+            
+            
+            
+            
+                
+                    
+                    
+                
+            
+                
+            
+                
+            
+                
+            
+
+            
+
+            <section class="frame-card" id="frame-1" data-timestamp="0.0">
+                <div class="frame-header">
+                    <div style="display: flex; flex-direction: column;">
+                        
+                        <h3 class="frame-title">
+                            <span class="frame-number">1-1</span>
+                            
+                            面對創作痛苦與自我認知
+                            
+                        </h3>
+                    </div>
+                    <div class="frame-badges">
+                        <button class="star-btn " id="star-0" onclick="toggleStar(0)" title="標記為重點">⭐</button>
+                        <span class="badge auto">自動</span>
+                        
+                        <span class="badge analyzed">✓ 已分析</span>
+                        
+                        
+                    </div>
+                </div>
+
+                <div class="frame-body">
+                    <!-- 左側圖片 - 滿版 -->
+                    <div class="frame-image-area">
+                        <div class="image-wrapper" onclick="openLightbox(0)">
+                            
+                            <img src="frames/00_00_00.png" alt="00:00" loading="lazy">
+                            <span class="zoom-hint">🔍 點擊放大</span>
+                            <span class="frame-timestamp">00:00</span>
+                            
+                            <button class="play-overlay" onclick="event.stopPropagation(); jumpToTimeAndPlay(0.0)">
+                                ▶ 播放
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 右側分析 -->
+                    <div class="frame-analysis">
+                        
+                        <div class="analysis-section">
+                            <h4 style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>📝 內容摘要</span>
+                                <button class="edit-toggle-btn" onclick="toggleEdit(0)">✏️ 編輯</button>
+                            </h4>
+                            <div class="analysis-summary" id="summary-display-0">- 承認自我稱讚與真實感受<br>  - 不再被外界稱讚所左右<br>  - 內在痛苦與努力被忽視<br>- 創作過程中的痛苦與挑戰<br>  - 需要付出大量努力<br>  - 內心掙扎與堅持<br>- 把節目核心抓出來的意義<br>  - 尋找主題與訊息<br>  - 讓觀眾更易理解</div>
+                            <textarea class="summary-editor" id="summary-editor-0">- 承認自我稱讚與真實感受
+  - 不再被外界稱讚所左右
+  - 內在痛苦與努力被忽視
+- 創作過程中的痛苦與挑戰
+  - 需要付出大量努力
+  - 內心掙扎與堅持
+- 把節目核心抓出來的意義
+  - 尋找主題與訊息
+  - 讓觀眾更易理解</textarea>
+                            <div class="edit-controls" id="edit-controls-0">
+                                <button class="save-btn" id="save-btn-0" onclick="saveSummary(0)">💾 儲存並回寫檔案</button>
+                                <button class="save-btn" style="background: var(--text-secondary);" onclick="toggleEdit(0)">取消</button>
+                            </div>
+                            
+                            
+                        </div>
+                        
+
+                        
+
+                        
+                    </div>
+                </div>
+
+                <!-- 逐字稿 -->
+                
+                <details class="transcript-toggle">
+                    <summary>📜 展開逐字稿</summary>
+                    <div class="transcript-content">
+                        <div class="transcript-text">
+                            <div class="zh-lang">不要再稱讚我 其實我做得很痛苦
+哈哈哈哈
+把節目的核心都抓出來</div>
+                            
+                        </div>
+                    </div>
+                </details>
+                
+            </section>
+            
+            
+            
+            
+            
+            
+                
+                    
+                    
+                
+            
+                
+            
+                
+            
+                
+            
+
+            
+
+            <section class="frame-card" id="frame-2" data-timestamp="6.6">
+                <div class="frame-header">
+                    <div style="display: flex; flex-direction: column;">
+                        
+                        <h3 class="frame-title">
+                            <span class="frame-number">1-2</span>
+                            
+                            閱讀題目與關鍵字映射練習
+                            
+                        </h3>
+                    </div>
+                    <div class="frame-badges">
+                        <button class="star-btn " id="star-1" onclick="toggleStar(1)" title="標記為重點">⭐</button>
+                        <span class="badge auto">自動</span>
+                        
+                        <span class="badge analyzed">✓ 已分析</span>
+                        
+                        
+                    </div>
+                </div>
+
+                <div class="frame-body">
+                    <!-- 左側圖片 - 滿版 -->
+                    <div class="frame-image-area">
+                        <div class="image-wrapper" onclick="openLightbox(1)">
+                            
+                            <img src="frames/00_00_06.png" alt="00:06" loading="lazy">
+                            <span class="zoom-hint">🔍 點擊放大</span>
+                            <span class="frame-timestamp">00:06</span>
+                            
+                            <button class="play-overlay" onclick="event.stopPropagation(); jumpToTimeAndPlay(6.6)">
+                                ▶ 播放
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 右側分析 -->
+                    <div class="frame-analysis">
+                        
+                        <div class="analysis-section">
+                            <h4 style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>📝 內容摘要</span>
+                                <button class="edit-toggle-btn" onclick="toggleEdit(1)">✏️ 編輯</button>
+                            </h4>
+                            <div class="analysis-summary" id="summary-display-1">- 目標設定<br>  - 透過「focus」與「備戰」的心態，提升閱讀效率<br>- 讀題流程<br>  - 先快速閱讀題目，保持輕鬆節奏<br>  - 逐句捕捉關鍵字眼<br>- 關鍵字處理<br>  - 先將重要字眼寫下<br>  - 對應到「地面層」的空間概念<br>- 練習分段<br>  - 第一部分：熟悉題目結構與關鍵字<br>  - 第二部分：學習如何將關鍵字轉換成實際解題步驟</div>
+                            <textarea class="summary-editor" id="summary-editor-1">- 目標設定
+  - 透過「focus」與「備戰」的心態，提升閱讀效率
+- 讀題流程
+  - 先快速閱讀題目，保持輕鬆節奏
+  - 逐句捕捉關鍵字眼
+- 關鍵字處理
+  - 先將重要字眼寫下
+  - 對應到「地面層」的空間概念
+- 練習分段
+  - 第一部分：熟悉題目結構與關鍵字
+  - 第二部分：學習如何將關鍵字轉換成實際解題步驟</textarea>
+                            <div class="edit-controls" id="edit-controls-1">
+                                <button class="save-btn" id="save-btn-1" onclick="saveSummary(1)">💾 儲存並回寫檔案</button>
+                                <button class="save-btn" style="background: var(--text-secondary);" onclick="toggleEdit(1)">取消</button>
+                            </div>
+                            
+                            
+                        </div>
+                        
+
+                        
+
+                        
+                    </div>
+                </div>
+
+                <!-- 逐字稿 -->
+                
+                <details class="transcript-toggle">
+                    <summary>📜 展開逐字稿</summary>
+                    <div class="transcript-content">
+                        <div class="transcript-text">
+                            <div class="zh-lang">剛才有同學的反應就是說
+今天一次這樣念個四題
+就是有focus聚焦的感覺啦 對不對
+還有一種開始備戰的感覺
+沒錯 我們現在就來講一下
+接下來練習工作
+請大家開始去模擬
+你們這個練習很輕鬆就是讀題目
+就是讀題目
+然後呢
+我前幾個禮拜有去做個示範
+我把最重要的字眼寫下來
+對應到哪些最重要的空間
+那這些空間是地面層的空間
+對不對
+然後這是第一部分要練習的
+第二部分要練習的時候
+我這些字很重要的字眼如何轉換成</div>
+                            
+                        </div>
+                    </div>
+                </details>
+                
+            </section>
+            
+            
+            
+            
+            
+            
+                
+                    
+                    
+                
+            
+                
+            
+                
+            
+                
+            
+
+            
+
+            <section class="frame-card" id="frame-3" data-timestamp="50.0">
+                <div class="frame-header">
+                    <div style="display: flex; flex-direction: column;">
+                        
+                        <h3 class="frame-title">
+                            <span class="frame-number">1-3</span>
+                            
+                            圖面標題副標題的產生方法
+                            
+                        </h3>
+                    </div>
+                    <div class="frame-badges">
+                        <button class="star-btn " id="star-2" onclick="toggleStar(2)" title="標記為重點">⭐</button>
+                        <span class="badge auto">自動</span>
+                        
+                        <span class="badge analyzed">✓ 已分析</span>
+                        
+                        
+                    </div>
+                </div>
+
+                <div class="frame-body">
+                    <!-- 左側圖片 - 滿版 -->
+                    <div class="frame-image-area">
+                        <div class="image-wrapper" onclick="openLightbox(2)">
+                            
+                            <img src="frames/00_00_50.png" alt="00:50" loading="lazy">
+                            <span class="zoom-hint">🔍 點擊放大</span>
+                            <span class="frame-timestamp">00:50</span>
+                            
+                            <button class="play-overlay" onclick="event.stopPropagation(); jumpToTimeAndPlay(50.0)">
+                                ▶ 播放
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 右側分析 -->
+                    <div class="frame-analysis">
+                        
+                        <div class="analysis-section">
+                            <h4 style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>📝 內容摘要</span>
+                                <button class="edit-toggle-btn" onclick="toggleEdit(2)">✏️ 編輯</button>
+                            </h4>
+                            <div class="analysis-summary" id="summary-display-2">- 副標題是描述標題的字眼<br>  - 主要用於補充說明或細化主題<br>- 如何產生副標題<br>  - 從圖面內容提煉關鍵資訊<br>  - 以簡潔、具體的語句呈現<br>- 寫法示例<br>  - 你可以這樣寫</div>
+                            <textarea class="summary-editor" id="summary-editor-2">- 副標題是描述標題的字眼
+  - 主要用於補充說明或細化主題
+- 如何產生副標題
+  - 從圖面內容提煉關鍵資訊
+  - 以簡潔、具體的語句呈現
+- 寫法示例
+  - 你可以這樣寫</textarea>
+                            <div class="edit-controls" id="edit-controls-2">
+                                <button class="save-btn" id="save-btn-2" onclick="saveSummary(2)">💾 儲存並回寫檔案</button>
+                                <button class="save-btn" style="background: var(--text-secondary);" onclick="toggleEdit(2)">取消</button>
+                            </div>
+                            
+                            
+                        </div>
+                        
+
+                        
+
+                        
+                    </div>
+                </div>
+
+                <!-- 逐字稿 -->
+                
+                <details class="transcript-toggle">
+                    <summary>📜 展開逐字稿</summary>
+                    <div class="transcript-content">
+                        <div class="transcript-text">
+                            <div class="zh-lang">圖面上的標題的副標題
+就是描述標題的那些字眼
+要怎麼樣去產生
+你就可以這樣寫
+哦</div>
+                            
+                        </div>
+                    </div>
+                </details>
+                
+            </section>
+            
+            
+            
+            
+            
+            
+                
+                    
+                    
+                
+            
+                
+            
+                
+            
+                
+            
+
+            
+
+            <section class="frame-card" id="frame-4" data-timestamp="60.0">
+                <div class="frame-header">
+                    <div style="display: flex; flex-direction: column;">
+                        
+                        <h3 class="frame-title">
+                            <span class="frame-number">1-4</span>
+                            
+                            簡短回應
+                            
+                        </h3>
+                    </div>
+                    <div class="frame-badges">
+                        <button class="star-btn " id="star-3" onclick="toggleStar(3)" title="標記為重點">⭐</button>
+                        <span class="badge auto">自動</span>
+                        
+                        <span class="badge analyzed">✓ 已分析</span>
+                        
+                        
+                    </div>
+                </div>
+
+                <div class="frame-body">
+                    <!-- 左側圖片 - 滿版 -->
+                    <div class="frame-image-area">
+                        <div class="image-wrapper" onclick="openLightbox(3)">
+                            
+                            <img src="frames/00_01_00.png" alt="01:00" loading="lazy">
+                            <span class="zoom-hint">🔍 點擊放大</span>
+                            <span class="frame-timestamp">01:00</span>
+                            
+                            <button class="play-overlay" onclick="event.stopPropagation(); jumpToTimeAndPlay(60.0)">
+                                ▶ 播放
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 右側分析 -->
+                    <div class="frame-analysis">
+                        
+                        <div class="analysis-section">
+                            <h4 style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>📝 內容摘要</span>
+                                <button class="edit-toggle-btn" onclick="toggleEdit(3)">✏️ 編輯</button>
+                            </h4>
+                            <div class="analysis-summary" id="summary-display-3">- 表示聽者的注意或同意<br>  - 口語中的「哦」常用於表示聽者正在聽或理解對方所說的內容<br>  - 也可用於填充語氣，表示思考或等待下一句</div>
+                            <textarea class="summary-editor" id="summary-editor-3">- 表示聽者的注意或同意
+  - 口語中的「哦」常用於表示聽者正在聽或理解對方所說的內容
+  - 也可用於填充語氣，表示思考或等待下一句</textarea>
+                            <div class="edit-controls" id="edit-controls-3">
+                                <button class="save-btn" id="save-btn-3" onclick="saveSummary(3)">💾 儲存並回寫檔案</button>
+                                <button class="save-btn" style="background: var(--text-secondary);" onclick="toggleEdit(3)">取消</button>
+                            </div>
+                            
+                            
+                        </div>
+                        
+
+                        
+
+                        
+                    </div>
+                </div>
+
+                <!-- 逐字稿 -->
+                
+                <details class="transcript-toggle">
+                    <summary>📜 展開逐字稿</summary>
+                    <div class="transcript-content">
+                        <div class="transcript-text">
+                            <div class="zh-lang">哦</div>
+                            
+                        </div>
+                    </div>
+                </details>
+                
+            </section>
+            
+            
+            
+            
+            
+            
+                
+                    
+                    
+                
+            
+                
+            
+                
+            
+                
+            
+
+            
+
+            <section class="frame-card" id="frame-5" data-timestamp="60.5">
+                <div class="frame-header">
+                    <div style="display: flex; flex-direction: column;">
+                        
+                        <h3 class="frame-title">
+                            <span class="frame-number">1-5</span>
+                            
+                            句子作為圖表副標題的應用
+                            
+                        </h3>
+                    </div>
+                    <div class="frame-badges">
+                        <button class="star-btn " id="star-4" onclick="toggleStar(4)" title="標記為重點">⭐</button>
+                        <span class="badge auto">自動</span>
+                        
+                        <span class="badge analyzed">✓ 已分析</span>
+                        
+                        
+                    </div>
+                </div>
+
+                <div class="frame-body">
+                    <!-- 左側圖片 - 滿版 -->
+                    <div class="frame-image-area">
+                        <div class="image-wrapper" onclick="openLightbox(4)">
+                            
+                            <img src="frames/00_01_00.png" alt="01:00" loading="lazy">
+                            <span class="zoom-hint">🔍 點擊放大</span>
+                            <span class="frame-timestamp">01:00</span>
+                            
+                            <button class="play-overlay" onclick="event.stopPropagation(); jumpToTimeAndPlay(60.5)">
+                                ▶ 播放
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 右側分析 -->
+                    <div class="frame-analysis">
+                        
+                        <div class="analysis-section">
+                            <h4 style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>📝 內容摘要</span>
+                                <button class="edit-toggle-btn" onclick="toggleEdit(4)">✏️ 編輯</button>
+                            </h4>
+                            <div class="analysis-summary" id="summary-display-4">- 句子可作為捧面圖的副標題<br>  - 方便說明圖表主題<br>  - 提升閱讀者理解<br>- 句子可作為空間組織包圍圖的副標題<br>  - 強調空間關係<br>  - 使圖表更具說服力</div>
+                            <textarea class="summary-editor" id="summary-editor-4">- 句子可作為捧面圖的副標題
+  - 方便說明圖表主題
+  - 提升閱讀者理解
+- 句子可作為空間組織包圍圖的副標題
+  - 強調空間關係
+  - 使圖表更具說服力</textarea>
+                            <div class="edit-controls" id="edit-controls-4">
+                                <button class="save-btn" id="save-btn-4" onclick="saveSummary(4)">💾 儲存並回寫檔案</button>
+                                <button class="save-btn" style="background: var(--text-secondary);" onclick="toggleEdit(4)">取消</button>
+                            </div>
+                            
+                            
+                        </div>
+                        
+
+                        
+
+                        
+                    </div>
+                </div>
+
+                <!-- 逐字稿 -->
+                
+                <details class="transcript-toggle">
+                    <summary>📜 展開逐字稿</summary>
+                    <div class="transcript-content">
+                        <div class="transcript-text">
+                            <div class="zh-lang">這句話我可以拿來當捧面圖的副標題
+這句話我可以拿來當空間組織
+包圍圖的副標題</div>
+                            
+                        </div>
+                    </div>
+                </details>
+                
+            </section>
+            
+            
+            
+            
+            
+            
+                
+                    
+                    
+                
+            
+                
+            
+                
+            
+                
+            
+
+            
+
+            <section class="frame-card" id="frame-6" data-timestamp="65.4">
+                <div class="frame-header">
+                    <div style="display: flex; flex-direction: column;">
+                        
+                        <h3 class="frame-title">
+                            <span class="frame-number">1-6</span>
+                            
+                            包圍圖副標題在基地環境分析中的應用
+                            
+                        </h3>
+                    </div>
+                    <div class="frame-badges">
+                        <button class="star-btn " id="star-5" onclick="toggleStar(5)" title="標記為重點">⭐</button>
+                        <span class="badge auto">自動</span>
+                        
+                        <span class="badge analyzed">✓ 已分析</span>
+                        
+                        
+                    </div>
+                </div>
+
+                <div class="frame-body">
+                    <!-- 左側圖片 - 滿版 -->
+                    <div class="frame-image-area">
+                        <div class="image-wrapper" onclick="openLightbox(5)">
+                            
+                            <img src="frames/00_01_05.png" alt="01:05" loading="lazy">
+                            <span class="zoom-hint">🔍 點擊放大</span>
+                            <span class="frame-timestamp">01:05</span>
+                            
+                            <button class="play-overlay" onclick="event.stopPropagation(); jumpToTimeAndPlay(65.4)">
+                                ▶ 播放
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 右側分析 -->
+                    <div class="frame-analysis">
+                        
+                        <div class="analysis-section">
+                            <h4 style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>📝 內容摘要</span>
+                                <button class="edit-toggle-btn" onclick="toggleEdit(5)">✏️ 編輯</button>
+                            </h4>
+                            <div class="analysis-summary" id="summary-display-5">- 包圍圖的副標題可直接作為基地環境分析的標題<br>  - 方便快速定位分析重點<br>  - 具備可視化與說明性<br>- 需要開始練習使用此方法<br>  - 透過實際案例加深理解<br>- 影片開頭提到觀眾普遍較為懶惰<br>  - 以此提醒學習者保持積極投入</div>
+                            <textarea class="summary-editor" id="summary-editor-5">- 包圍圖的副標題可直接作為基地環境分析的標題
+  - 方便快速定位分析重點
+  - 具備可視化與說明性
+- 需要開始練習使用此方法
+  - 透過實際案例加深理解
+- 影片開頭提到觀眾普遍較為懶惰
+  - 以此提醒學習者保持積極投入</textarea>
+                            <div class="edit-controls" id="edit-controls-5">
+                                <button class="save-btn" id="save-btn-5" onclick="saveSummary(5)">💾 儲存並回寫檔案</button>
+                                <button class="save-btn" style="background: var(--text-secondary);" onclick="toggleEdit(5)">取消</button>
+                            </div>
+                            
+                            
+                        </div>
+                        
+
+                        
+
+                        
+                    </div>
+                </div>
+
+                <!-- 逐字稿 -->
+                
+                <details class="transcript-toggle">
+                    <summary>📜 展開逐字稿</summary>
+                    <div class="transcript-content">
+                        <div class="transcript-text">
+                            <div class="zh-lang">包圍圖的副標題
+這句話我可以拿來當做基地環境分析的
+副標題
+這個要開始練習
+哦
+我剛剛今天開頭的時候有講
+大家都很懶惰</div>
+                            
+                        </div>
+                    </div>
+                </details>
+                
+            </section>
+            
+            
+            
+            
+            
+            
+                
+            
+                
+                    
+                    
+                
+            
+                
+            
+                
+            
+
+            
+
+            <section class="frame-card" id="frame-7" data-timestamp="76.4">
+                <div class="frame-header">
+                    <div style="display: flex; flex-direction: column;">
+                        
+                        <h3 class="frame-title">
+                            <span class="frame-number">2-1</span>
+                            
+                            同時畫圖與思考的痛苦
+                            
+                        </h3>
+                    </div>
+                    <div class="frame-badges">
+                        <button class="star-btn " id="star-6" onclick="toggleStar(6)" title="標記為重點">⭐</button>
+                        <span class="badge auto">自動</span>
+                        
+                        <span class="badge analyzed">✓ 已分析</span>
+                        
+                        
+                    </div>
+                </div>
+
+                <div class="frame-body">
+                    <!-- 左側圖片 - 滿版 -->
+                    <div class="frame-image-area">
+                        <div class="image-wrapper" onclick="openLightbox(6)">
+                            
+                            <img src="frames/00_01_16.png" alt="01:16" loading="lazy">
+                            <span class="zoom-hint">🔍 點擊放大</span>
+                            <span class="frame-timestamp">01:16</span>
+                            
+                            <button class="play-overlay" onclick="event.stopPropagation(); jumpToTimeAndPlay(76.4)">
+                                ▶ 播放
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 右側分析 -->
+                    <div class="frame-analysis">
+                        
+                        <div class="analysis-section">
+                            <h4 style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>📝 內容摘要</span>
+                                <button class="edit-toggle-btn" onclick="toggleEdit(6)">✏️ 編輯</button>
+                            </h4>
+                            <div class="analysis-summary" id="summary-display-6">- 同時進行畫圖與思考的困難<br>  - 認知負荷過高，容易分心<br>  - 影響創意與精準度<br>- 造成痛苦的原因<br>  - 需要在同一時間處理多重任務<br>  - 內在衝突：視覺化與邏輯推理<br>- 可能的緩解方式<br>  - 分階段完成：先思考再畫圖<br>  - 使用協助工具（如思維導圖、草圖軟體）<br>  - 設定時間限制與休息</div>
+                            <textarea class="summary-editor" id="summary-editor-6">- 同時進行畫圖與思考的困難
+  - 認知負荷過高，容易分心
+  - 影響創意與精準度
+- 造成痛苦的原因
+  - 需要在同一時間處理多重任務
+  - 內在衝突：視覺化與邏輯推理
+- 可能的緩解方式
+  - 分階段完成：先思考再畫圖
+  - 使用協助工具（如思維導圖、草圖軟體）
+  - 設定時間限制與休息</textarea>
+                            <div class="edit-controls" id="edit-controls-6">
+                                <button class="save-btn" id="save-btn-6" onclick="saveSummary(6)">💾 儲存並回寫檔案</button>
+                                <button class="save-btn" style="background: var(--text-secondary);" onclick="toggleEdit(6)">取消</button>
+                            </div>
+                            
+                            
+                        </div>
+                        
+
+                        
+
+                        
+                    </div>
+                </div>
+
+                <!-- 逐字稿 -->
+                
+                <details class="transcript-toggle">
+                    <summary>📜 展開逐字稿</summary>
+                    <div class="transcript-content">
+                        <div class="transcript-text">
+                            <div class="zh-lang">要你同時畫圖又要同時思考很痛苦</div>
+                            
+                        </div>
+                    </div>
+                </details>
+                
+            </section>
+            
+            
+            
+            
+            
+            
+                
+            
+                
+                    
+                    
+                
+            
+                
+            
+                
+            
+
+            
+
+            <section class="frame-card" id="frame-8" data-timestamp="79.6">
+                <div class="frame-header">
+                    <div style="display: flex; flex-direction: column;">
+                        
+                        <h3 class="frame-title">
+                            <span class="frame-number">2-2</span>
+                            
+                            思考不需畫圖
+                            
+                        </h3>
+                    </div>
+                    <div class="frame-badges">
+                        <button class="star-btn " id="star-7" onclick="toggleStar(7)" title="標記為重點">⭐</button>
+                        <span class="badge auto">自動</span>
+                        
+                        <span class="badge analyzed">✓ 已分析</span>
+                        
+                        
+                    </div>
+                </div>
+
+                <div class="frame-body">
+                    <!-- 左側圖片 - 滿版 -->
+                    <div class="frame-image-area">
+                        <div class="image-wrapper" onclick="openLightbox(7)">
+                            
+                            <img src="frames/00_01_19.png" alt="01:19" loading="lazy">
+                            <span class="zoom-hint">🔍 點擊放大</span>
+                            <span class="frame-timestamp">01:19</span>
+                            
+                            <button class="play-overlay" onclick="event.stopPropagation(); jumpToTimeAndPlay(79.6)">
+                                ▶ 播放
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 右側分析 -->
+                    <div class="frame-analysis">
+                        
+                        <div class="analysis-section">
+                            <h4 style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>📝 內容摘要</span>
+                                <button class="edit-toggle-btn" onclick="toggleEdit(7)">✏️ 編輯</button>
+                            </h4>
+                            <div class="analysis-summary" id="summary-display-7">- 本課程主旨：鼓勵學員在思考時不必依賴畫圖<br>  - 以文字或口頭方式整理思路<br>- 若想進一步開啟視覺化工具<br>  - 可選擇開啟相關功能或軟體</div>
+                            <textarea class="summary-editor" id="summary-editor-7">- 本課程主旨：鼓勵學員在思考時不必依賴畫圖
+  - 以文字或口頭方式整理思路
+- 若想進一步開啟視覺化工具
+  - 可選擇開啟相關功能或軟體</textarea>
+                            <div class="edit-controls" id="edit-controls-7">
+                                <button class="save-btn" id="save-btn-7" onclick="saveSummary(7)">💾 儲存並回寫檔案</button>
+                                <button class="save-btn" style="background: var(--text-secondary);" onclick="toggleEdit(7)">取消</button>
+                            </div>
+                            
+                            
+                        </div>
+                        
+
+                        
+
+                        
+                    </div>
+                </div>
+
+                <!-- 逐字稿 -->
+                
+                <details class="transcript-toggle">
+                    <summary>📜 展開逐字稿</summary>
+                    <div class="transcript-content">
+                        <div class="transcript-text">
+                            <div class="zh-lang">所以今天就是只是要你思考不用畫圖
+哦
+但是如果你想要開啟的話</div>
+                            
+                        </div>
+                    </div>
+                </details>
+                
+            </section>
+            
+            
+            
+            
+            
+            
+                
+            
+                
+                    
+                    
+                
+            
+                
+            
+                
+            
+
+            
+
+            <section class="frame-card" id="frame-9" data-timestamp="85.4">
+                <div class="frame-header">
+                    <div style="display: flex; flex-direction: column;">
+                        
+                        <h3 class="frame-title">
+                            <span class="frame-number">2-3</span>
+                            
+                            簡易開啟功能指令
+                            
+                        </h3>
+                    </div>
+                    <div class="frame-badges">
+                        <button class="star-btn " id="star-8" onclick="toggleStar(8)" title="標記為重點">⭐</button>
+                        <span class="badge auto">自動</span>
+                        
+                        <span class="badge analyzed">✓ 已分析</span>
+                        
+                        
+                    </div>
+                </div>
+
+                <div class="frame-body">
+                    <!-- 左側圖片 - 滿版 -->
+                    <div class="frame-image-area">
+                        <div class="image-wrapper" onclick="openLightbox(8)">
+                            
+                            <img src="frames/00_01_25.png" alt="01:25" loading="lazy">
+                            <span class="zoom-hint">🔍 點擊放大</span>
+                            <span class="frame-timestamp">01:25</span>
+                            
+                            <button class="play-overlay" onclick="event.stopPropagation(); jumpToTimeAndPlay(85.4)">
+                                ▶ 播放
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 右側分析 -->
+                    <div class="frame-analysis">
+                        
+                        <div class="analysis-section">
+                            <h4 style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>📝 內容摘要</span>
+                                <button class="edit-toggle-btn" onclick="toggleEdit(8)">✏️ 編輯</button>
+                            </h4>
+                            <div class="analysis-summary" id="summary-display-8">- 若想開啟功能，只需點擊對應的圖示<br>  - 直接指向圖示即可完成操作<br>  - 無需額外思考，操作流程簡單</div>
+                            <textarea class="summary-editor" id="summary-editor-8">- 若想開啟功能，只需點擊對應的圖示
+  - 直接指向圖示即可完成操作
+  - 無需額外思考，操作流程簡單</textarea>
+                            <div class="edit-controls" id="edit-controls-8">
+                                <button class="save-btn" id="save-btn-8" onclick="saveSummary(8)">💾 儲存並回寫檔案</button>
+                                <button class="save-btn" style="background: var(--text-secondary);" onclick="toggleEdit(8)">取消</button>
+                            </div>
+                            
+                            
+                        </div>
+                        
+
+                        
+
+                        
+                    </div>
+                </div>
+
+                <!-- 逐字稿 -->
+                
+                <details class="transcript-toggle">
+                    <summary>📜 展開逐字稿</summary>
+                    <div class="transcript-content">
+                        <div class="transcript-text">
+                            <div class="zh-lang">但是如果你想要開啟的話
+你可以指畫圖不思考</div>
+                            
+                        </div>
+                    </div>
+                </details>
+                
+            </section>
+            
+            
+            
+            
+            
+            
+                
+            
+                
+                    
+                    
+                
+            
+                
+            
+                
+            
+
+            
+
+            <section class="frame-card" id="frame-10" data-timestamp="87.5">
+                <div class="frame-header">
+                    <div style="display: flex; flex-direction: column;">
+                        
+                        <h3 class="frame-title">
+                            <span class="frame-number">2-4</span>
+                            
+                            畫圖不思考即排版練習
+                            
+                        </h3>
+                    </div>
+                    <div class="frame-badges">
+                        <button class="star-btn " id="star-9" onclick="toggleStar(9)" title="標記為重點">⭐</button>
+                        <span class="badge auto">自動</span>
+                        
+                        <span class="badge analyzed">✓ 已分析</span>
+                        
+                        
+                    </div>
+                </div>
+
+                <div class="frame-body">
+                    <!-- 左側圖片 - 滿版 -->
+                    <div class="frame-image-area">
+                        <div class="image-wrapper" onclick="openLightbox(9)">
+                            
+                            <img src="frames/00_01_27.png" alt="01:27" loading="lazy">
+                            <span class="zoom-hint">🔍 點擊放大</span>
+                            <span class="frame-timestamp">01:27</span>
+                            
+                            <button class="play-overlay" onclick="event.stopPropagation(); jumpToTimeAndPlay(87.5)">
+                                ▶ 播放
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 右側分析 -->
+                    <div class="frame-analysis">
+                        
+                        <div class="analysis-section">
+                            <h4 style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>📝 內容摘要</span>
+                                <button class="edit-toggle-btn" onclick="toggleEdit(9)">✏️ 編輯</button>
+                            </h4>
+                            <div class="analysis-summary" id="summary-display-9">- 直接畫圖而不先思考<br>  - 相當於開始練習排版<br>  - 透過即時視覺化提升空間感與構圖技巧<br>- 排版練習的意義<br>  - 培養比例、對齊、留白等排版原則的直覺<br>  - 促進快速決策與創意迴圈</div>
+                            <textarea class="summary-editor" id="summary-editor-9">- 直接畫圖而不先思考
+  - 相當於開始練習排版
+  - 透過即時視覺化提升空間感與構圖技巧
+- 排版練習的意義
+  - 培養比例、對齊、留白等排版原則的直覺
+  - 促進快速決策與創意迴圈</textarea>
+                            <div class="edit-controls" id="edit-controls-9">
+                                <button class="save-btn" id="save-btn-9" onclick="saveSummary(9)">💾 儲存並回寫檔案</button>
+                                <button class="save-btn" style="background: var(--text-secondary);" onclick="toggleEdit(9)">取消</button>
+                            </div>
+                            
+                            
+                        </div>
+                        
+
+                        
+
+                        
+                    </div>
+                </div>
+
+                <!-- 逐字稿 -->
+                
+                <details class="transcript-toggle">
+                    <summary>📜 展開逐字稿</summary>
+                    <div class="transcript-content">
+                        <div class="transcript-text">
+                            <div class="zh-lang">指畫圖不思考就是開始練習排版</div>
+                            
+                        </div>
+                    </div>
+                </details>
+                
+            </section>
+            
+            
+            
+            
+            
+            
+                
+            
+                
+                    
+                    
+                
+            
+                
+            
+                
+            
+
+            
+
+            <section class="frame-card" id="frame-11" data-timestamp="90.9">
+                <div class="frame-header">
+                    <div style="display: flex; flex-direction: column;">
+                        
+                        <h3 class="frame-title">
+                            <span class="frame-number">2-5</span>
+                            
+                            獨題練習：不畫圖的思考方法
+                            
+                        </h3>
+                    </div>
+                    <div class="frame-badges">
+                        <button class="star-btn " id="star-10" onclick="toggleStar(10)" title="標記為重點">⭐</button>
+                        <span class="badge auto">自動</span>
+                        
+                        <span class="badge analyzed">✓ 已分析</span>
+                        
+                        
+                    </div>
+                </div>
+
+                <div class="frame-body">
+                    <!-- 左側圖片 - 滿版 -->
+                    <div class="frame-image-area">
+                        <div class="image-wrapper" onclick="openLightbox(10)">
+                            
+                            <img src="frames/00_01_30.png" alt="01:30" loading="lazy">
+                            <span class="zoom-hint">🔍 點擊放大</span>
+                            <span class="frame-timestamp">01:30</span>
+                            
+                            <button class="play-overlay" onclick="event.stopPropagation(); jumpToTimeAndPlay(90.9)">
+                                ▶ 播放
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 右側分析 -->
+                    <div class="frame-analysis">
+                        
+                        <div class="analysis-section">
+                            <h4 style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>📝 內容摘要</span>
+                                <button class="edit-toggle-btn" onclick="toggleEdit(10)">✏️ 編輯</button>
+                            </h4>
+                            <div class="analysis-summary" id="summary-display-10">- 思考不畫圖是獨題練習的起點<br>  - 透過不依賴圖形，強化概念內化<br>  - 促進獨立思考與問題拆解<br>- 適合已具經驗的學員（老鳥）進行獨題練習<br>  - 減少外在提示，提升自我導向學習<br>  - 進一步鞏固已學知識與技巧</div>
+                            <textarea class="summary-editor" id="summary-editor-10">- 思考不畫圖是獨題練習的起點
+  - 透過不依賴圖形，強化概念內化
+  - 促進獨立思考與問題拆解
+- 適合已具經驗的學員（老鳥）進行獨題練習
+  - 減少外在提示，提升自我導向學習
+  - 進一步鞏固已學知識與技巧</textarea>
+                            <div class="edit-controls" id="edit-controls-10">
+                                <button class="save-btn" id="save-btn-10" onclick="saveSummary(10)">💾 儲存並回寫檔案</button>
+                                <button class="save-btn" style="background: var(--text-secondary);" onclick="toggleEdit(10)">取消</button>
+                            </div>
+                            
+                            
+                        </div>
+                        
+
+                        
+
+                        
+                    </div>
+                </div>
+
+                <!-- 逐字稿 -->
+                
+                <details class="transcript-toggle">
+                    <summary>📜 展開逐字稿</summary>
+                    <div class="transcript-content">
+                        <div class="transcript-text">
+                            <div class="zh-lang">指思考不畫圖就是開始練習獨題
+今天來的有幾個是老鳥
+那你可以練習獨題不畫圖</div>
+                            
+                        </div>
+                    </div>
+                </details>
+                
+            </section>
+            
+            
+            
+            
+            
+            
+                
+            
+                
+                    
+                    
+                
+            
+                
+            
+                
+            
+
+            
+
+            <section class="frame-card" id="frame-12" data-timestamp="95.5">
+                <div class="frame-header">
+                    <div style="display: flex; flex-direction: column;">
+                        
+                        <h3 class="frame-title">
+                            <span class="frame-number">2-6</span>
+                            
+                            獨題不畫圖的思考練習
+                            
+                        </h3>
+                    </div>
+                    <div class="frame-badges">
+                        <button class="star-btn " id="star-11" onclick="toggleStar(11)" title="標記為重點">⭐</button>
+                        <span class="badge auto">自動</span>
+                        
+                        <span class="badge analyzed">✓ 已分析</span>
+                        
+                        
+                    </div>
+                </div>
+
+                <div class="frame-body">
+                    <!-- 左側圖片 - 滿版 -->
+                    <div class="frame-image-area">
+                        <div class="image-wrapper" onclick="openLightbox(11)">
+                            
+                            <img src="frames/00_01_35.png" alt="01:35" loading="lazy">
+                            <span class="zoom-hint">🔍 點擊放大</span>
+                            <span class="frame-timestamp">01:35</span>
+                            
+                            <button class="play-overlay" onclick="event.stopPropagation(); jumpToTimeAndPlay(95.5)">
+                                ▶ 播放
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 右側分析 -->
+                    <div class="frame-analysis">
+                        
+                        <div class="analysis-section">
+                            <h4 style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>📝 內容摘要</span>
+                                <button class="edit-toggle-btn" onclick="toggleEdit(11)">✏️ 編輯</button>
+                            </h4>
+                            <div class="analysis-summary" id="summary-display-11">- 練習不依賴圖形的解題方式<br>  - 先在腦中構想問題情境<br>  - 以文字或符號記錄關鍵資訊<br>- 培養抽象思考與概念理解<br>  - 透過邏輯推理推導答案<br>  - 避免過度依賴視覺化工具<br>- 適用於考試或實務問題<br>  - 減少畫圖時間，提升答題效率<br>  - 增強對題目本質的把握</div>
+                            <textarea class="summary-editor" id="summary-editor-11">- 練習不依賴圖形的解題方式
+  - 先在腦中構想問題情境
+  - 以文字或符號記錄關鍵資訊
+- 培養抽象思考與概念理解
+  - 透過邏輯推理推導答案
+  - 避免過度依賴視覺化工具
+- 適用於考試或實務問題
+  - 減少畫圖時間，提升答題效率
+  - 增強對題目本質的把握</textarea>
+                            <div class="edit-controls" id="edit-controls-11">
+                                <button class="save-btn" id="save-btn-11" onclick="saveSummary(11)">💾 儲存並回寫檔案</button>
+                                <button class="save-btn" style="background: var(--text-secondary);" onclick="toggleEdit(11)">取消</button>
+                            </div>
+                            
+                            
+                        </div>
+                        
+
+                        
+
+                        
+                    </div>
+                </div>
+
+                <!-- 逐字稿 -->
+                
+                <details class="transcript-toggle">
+                    <summary>📜 展開逐字稿</summary>
+                    <div class="transcript-content">
+                        <div class="transcript-text">
+                            <div class="zh-lang">那你可以練習獨題不畫圖
+思考不畫圖</div>
+                            
+                        </div>
+                    </div>
+                </details>
+                
+            </section>
+            
+            
+            
+            
+            
+            
+                
+            
+                
+                    
+                    
+                
+            
+                
+            
+                
+            
+
+            
+
+            <section class="frame-card" id="frame-13" data-timestamp="98.3">
+                <div class="frame-header">
+                    <div style="display: flex; flex-direction: column;">
+                        
+                        <h3 class="frame-title">
+                            <span class="frame-number">2-7</span>
+                            
+                            思考不畫圖
+                            
+                        </h3>
+                    </div>
+                    <div class="frame-badges">
+                        <button class="star-btn " id="star-12" onclick="toggleStar(12)" title="標記為重點">⭐</button>
+                        <span class="badge auto">自動</span>
+                        
+                        <span class="badge analyzed">✓ 已分析</span>
+                        
+                        
+                    </div>
+                </div>
+
+                <div class="frame-body">
+                    <!-- 左側圖片 - 滿版 -->
+                    <div class="frame-image-area">
+                        <div class="image-wrapper" onclick="openLightbox(12)">
+                            
+                            <img src="frames/00_01_38.png" alt="01:38" loading="lazy">
+                            <span class="zoom-hint">🔍 點擊放大</span>
+                            <span class="frame-timestamp">01:38</span>
+                            
+                            <button class="play-overlay" onclick="event.stopPropagation(); jumpToTimeAndPlay(98.3)">
+                                ▶ 播放
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 右側分析 -->
+                    <div class="frame-analysis">
+                        
+                        <div class="analysis-section">
+                            <h4 style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>📝 內容摘要</span>
+                                <button class="edit-toggle-btn" onclick="toggleEdit(12)">✏️ 編輯</button>
+                            </h4>
+                            <div class="analysis-summary" id="summary-display-12">- 觀察到部分新人在學習過程中只進行思考，缺乏實際繪圖<br>  - 這種方式可能導致概念不夠具體<br>- 建議將思考與繪圖結合，以加強理解與表達</div>
+                            <textarea class="summary-editor" id="summary-editor-12">- 觀察到部分新人在學習過程中只進行思考，缺乏實際繪圖
+  - 這種方式可能導致概念不夠具體
+- 建議將思考與繪圖結合，以加強理解與表達</textarea>
+                            <div class="edit-controls" id="edit-controls-12">
+                                <button class="save-btn" id="save-btn-12" onclick="saveSummary(12)">💾 儲存並回寫檔案</button>
+                                <button class="save-btn" style="background: var(--text-secondary);" onclick="toggleEdit(12)">取消</button>
+                            </div>
+                            
+                            
+                        </div>
+                        
+
+                        
+
+                        
+                    </div>
+                </div>
+
+                <!-- 逐字稿 -->
+                
+                <details class="transcript-toggle">
+                    <summary>📜 展開逐字稿</summary>
+                    <div class="transcript-content">
+                        <div class="transcript-text">
+                            <div class="zh-lang">思考不畫圖
+哦有一些菜鳥</div>
+                            
+                        </div>
+                    </div>
+                </details>
+                
+            </section>
+            
+            
+            
+            
+            
+            
+                
+            
+                
+                    
+                    
+                
+            
+                
+            
+                
+            
+
+            
+
+            <section class="frame-card" id="frame-14" data-timestamp="101.3">
+                <div class="frame-header">
+                    <div style="display: flex; flex-direction: column;">
+                        
+                        <h3 class="frame-title">
+                            <span class="frame-number">2-8</span>
+                            
+                            畫圖與思考的雙重挑戰
+                            
+                        </h3>
+                    </div>
+                    <div class="frame-badges">
+                        <button class="star-btn " id="star-13" onclick="toggleStar(13)" title="標記為重點">⭐</button>
+                        <span class="badge auto">自動</span>
+                        
+                        <span class="badge analyzed">✓ 已分析</span>
+                        
+                        
+                    </div>
+                </div>
+
+                <div class="frame-body">
+                    <!-- 左側圖片 - 滿版 -->
+                    <div class="frame-image-area">
+                        <div class="image-wrapper" onclick="openLightbox(13)">
+                            
+                            <img src="frames/00_01_41.png" alt="01:41" loading="lazy">
+                            <span class="zoom-hint">🔍 點擊放大</span>
+                            <span class="frame-timestamp">01:41</span>
+                            
+                            <button class="play-overlay" onclick="event.stopPropagation(); jumpToTimeAndPlay(101.3)">
+                                ▶ 播放
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 右側分析 -->
+                    <div class="frame-analysis">
+                        
+                        <div class="analysis-section">
+                            <h4 style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>📝 內容摘要</span>
+                                <button class="edit-toggle-btn" onclick="toggleEdit(13)">✏️ 編輯</button>
+                            </h4>
+                            <div class="analysis-summary" id="summary-display-13">- 同時需要畫圖與思考<br>  - 兩者都不想做時的困境<br>- 這週有重要工作需要完成</div>
+                            <textarea class="summary-editor" id="summary-editor-13">- 同時需要畫圖與思考
+  - 兩者都不想做時的困境
+- 這週有重要工作需要完成</textarea>
+                            <div class="edit-controls" id="edit-controls-13">
+                                <button class="save-btn" id="save-btn-13" onclick="saveSummary(13)">💾 儲存並回寫檔案</button>
+                                <button class="save-btn" style="background: var(--text-secondary);" onclick="toggleEdit(13)">取消</button>
+                            </div>
+                            
+                            
+                        </div>
+                        
+
+                        
+
+                        
+                    </div>
+                </div>
+
+                <!-- 逐字稿 -->
+                
+                <details class="transcript-toggle">
+                    <summary>📜 展開逐字稿</summary>
+                    <div class="transcript-content">
+                        <div class="transcript-text">
+                            <div class="zh-lang">那就是又要畫圖又要思考
+哈哈哈哈
+啊如果兩個都不想那拜託
+這個禮拜有個很重要的工作</div>
+                            
+                        </div>
+                    </div>
+                </details>
+                
+            </section>
+            
+            
+            
+            
+            
+            
+                
+            
+                
+            
+                
+                    
+                    
+                
+            
+                
+            
+
+            
+
+            <section class="frame-card" id="frame-15" data-timestamp="109.7">
+                <div class="frame-header">
+                    <div style="display: flex; flex-direction: column;">
+                        
+                        <h3 class="frame-title">
+                            <span class="frame-number">3-1</span>
+                            
+                            本週重要任務與未來展望
+                            
+                        </h3>
+                    </div>
+                    <div class="frame-badges">
+                        <button class="star-btn " id="star-14" onclick="toggleStar(14)" title="標記為重點">⭐</button>
+                        <span class="badge auto">自動</span>
+                        
+                        <span class="badge analyzed">✓ 已分析</span>
+                        
+                        
+                    </div>
+                </div>
+
+                <div class="frame-body">
+                    <!-- 左側圖片 - 滿版 -->
+                    <div class="frame-image-area">
+                        <div class="image-wrapper" onclick="openLightbox(14)">
+                            
+                            <img src="frames/00_01_49.png" alt="01:49" loading="lazy">
+                            <span class="zoom-hint">🔍 點擊放大</span>
+                            <span class="frame-timestamp">01:49</span>
+                            
+                            <button class="play-overlay" onclick="event.stopPropagation(); jumpToTimeAndPlay(109.7)">
+                                ▶ 播放
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 右側分析 -->
+                    <div class="frame-analysis">
+                        
+                        <div class="analysis-section">
+                            <h4 style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>📝 內容摘要</span>
+                                <button class="edit-toggle-btn" onclick="toggleEdit(14)">✏️ 編輯</button>
+                            </h4>
+                            <div class="analysis-summary" id="summary-display-14">- 本週重要工作<br>  - 購買 30 張大圖紙<br>- 對對方的鼓勵與期望<br>  - 認為對方會考上<br>- 期待未來的結果<br>  - 十天後會知道進展</div>
+                            <textarea class="summary-editor" id="summary-editor-14">- 本週重要工作
+  - 購買 30 張大圖紙
+- 對對方的鼓勵與期望
+  - 認為對方會考上
+- 期待未來的結果
+  - 十天後會知道進展</textarea>
+                            <div class="edit-controls" id="edit-controls-14">
+                                <button class="save-btn" id="save-btn-14" onclick="saveSummary(14)">💾 儲存並回寫檔案</button>
+                                <button class="save-btn" style="background: var(--text-secondary);" onclick="toggleEdit(14)">取消</button>
+                            </div>
+                            
+                            
+                        </div>
+                        
+
+                        
+
+                        
+                    </div>
+                </div>
+
+                <!-- 逐字稿 -->
+                
+                <details class="transcript-toggle">
+                    <summary>📜 展開逐字稿</summary>
+                    <div class="transcript-content">
+                        <div class="transcript-text">
+                            <div class="zh-lang">這個禮拜有個很重要的工作
+去買30張大圖紙
+哦老鳥不用老鳥不用
+哦因為我覺得你會考上
+哈哈哈哈
+好
+十天後就知道</div>
+                            
+                        </div>
+                    </div>
+                </details>
+                
+            </section>
+            
+            
+            
+            
+            
+            
+                
+            
+                
+            
+                
+                    
+                    
+                
+            
+                
+            
+
+            
+
+            <section class="frame-card" id="frame-16" data-timestamp="120.0">
+                <div class="frame-header">
+                    <div style="display: flex; flex-direction: column;">
+                        
+                        <h3 class="frame-title">
+                            <span class="frame-number">3-2</span>
+                            
+                            課程作業安排與練習目標
+                            
+                        </h3>
+                    </div>
+                    <div class="frame-badges">
+                        <button class="star-btn " id="star-15" onclick="toggleStar(15)" title="標記為重點">⭐</button>
+                        <span class="badge auto">自動</span>
+                        
+                        <span class="badge analyzed">✓ 已分析</span>
+                        
+                        
+                    </div>
+                </div>
+
+                <div class="frame-body">
+                    <!-- 左側圖片 - 滿版 -->
+                    <div class="frame-image-area">
+                        <div class="image-wrapper" onclick="openLightbox(15)">
+                            
+                            <img src="frames/00_02_00.png" alt="02:00" loading="lazy">
+                            <span class="zoom-hint">🔍 點擊放大</span>
+                            <span class="frame-timestamp">02:00</span>
+                            
+                            <button class="play-overlay" onclick="event.stopPropagation(); jumpToTimeAndPlay(120.0)">
+                                ▶ 播放
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 右側分析 -->
+                    <div class="frame-analysis">
+                        
+                        <div class="analysis-section">
+                            <h4 style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>📝 內容摘要</span>
+                                <button class="edit-toggle-btn" onclick="toggleEdit(15)">✏️ 編輯</button>
+                            </h4>
+                            <div class="analysis-summary" id="summary-display-15">- 課程進度<br>  - 十天後將有進一步更新<br>- 作業概覽<br>  - 現有三個功課<br>  - 第一個功課：空間定性定量<br>    - 上週已示範<br>    - 目標：寫出看似「厲害」的成果</div>
+                            <textarea class="summary-editor" id="summary-editor-15">- 課程進度
+  - 十天後將有進一步更新
+- 作業概覽
+  - 現有三個功課
+  - 第一個功課：空間定性定量
+    - 上週已示範
+    - 目標：寫出看似「厲害」的成果</textarea>
+                            <div class="edit-controls" id="edit-controls-15">
+                                <button class="save-btn" id="save-btn-15" onclick="saveSummary(15)">💾 儲存並回寫檔案</button>
+                                <button class="save-btn" style="background: var(--text-secondary);" onclick="toggleEdit(15)">取消</button>
+                            </div>
+                            
+                            
+                        </div>
+                        
+
+                        
+
+                        
+                    </div>
+                </div>
+
+                <!-- 逐字稿 -->
+                
+                <details class="transcript-toggle">
+                    <summary>📜 展開逐字稿</summary>
+                    <div class="transcript-content">
+                        <div class="transcript-text">
+                            <div class="zh-lang">十天後就知道
+十天後就知道來我們繼續講一下
+哦
+拜託拜託我們現在有三個功課了
+第一個功課是做
+呃
+兩個功課啦
+一個是做空間定性定量
+上禮拜有示範過
+他的練習目標是要看起來
+好像很厲害
+要可以寫出來</div>
+                            
+                        </div>
+                    </div>
+                </details>
+                
+            </section>
+            
+            
+            
+            
+            
+            
+                
+            
+                
+            
+                
+                    
+                    
+                
+            
+                
+            
+
+            
+
+            <section class="frame-card" id="frame-17" data-timestamp="139.3">
+                <div class="frame-header">
+                    <div style="display: flex; flex-direction: column;">
+                        
+                        <h3 class="frame-title">
+                            <span class="frame-number">3-3</span>
+                            
+                            圖面寫作與空間重點辨識練習
+                            
+                        </h3>
+                    </div>
+                    <div class="frame-badges">
+                        <button class="star-btn " id="star-16" onclick="toggleStar(16)" title="標記為重點">⭐</button>
+                        <span class="badge auto">自動</span>
+                        
+                        <span class="badge analyzed">✓ 已分析</span>
+                        
+                        
+                    </div>
+                </div>
+
+                <div class="frame-body">
+                    <!-- 左側圖片 - 滿版 -->
+                    <div class="frame-image-area">
+                        <div class="image-wrapper" onclick="openLightbox(16)">
+                            
+                            <img src="frames/00_02_19.png" alt="02:19" loading="lazy">
+                            <span class="zoom-hint">🔍 點擊放大</span>
+                            <span class="frame-timestamp">02:19</span>
+                            
+                            <button class="play-overlay" onclick="event.stopPropagation(); jumpToTimeAndPlay(139.3)">
+                                ▶ 播放
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 右側分析 -->
+                    <div class="frame-analysis">
+                        
+                        <div class="analysis-section">
+                            <h4 style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>📝 內容摘要</span>
+                                <button class="edit-toggle-btn" onclick="toggleEdit(16)">✏️ 編輯</button>
+                            </h4>
+                            <div class="analysis-summary" id="summary-display-16">- **寫作任務**  <br>  - 需要將文字寫成圖面正式的一部分  <br>  - 只要完成即可，重點在於提交給老師  <br>- **項目管理**  <br>  - 建立專案並持續累積內容  <br>  - 透過不斷寫作與閱讀題目來提升能力  <br>- **實作練習**  <br>  - 以 A4 紙為媒介  <br>  - 選出「地面最重要的空間」並寫下  <br>  - 指出哪一句話說明該空間的重要性  <br>  - 選擇一句可作為圖面副標題的句子</div>
+                            <textarea class="summary-editor" id="summary-editor-16">- **寫作任務**  
+  - 需要將文字寫成圖面正式的一部分  
+  - 只要完成即可，重點在於提交給老師  
+- **項目管理**  
+  - 建立專案並持續累積內容  
+  - 透過不斷寫作與閱讀題目來提升能力  
+- **實作練習**  
+  - 以 A4 紙為媒介  
+  - 選出「地面最重要的空間」並寫下  
+  - 指出哪一句話說明該空間的重要性  
+  - 選擇一句可作為圖面副標題的句子</textarea>
+                            <div class="edit-controls" id="edit-controls-16">
+                                <button class="save-btn" id="save-btn-16" onclick="saveSummary(16)">💾 儲存並回寫檔案</button>
+                                <button class="save-btn" style="background: var(--text-secondary);" onclick="toggleEdit(16)">取消</button>
+                            </div>
+                            
+                            
+                        </div>
+                        
+
+                        
+
+                        
+                    </div>
+                </div>
+
+                <!-- 逐字稿 -->
+                
+                <details class="transcript-toggle">
+                    <summary>📜 展開逐字稿</summary>
+                    <div class="transcript-content">
+                        <div class="transcript-text">
+                            <div class="zh-lang">要可以寫出來
+就好像是圖面上的正式的一部分
+這是目標
+哦
+隨便你怎麼寫我也不會認真看
+但是麻煩你有做就傳給我
+哦傳給我之後
+我們開個項目坐在裡面
+你要一直累積裡面的量
+這是第一個開始練習
+第二個開始練習讀題
+麻煩那一張A4的紙
+把你覺得地面成最重要的空間寫下來
+然後去寫是哪一句話
+讓你覺得是最重要的空間
+哦然後
+哪一句話可以當做
+圖面的副標題</div>
+                            
+                        </div>
+                    </div>
+                </details>
+                
+            </section>
+            
+            
+            
+            
+            
+            
+                
+            
+                
+            
+                
+                    
+                    
+                
+            
+                
+            
+
+            
+
+            <section class="frame-card" id="frame-18" data-timestamp="171.9">
+                <div class="frame-header">
+                    <div style="display: flex; flex-direction: column;">
+                        
+                        <h3 class="frame-title">
+                            <span class="frame-number">3-4</span>
+                            
+                            對圖面副標題的忽視與理由
+                            
+                        </h3>
+                    </div>
+                    <div class="frame-badges">
+                        <button class="star-btn " id="star-17" onclick="toggleStar(17)" title="標記為重點">⭐</button>
+                        <span class="badge auto">自動</span>
+                        
+                        <span class="badge analyzed">✓ 已分析</span>
+                        
+                        
+                    </div>
+                </div>
+
+                <div class="frame-body">
+                    <!-- 左側圖片 - 滿版 -->
+                    <div class="frame-image-area">
+                        <div class="image-wrapper" onclick="openLightbox(17)">
+                            
+                            <img src="frames/00_02_51.png" alt="02:51" loading="lazy">
+                            <span class="zoom-hint">🔍 點擊放大</span>
+                            <span class="frame-timestamp">02:51</span>
+                            
+                            <button class="play-overlay" onclick="event.stopPropagation(); jumpToTimeAndPlay(171.9)">
+                                ▶ 播放
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 右側分析 -->
+                    <div class="frame-analysis">
+                        
+                        <div class="analysis-section">
+                            <h4 style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>📝 內容摘要</span>
+                                <button class="edit-toggle-btn" onclick="toggleEdit(17)">✏️ 編輯</button>
+                            </h4>
+                            <div class="analysis-summary" id="summary-display-17">- 觀察者對圖面副標題的理解與傳遞<br>  - 先確認「了解嗎」後請對方寫下副標題並傳送<br>- 觀察者不願意認真看副標題的原因<br>  - 表示「我不會認真看」<br>- 觀察者對此的解釋與理由<br>  - 提問「為什麼不認真看？」並說「有我的理由」</div>
+                            <textarea class="summary-editor" id="summary-editor-17">- 觀察者對圖面副標題的理解與傳遞
+  - 先確認「了解嗎」後請對方寫下副標題並傳送
+- 觀察者不願意認真看副標題的原因
+  - 表示「我不會認真看」
+- 觀察者對此的解釋與理由
+  - 提問「為什麼不認真看？」並說「有我的理由」</textarea>
+                            <div class="edit-controls" id="edit-controls-17">
+                                <button class="save-btn" id="save-btn-17" onclick="saveSummary(17)">💾 儲存並回寫檔案</button>
+                                <button class="save-btn" style="background: var(--text-secondary);" onclick="toggleEdit(17)">取消</button>
+                            </div>
+                            
+                            
+                        </div>
+                        
+
+                        
+
+                        
+                    </div>
+                </div>
+
+                <!-- 逐字稿 -->
+                
+                <details class="transcript-toggle">
+                    <summary>📜 展開逐字稿</summary>
+                    <div class="transcript-content">
+                        <div class="transcript-text">
+                            <div class="zh-lang">圖面的副標題
+了解嗎
+哦寫下來一樣傳給我
+一樣我不會認真看
+哦為什麼不認真看有我的理由</div>
+                            
+                        </div>
+                    </div>
+                </details>
+                
+            </section>
+            
+            
+            
+            
+            
+            
+                
+            
+                
+            
+                
+                    
+                    
+                
+            
+                
+            
+
+            
+
+            <section class="frame-card" id="frame-19" data-timestamp="180.0">
+                <div class="frame-header">
+                    <div style="display: flex; flex-direction: column;">
+                        
+                        <h3 class="frame-title">
+                            <span class="frame-number">3-5</span>
+                            
+                            重溫舊練習以對照新題目
+                            
+                        </h3>
+                    </div>
+                    <div class="frame-badges">
+                        <button class="star-btn " id="star-18" onclick="toggleStar(18)" title="標記為重點">⭐</button>
+                        <span class="badge auto">自動</span>
+                        
+                        <span class="badge analyzed">✓ 已分析</span>
+                        
+                        
+                    </div>
+                </div>
+
+                <div class="frame-body">
+                    <!-- 左側圖片 - 滿版 -->
+                    <div class="frame-image-area">
+                        <div class="image-wrapper" onclick="openLightbox(18)">
+                            
+                            <img src="frames/00_03_00.png" alt="03:00" loading="lazy">
+                            <span class="zoom-hint">🔍 點擊放大</span>
+                            <span class="frame-timestamp">03:00</span>
+                            
+                            <button class="play-overlay" onclick="event.stopPropagation(); jumpToTimeAndPlay(180.0)">
+                                ▶ 播放
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 右側分析 -->
+                    <div class="frame-analysis">
+                        
+                        <div class="analysis-section">
+                            <h4 style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>📝 內容摘要</span>
+                                <button class="edit-toggle-btn" onclick="toggleEdit(18)">✏️ 編輯</button>
+                            </h4>
+                            <div class="analysis-summary" id="summary-display-18">- 影片重點提醒<br>  - 觀眾需認真觀看影片內容<br>  - 影片將介紹即將討論的題目<br>- 建議學習方法<br>  - 重新拿出舊練習題<br>  - 將舊題與新題目做對照</div>
+                            <textarea class="summary-editor" id="summary-editor-18">- 影片重點提醒
+  - 觀眾需認真觀看影片內容
+  - 影片將介紹即將討論的題目
+- 建議學習方法
+  - 重新拿出舊練習題
+  - 將舊題與新題目做對照</textarea>
+                            <div class="edit-controls" id="edit-controls-18">
+                                <button class="save-btn" id="save-btn-18" onclick="saveSummary(18)">💾 儲存並回寫檔案</button>
+                                <button class="save-btn" style="background: var(--text-secondary);" onclick="toggleEdit(18)">取消</button>
+                            </div>
+                            
+                            
+                        </div>
+                        
+
+                        
+
+                        
+                    </div>
+                </div>
+
+                <!-- 逐字稿 -->
+                
+                <details class="transcript-toggle">
+                    <summary>📜 展開逐字稿</summary>
+                    <div class="transcript-content">
+                        <div class="transcript-text">
+                            <div class="zh-lang">哦為什麼不認真看有我的理由
+因為接下來
+我都會去講到這些題目
+你要自己能夠去
+重新拿出你的舊練習來對照</div>
+                            
+                        </div>
+                    </div>
+                </details>
+                
+            </section>
+            
+            
+            
+            
+            
+            
+                
+            
+                
+            
+                
+                    
+                    
+                
+            
+                
+            
+
+            
+
+            <section class="frame-card" id="frame-20" data-timestamp="189.0">
+                <div class="frame-header">
+                    <div style="display: flex; flex-direction: column;">
+                        
+                        <h3 class="frame-title">
+                            <span class="frame-number">3-6</span>
+                            
+                            關注學員配置
+                            
+                        </h3>
+                    </div>
+                    <div class="frame-badges">
+                        <button class="star-btn " id="star-19" onclick="toggleStar(19)" title="標記為重點">⭐</button>
+                        <span class="badge auto">自動</span>
+                        
+                        <span class="badge analyzed">✓ 已分析</span>
+                        
+                        
+                    </div>
+                </div>
+
+                <div class="frame-body">
+                    <!-- 左側圖片 - 滿版 -->
+                    <div class="frame-image-area">
+                        <div class="image-wrapper" onclick="openLightbox(19)">
+                            
+                            <img src="frames/00_03_09.png" alt="03:09" loading="lazy">
+                            <span class="zoom-hint">🔍 點擊放大</span>
+                            <span class="frame-timestamp">03:09</span>
+                            
+                            <button class="play-overlay" onclick="event.stopPropagation(); jumpToTimeAndPlay(189.0)">
+                                ▶ 播放
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 右側分析 -->
+                    <div class="frame-analysis">
+                        
+                        <div class="analysis-section">
+                            <h4 style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>📝 內容摘要</span>
+                                <button class="edit-toggle-btn" onclick="toggleEdit(19)">✏️ 編輯</button>
+                            </h4>
+                            <div class="analysis-summary" id="summary-display-19">- 讲师强调自己会花时间查看学员的配置<br>  - 通过配置了解学员的背景与需求<br>  - 配置决定教学方法与内容的调整<br>- 关注配置有助于提升学习效果与教学针对性</div>
+                            <textarea class="summary-editor" id="summary-editor-19">- 讲师强调自己会花时间查看学员的配置
+  - 通过配置了解学员的背景与需求
+  - 配置决定教学方法与内容的调整
+- 关注配置有助于提升学习效果与教学针对性</textarea>
+                            <div class="edit-controls" id="edit-controls-19">
+                                <button class="save-btn" id="save-btn-19" onclick="saveSummary(19)">💾 儲存並回寫檔案</button>
+                                <button class="save-btn" style="background: var(--text-secondary);" onclick="toggleEdit(19)">取消</button>
+                            </div>
+                            
+                            
+                        </div>
+                        
+
+                        
+
+                        
+                    </div>
+                </div>
+
+                <!-- 逐字稿 -->
+                
+                <details class="transcript-toggle">
+                    <summary>📜 展開逐字稿</summary>
+                    <div class="transcript-content">
+                        <div class="transcript-text">
+                            <div class="zh-lang">我真正會花時間看的是你們的配置</div>
+                            
+                        </div>
+                    </div>
+                </details>
+                
+            </section>
+            
+            
+            
+            
+            
+            
+                
+            
+                
+            
+                
+                    
+                    
+                
+            
+                
+            
+
+            
+
+            <section class="frame-card" id="frame-21" data-timestamp="192.3">
+                <div class="frame-header">
+                    <div style="display: flex; flex-direction: column;">
+                        
+                        <h3 class="frame-title">
+                            <span class="frame-number">3-7</span>
+                            
+                            輸出導向的練習與影片對照教學
+                            
+                        </h3>
+                    </div>
+                    <div class="frame-badges">
+                        <button class="star-btn " id="star-20" onclick="toggleStar(20)" title="標記為重點">⭐</button>
+                        <span class="badge auto">自動</span>
+                        
+                        <span class="badge analyzed">✓ 已分析</span>
+                        
+                        
+                    </div>
+                </div>
+
+                <div class="frame-body">
+                    <!-- 左側圖片 - 滿版 -->
+                    <div class="frame-image-area">
+                        <div class="image-wrapper" onclick="openLightbox(20)">
+                            
+                            <img src="frames/00_03_12.png" alt="03:12" loading="lazy">
+                            <span class="zoom-hint">🔍 點擊放大</span>
+                            <span class="frame-timestamp">03:12</span>
+                            
+                            <button class="play-overlay" onclick="event.stopPropagation(); jumpToTimeAndPlay(192.3)">
+                                ▶ 播放
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 右側分析 -->
+                    <div class="frame-analysis">
+                        
+                        <div class="analysis-section">
+                            <h4 style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>📝 內容摘要</span>
+                                <button class="edit-toggle-btn" onclick="toggleEdit(20)">✏️ 編輯</button>
+                            </h4>
+                            <div class="analysis-summary" id="summary-display-20">- 學習流程<br>  - 先完成獨體練習（定性、定量）<br>  - 完成後觀看老師影片並對照，提升學習效果<br>- 課程設計<br>  - 前半段課程以「輸出」為主，強調實際操作與表達<br>  - 後半段由學生自行輸出，老師進行檢視與回饋<br>- 目的與效益<br>  - 透過影片對照加深理解<br>  - 以輸出為核心，促進學習者實踐與反思</div>
+                            <textarea class="summary-editor" id="summary-editor-20">- 學習流程
+  - 先完成獨體練習（定性、定量）
+  - 完成後觀看老師影片並對照，提升學習效果
+- 課程設計
+  - 前半段課程以「輸出」為主，強調實際操作與表達
+  - 後半段由學生自行輸出，老師進行檢視與回饋
+- 目的與效益
+  - 透過影片對照加深理解
+  - 以輸出為核心，促進學習者實踐與反思</textarea>
+                            <div class="edit-controls" id="edit-controls-20">
+                                <button class="save-btn" id="save-btn-20" onclick="saveSummary(20)">💾 儲存並回寫檔案</button>
+                                <button class="save-btn" style="background: var(--text-secondary);" onclick="toggleEdit(20)">取消</button>
+                            </div>
+                            
+                            
+                        </div>
+                        
+
+                        
+
+                        
+                    </div>
+                </div>
+
+                <!-- 逐字稿 -->
+                
+                <details class="transcript-toggle">
+                    <summary>📜 展開逐字稿</summary>
+                    <div class="transcript-content">
+                        <div class="transcript-text">
+                            <div class="zh-lang">哦真正會花時間看配置
+你們這個階段的
+獨體練習空間定性定量練習
+都是
+做完了以後去看我的影片去對照
+這樣會比較幫助
+哦那當然
+我還是會
+接下來我會開始去講大家練習
+那講大家練習因為我
+今年的設定是前半段的
+前半段的課程都是輸出
+輸出為主
+然後後半段才會是你們
+換你們輸出我來
+檢視哦好
+然後這邊</div>
+                            
+                        </div>
+                    </div>
+                </details>
+                
+            </section>
+            
+            
+            
+            
+            
+            
+                
+            
+                
+            
+                
+            
+                
+                    
+                    
+                
+            
+
+            
+
+            <section class="frame-card" id="frame-22" data-timestamp="228.0">
+                <div class="frame-header">
+                    <div style="display: flex; flex-direction: column;">
+                        
+                        <h3 class="frame-title">
+                            <span class="frame-number">4-1</span>
+                            
+                            先試課再決定付費
+                            
+                        </h3>
+                    </div>
+                    <div class="frame-badges">
+                        <button class="star-btn " id="star-21" onclick="toggleStar(21)" title="標記為重點">⭐</button>
+                        <span class="badge auto">自動</span>
+                        
+                        <span class="badge analyzed">✓ 已分析</span>
+                        
+                        
+                    </div>
+                </div>
+
+                <div class="frame-body">
+                    <!-- 左側圖片 - 滿版 -->
+                    <div class="frame-image-area">
+                        <div class="image-wrapper" onclick="openLightbox(21)">
+                            
+                            <img src="frames/00_03_48.png" alt="03:48" loading="lazy">
+                            <span class="zoom-hint">🔍 點擊放大</span>
+                            <span class="frame-timestamp">03:48</span>
+                            
+                            <button class="play-overlay" onclick="event.stopPropagation(); jumpToTimeAndPlay(228.0)">
+                                ▶ 播放
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 右側分析 -->
+                    <div class="frame-analysis">
+                        
+                        <div class="analysis-section">
+                            <h4 style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>📝 內容摘要</span>
+                                <button class="edit-toggle-btn" onclick="toggleEdit(21)">✏️ 編輯</button>
+                            </h4>
+                            <div class="analysis-summary" id="summary-display-21">- 先讓學生上課再決定付費<br>  - 允許學生先體驗課程，避免強制先付費<br>  - 讓學生感受課程內容後再做付費決定<br>- 若學生無法到現場<br>  - 檢查是否可線上參與<br>  - 需要協助觀看影片或點按操作</div>
+                            <textarea class="summary-editor" id="summary-editor-21">- 先讓學生上課再決定付費
+  - 允許學生先體驗課程，避免強制先付費
+  - 讓學生感受課程內容後再做付費決定
+- 若學生無法到現場
+  - 檢查是否可線上參與
+  - 需要協助觀看影片或點按操作</textarea>
+                            <div class="edit-controls" id="edit-controls-21">
+                                <button class="save-btn" id="save-btn-21" onclick="saveSummary(21)">💾 儲存並回寫檔案</button>
+                                <button class="save-btn" style="background: var(--text-secondary);" onclick="toggleEdit(21)">取消</button>
+                            </div>
+                            
+                            
+                        </div>
+                        
+
+                        
+
+                        
+                    </div>
+                </div>
+
+                <!-- 逐字稿 -->
+                
+                <details class="transcript-toggle">
+                    <summary>📜 展開逐字稿</summary>
+                    <div class="transcript-content">
+                        <div class="transcript-text">
+                            <div class="zh-lang">如果你們有同學想上課
+一定堅持要付錢才要開始上課
+可以跟他說先來上課再決定好在付錢
+好不好
+來現場不能來現場
+麻煩你看個影片幫我點按</div>
+                            
+                        </div>
+                    </div>
+                </details>
+                
+            </section>
+            
+            
+            
+            
+            
+            
+                
+            
+                
+            
+                
+            
+                
+                    
+                    
+                
+            
+
+            
+
+            <section class="frame-card" id="frame-23" data-timestamp="240.0">
+                <div class="frame-header">
+                    <div style="display: flex; flex-direction: column;">
+                        
+                        <h3 class="frame-title">
+                            <span class="frame-number">4-2</span>
+                            
+                            影片推廣請求
+                            
+                        </h3>
+                    </div>
+                    <div class="frame-badges">
+                        <button class="star-btn " id="star-22" onclick="toggleStar(22)" title="標記為重點">⭐</button>
+                        <span class="badge auto">自動</span>
+                        
+                        <span class="badge analyzed">✓ 已分析</span>
+                        
+                        
+                    </div>
+                </div>
+
+                <div class="frame-body">
+                    <!-- 左側圖片 - 滿版 -->
+                    <div class="frame-image-area">
+                        <div class="image-wrapper" onclick="openLightbox(22)">
+                            
+                            <img src="frames/00_04_00.png" alt="04:00" loading="lazy">
+                            <span class="zoom-hint">🔍 點擊放大</span>
+                            <span class="frame-timestamp">04:00</span>
+                            
+                            <button class="play-overlay" onclick="event.stopPropagation(); jumpToTimeAndPlay(240.0)">
+                                ▶ 播放
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 右側分析 -->
+                    <div class="frame-analysis">
+                        
+                        <div class="analysis-section">
+                            <h4 style="display: flex; justify-content: space-between; align-items: center;">
+                                <span>📝 內容摘要</span>
+                                <button class="edit-toggle-btn" onclick="toggleEdit(22)">✏️ 編輯</button>
+                            </h4>
+                            <div class="analysis-summary" id="summary-display-22">- 觀眾互動請求<br>  - 請點按「讚」與「分享」<br>  - 若不點讚不分享，至少私訊確認是否想繼續觀看<br>- 內容背景說明<br>  - 影片製作者因某些原因將於今年繼續教學<br>- 推廣與感謝<br>  - 請觀眾協助推廣影片<br>  - 影片結尾表達感謝與結束語</div>
+                            <textarea class="summary-editor" id="summary-editor-22">- 觀眾互動請求
+  - 請點按「讚」與「分享」
+  - 若不點讚不分享，至少私訊確認是否想繼續觀看
+- 內容背景說明
+  - 影片製作者因某些原因將於今年繼續教學
+- 推廣與感謝
+  - 請觀眾協助推廣影片
+  - 影片結尾表達感謝與結束語</textarea>
+                            <div class="edit-controls" id="edit-controls-22">
+                                <button class="save-btn" id="save-btn-22" onclick="saveSummary(22)">💾 儲存並回寫檔案</button>
+                                <button class="save-btn" style="background: var(--text-secondary);" onclick="toggleEdit(22)">取消</button>
+                            </div>
+                            
+                            
+                        </div>
+                        
+
+                        
+
+                        
+                    </div>
+                </div>
+
+                <!-- 逐字稿 -->
+                
+                <details class="transcript-toggle">
+                    <summary>📜 展開逐字稿</summary>
+                    <div class="transcript-content">
+                        <div class="transcript-text">
+                            <div class="zh-lang">麻煩你看個影片幫我點按
+點讚
+分享
+不點讚不分享沒關係至少私訊我說
+你還想不想繼續看
+哈哈哈哈
+然後
+因為我被
+某些原因我今年要繼續教了
+所以就請大家幫我去推廣一下
+好
+謝謝大家今天到這邊感謝各位</div>
+                            
+                        </div>
+                    </div>
+                </details>
+                
+            </section>
+            
+
+            <footer>
+                Video Notes v0.3.2 |
+                <a href="#" onclick="document.getElementById('rightPanel').scrollTo({top:0, behavior:'smooth'}); return false;">回到頂部</a>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <span class="lightbox-nav lightbox-prev" onclick="event.stopPropagation(); prevImage()">❮</span>
+        <img id="lightboxImg" src="" alt="">
+        <span class="lightbox-nav lightbox-next" onclick="event.stopPropagation(); nextImage()">❯</span>
+        <div class="lightbox-info" id="lightboxInfo"></div>
+    </div>
+    
+    <!-- Data Islands for Safer JSON Injection -->
+    <script id="data-video" type="application/json">{"video": {"title": "2026 0124 07 本週練習說明", "url": "https://www.youtube.com/watch?v=2BYPh2bDQ2A", "duration": "04:21", "downloaded_at": "2026-02-21", "is_bilingual": false}, "chapters": [{"title": "創作起點：痛苦、關鍵字與標題產生", "start_index": 0, "end_index": 5}, {"title": "思考與繪圖的分離：痛苦、方法與練習", "start_index": 6, "end_index": 13}, {"title": "課程實踐：任務、寫作、回顧與輸出", "start_index": 14, "end_index": 20}, {"title": "學員與行銷：配置、試課與推廣", "start_index": 21, "end_index": 22}], "frames": [{"timestamp": "00:00", "timestamp_seconds": 0.0, "image": "frames/00_00_00.png", "transcript": "不要再稱讚我 其實我做得很痛苦\n哈哈哈哈\n把節目的核心都抓出來", "note": "", "title": "面對創作痛苦與自我認知", "summary": "- 承認自我稱讚與真實感受\n  - 不再被外界稱讚所左右\n  - 內在痛苦與努力被忽視\n- 創作過程中的痛苦與挑戰\n  - 需要付出大量努力\n  - 內心掙扎與堅持\n- 把節目核心抓出來的意義\n  - 尋找主題與訊息\n  - 讓觀眾更易理解", "visual_analysis": "", "source": "auto", "analyzed": true, "chapter_id": "1-1"}, {"timestamp": "00:06", "timestamp_seconds": 6.6, "image": "frames/00_00_06.png", "transcript": "剛才有同學的反應就是說\n今天一次這樣念個四題\n就是有focus聚焦的感覺啦 對不對\n還有一種開始備戰的感覺\n沒錯 我們現在就來講一下\n接下來練習工作\n請大家開始去模擬\n你們這個練習很輕鬆就是讀題目\n就是讀題目\n然後呢\n我前幾個禮拜有去做個示範\n我把最重要的字眼寫下來\n對應到哪些最重要的空間\n那這些空間是地面層的空間\n對不對\n然後這是第一部分要練習的\n第二部分要練習的時候\n我這些字很重要的字眼如何轉換成", "note": "", "title": "閱讀題目與關鍵字映射練習", "summary": "- 目標設定\n  - 透過「focus」與「備戰」的心態，提升閱讀效率\n- 讀題流程\n  - 先快速閱讀題目，保持輕鬆節奏\n  - 逐句捕捉關鍵字眼\n- 關鍵字處理\n  - 先將重要字眼寫下\n  - 對應到「地面層」的空間概念\n- 練習分段\n  - 第一部分：熟悉題目結構與關鍵字\n  - 第二部分：學習如何將關鍵字轉換成實際解題步驟", "visual_analysis": "", "source": "auto", "analyzed": true, "chapter_id": "1-2"}, {"timestamp": "00:50", "timestamp_seconds": 50.0, "image": "frames/00_00_50.png", "transcript": "圖面上的標題的副標題\n就是描述標題的那些字眼\n要怎麼樣去產生\n你就可以這樣寫\n哦", "note": "", "title": "圖面標題副標題的產生方法", "summary": "- 副標題是描述標題的字眼\n  - 主要用於補充說明或細化主題\n- 如何產生副標題\n  - 從圖面內容提煉關鍵資訊\n  - 以簡潔、具體的語句呈現\n- 寫法示例\n  - 你可以這樣寫", "visual_analysis": "", "source": "auto", "analyzed": true, "chapter_id": "1-3"}, {"timestamp": "01:00", "timestamp_seconds": 60.0, "image": "frames/00_01_00.png", "transcript": "哦", "note": "", "title": "簡短回應", "summary": "- 表示聽者的注意或同意\n  - 口語中的「哦」常用於表示聽者正在聽或理解對方所說的內容\n  - 也可用於填充語氣，表示思考或等待下一句", "visual_analysis": "", "source": "auto", "analyzed": true, "chapter_id": "1-4"}, {"timestamp": "01:00", "timestamp_seconds": 60.5, "image": "frames/00_01_00.png", "transcript": "這句話我可以拿來當捧面圖的副標題\n這句話我可以拿來當空間組織\n包圍圖的副標題", "note": "", "title": "句子作為圖表副標題的應用", "summary": "- 句子可作為捧面圖的副標題\n  - 方便說明圖表主題\n  - 提升閱讀者理解\n- 句子可作為空間組織包圍圖的副標題\n  - 強調空間關係\n  - 使圖表更具說服力", "visual_analysis": "", "source": "auto", "analyzed": true, "chapter_id": "1-5"}, {"timestamp": "01:05", "timestamp_seconds": 65.4, "image": "frames/00_01_05.png", "transcript": "包圍圖的副標題\n這句話我可以拿來當做基地環境分析的\n副標題\n這個要開始練習\n哦\n我剛剛今天開頭的時候有講\n大家都很懶惰", "note": "", "title": "包圍圖副標題在基地環境分析中的應用", "summary": "- 包圍圖的副標題可直接作為基地環境分析的標題\n  - 方便快速定位分析重點\n  - 具備可視化與說明性\n- 需要開始練習使用此方法\n  - 透過實際案例加深理解\n- 影片開頭提到觀眾普遍較為懶惰\n  - 以此提醒學習者保持積極投入", "visual_analysis": "", "source": "auto", "analyzed": true, "chapter_id": "1-6"}, {"timestamp": "01:16", "timestamp_seconds": 76.4, "image": "frames/00_01_16.png", "transcript": "要你同時畫圖又要同時思考很痛苦", "note": "", "title": "同時畫圖與思考的痛苦", "summary": "- 同時進行畫圖與思考的困難\n  - 認知負荷過高，容易分心\n  - 影響創意與精準度\n- 造成痛苦的原因\n  - 需要在同一時間處理多重任務\n  - 內在衝突：視覺化與邏輯推理\n- 可能的緩解方式\n  - 分階段完成：先思考再畫圖\n  - 使用協助工具（如思維導圖、草圖軟體）\n  - 設定時間限制與休息", "visual_analysis": "", "source": "auto", "analyzed": true, "chapter_id": "2-1"}, {"timestamp": "01:19", "timestamp_seconds": 79.6, "image": "frames/00_01_19.png", "transcript": "所以今天就是只是要你思考不用畫圖\n哦\n但是如果你想要開啟的話", "note": "", "title": "思考不需畫圖", "summary": "- 本課程主旨：鼓勵學員在思考時不必依賴畫圖\n  - 以文字或口頭方式整理思路\n- 若想進一步開啟視覺化工具\n  - 可選擇開啟相關功能或軟體", "visual_analysis": "", "source": "auto", "analyzed": true, "chapter_id": "2-2"}, {"timestamp": "01:25", "timestamp_seconds": 85.4, "image": "frames/00_01_25.png", "transcript": "但是如果你想要開啟的話\n你可以指畫圖不思考", "note": "", "title": "簡易開啟功能指令", "summary": "- 若想開啟功能，只需點擊對應的圖示\n  - 直接指向圖示即可完成操作\n  - 無需額外思考，操作流程簡單", "visual_analysis": "", "source": "auto", "analyzed": true, "chapter_id": "2-3"}, {"timestamp": "01:27", "timestamp_seconds": 87.5, "image": "frames/00_01_27.png", "transcript": "指畫圖不思考就是開始練習排版", "note": "", "title": "畫圖不思考即排版練習", "summary": "- 直接畫圖而不先思考\n  - 相當於開始練習排版\n  - 透過即時視覺化提升空間感與構圖技巧\n- 排版練習的意義\n  - 培養比例、對齊、留白等排版原則的直覺\n  - 促進快速決策與創意迴圈", "visual_analysis": "", "source": "auto", "analyzed": true, "chapter_id": "2-4"}, {"timestamp": "01:30", "timestamp_seconds": 90.9, "image": "frames/00_01_30.png", "transcript": "指思考不畫圖就是開始練習獨題\n今天來的有幾個是老鳥\n那你可以練習獨題不畫圖", "note": "", "title": "獨題練習：不畫圖的思考方法", "summary": "- 思考不畫圖是獨題練習的起點\n  - 透過不依賴圖形，強化概念內化\n  - 促進獨立思考與問題拆解\n- 適合已具經驗的學員（老鳥）進行獨題練習\n  - 減少外在提示，提升自我導向學習\n  - 進一步鞏固已學知識與技巧", "visual_analysis": "", "source": "auto", "analyzed": true, "chapter_id": "2-5"}, {"timestamp": "01:35", "timestamp_seconds": 95.5, "image": "frames/00_01_35.png", "transcript": "那你可以練習獨題不畫圖\n思考不畫圖", "note": "", "title": "獨題不畫圖的思考練習", "summary": "- 練習不依賴圖形的解題方式\n  - 先在腦中構想問題情境\n  - 以文字或符號記錄關鍵資訊\n- 培養抽象思考與概念理解\n  - 透過邏輯推理推導答案\n  - 避免過度依賴視覺化工具\n- 適用於考試或實務問題\n  - 減少畫圖時間，提升答題效率\n  - 增強對題目本質的把握", "visual_analysis": "", "source": "auto", "analyzed": true, "chapter_id": "2-6"}, {"timestamp": "01:38", "timestamp_seconds": 98.3, "image": "frames/00_01_38.png", "transcript": "思考不畫圖\n哦有一些菜鳥", "note": "", "title": "思考不畫圖", "summary": "- 觀察到部分新人在學習過程中只進行思考，缺乏實際繪圖\n  - 這種方式可能導致概念不夠具體\n- 建議將思考與繪圖結合，以加強理解與表達", "visual_analysis": "", "source": "auto", "analyzed": true, "chapter_id": "2-7"}, {"timestamp": "01:41", "timestamp_seconds": 101.3, "image": "frames/00_01_41.png", "transcript": "那就是又要畫圖又要思考\n哈哈哈哈\n啊如果兩個都不想那拜託\n這個禮拜有個很重要的工作", "note": "", "title": "畫圖與思考的雙重挑戰", "summary": "- 同時需要畫圖與思考\n  - 兩者都不想做時的困境\n- 這週有重要工作需要完成", "visual_analysis": "", "source": "auto", "analyzed": true, "chapter_id": "2-8"}, {"timestamp": "01:49", "timestamp_seconds": 109.7, "image": "frames/00_01_49.png", "transcript": "這個禮拜有個很重要的工作\n去買30張大圖紙\n哦老鳥不用老鳥不用\n哦因為我覺得你會考上\n哈哈哈哈\n好\n十天後就知道", "note": "", "title": "本週重要任務與未來展望", "summary": "- 本週重要工作\n  - 購買 30 張大圖紙\n- 對對方的鼓勵與期望\n  - 認為對方會考上\n- 期待未來的結果\n  - 十天後會知道進展", "visual_analysis": "", "source": "auto", "analyzed": true, "chapter_id": "3-1"}, {"timestamp": "02:00", "timestamp_seconds": 120.0, "image": "frames/00_02_00.png", "transcript": "十天後就知道\n十天後就知道來我們繼續講一下\n哦\n拜託拜託我們現在有三個功課了\n第一個功課是做\n呃\n兩個功課啦\n一個是做空間定性定量\n上禮拜有示範過\n他的練習目標是要看起來\n好像很厲害\n要可以寫出來", "note": "", "title": "課程作業安排與練習目標", "summary": "- 課程進度\n  - 十天後將有進一步更新\n- 作業概覽\n  - 現有三個功課\n  - 第一個功課：空間定性定量\n    - 上週已示範\n    - 目標：寫出看似「厲害」的成果", "visual_analysis": "", "source": "auto", "analyzed": true, "chapter_id": "3-2"}, {"timestamp": "02:19", "timestamp_seconds": 139.3, "image": "frames/00_02_19.png", "transcript": "要可以寫出來\n就好像是圖面上的正式的一部分\n這是目標\n哦\n隨便你怎麼寫我也不會認真看\n但是麻煩你有做就傳給我\n哦傳給我之後\n我們開個項目坐在裡面\n你要一直累積裡面的量\n這是第一個開始練習\n第二個開始練習讀題\n麻煩那一張A4的紙\n把你覺得地面成最重要的空間寫下來\n然後去寫是哪一句話\n讓你覺得是最重要的空間\n哦然後\n哪一句話可以當做\n圖面的副標題", "note": "", "title": "圖面寫作與空間重點辨識練習", "summary": "- **寫作任務**  \n  - 需要將文字寫成圖面正式的一部分  \n  - 只要完成即可，重點在於提交給老師  \n- **項目管理**  \n  - 建立專案並持續累積內容  \n  - 透過不斷寫作與閱讀題目來提升能力  \n- **實作練習**  \n  - 以 A4 紙為媒介  \n  - 選出「地面最重要的空間」並寫下  \n  - 指出哪一句話說明該空間的重要性  \n  - 選擇一句可作為圖面副標題的句子", "visual_analysis": "", "source": "auto", "analyzed": true, "chapter_id": "3-3"}, {"timestamp": "02:51", "timestamp_seconds": 171.9, "image": "frames/00_02_51.png", "transcript": "圖面的副標題\n了解嗎\n哦寫下來一樣傳給我\n一樣我不會認真看\n哦為什麼不認真看有我的理由", "note": "", "title": "對圖面副標題的忽視與理由", "summary": "- 觀察者對圖面副標題的理解與傳遞\n  - 先確認「了解嗎」後請對方寫下副標題並傳送\n- 觀察者不願意認真看副標題的原因\n  - 表示「我不會認真看」\n- 觀察者對此的解釋與理由\n  - 提問「為什麼不認真看？」並說「有我的理由」", "visual_analysis": "", "source": "auto", "analyzed": true, "chapter_id": "3-4"}, {"timestamp": "03:00", "timestamp_seconds": 180.0, "image": "frames/00_03_00.png", "transcript": "哦為什麼不認真看有我的理由\n因為接下來\n我都會去講到這些題目\n你要自己能夠去\n重新拿出你的舊練習來對照", "note": "", "title": "重溫舊練習以對照新題目", "summary": "- 影片重點提醒\n  - 觀眾需認真觀看影片內容\n  - 影片將介紹即將討論的題目\n- 建議學習方法\n  - 重新拿出舊練習題\n  - 將舊題與新題目做對照", "visual_analysis": "", "source": "auto", "analyzed": true, "chapter_id": "3-5"}, {"timestamp": "03:09", "timestamp_seconds": 189.0, "image": "frames/00_03_09.png", "transcript": "我真正會花時間看的是你們的配置", "note": "", "title": "關注學員配置", "summary": "- 讲师强调自己会花时间查看学员的配置\n  - 通过配置了解学员的背景与需求\n  - 配置决定教学方法与内容的调整\n- 关注配置有助于提升学习效果与教学针对性", "visual_analysis": "", "source": "auto", "analyzed": true, "chapter_id": "3-6"}, {"timestamp": "03:12", "timestamp_seconds": 192.3, "image": "frames/00_03_12.png", "transcript": "哦真正會花時間看配置\n你們這個階段的\n獨體練習空間定性定量練習\n都是\n做完了以後去看我的影片去對照\n這樣會比較幫助\n哦那當然\n我還是會\n接下來我會開始去講大家練習\n那講大家練習因為我\n今年的設定是前半段的\n前半段的課程都是輸出\n輸出為主\n然後後半段才會是你們\n換你們輸出我來\n檢視哦好\n然後這邊", "note": "", "title": "輸出導向的練習與影片對照教學", "summary": "- 學習流程\n  - 先完成獨體練習（定性、定量）\n  - 完成後觀看老師影片並對照，提升學習效果\n- 課程設計\n  - 前半段課程以「輸出」為主，強調實際操作與表達\n  - 後半段由學生自行輸出，老師進行檢視與回饋\n- 目的與效益\n  - 透過影片對照加深理解\n  - 以輸出為核心，促進學習者實踐與反思", "visual_analysis": "", "source": "auto", "analyzed": true, "chapter_id": "3-7"}, {"timestamp": "03:48", "timestamp_seconds": 228.0, "image": "frames/00_03_48.png", "transcript": "如果你們有同學想上課\n一定堅持要付錢才要開始上課\n可以跟他說先來上課再決定好在付錢\n好不好\n來現場不能來現場\n麻煩你看個影片幫我點按", "note": "", "title": "先試課再決定付費", "summary": "- 先讓學生上課再決定付費\n  - 允許學生先體驗課程，避免強制先付費\n  - 讓學生感受課程內容後再做付費決定\n- 若學生無法到現場\n  - 檢查是否可線上參與\n  - 需要協助觀看影片或點按操作", "visual_analysis": "", "source": "auto", "analyzed": true, "chapter_id": "4-1"}, {"timestamp": "04:00", "timestamp_seconds": 240.0, "image": "frames/00_04_00.png", "transcript": "麻煩你看個影片幫我點按\n點讚\n分享\n不點讚不分享沒關係至少私訊我說\n你還想不想繼續看\n哈哈哈哈\n然後\n因為我被\n某些原因我今年要繼續教了\n所以就請大家幫我去推廣一下\n好\n謝謝大家今天到這邊感謝各位", "note": "", "title": "影片推廣請求", "summary": "- 觀眾互動請求\n  - 請點按「讚」與「分享」\n  - 若不點讚不分享，至少私訊確認是否想繼續觀看\n- 內容背景說明\n  - 影片製作者因某些原因將於今年繼續教學\n- 推廣與感謝\n  - 請觀眾協助推廣影片\n  - 影片結尾表達感謝與結束語", "visual_analysis": "", "source": "auto", "analyzed": true, "chapter_id": "4-2"}]}</script>
+    <script id="data-subtitle-zh" type="application/json">[{"start": 0.0, "end": 2.26, "text": "不要再稱讚我 其實我做得很痛苦"}, {"start": 2.26, "end": 3.899, "text": "哈哈哈哈"}, {"start": 3.899, "end": 5.9, "text": "把節目的核心都抓出來"}, {"start": 6.6, "end": 8.859, "text": "剛才有同學的反應就是說"}, {"start": 8.859, "end": 10.359, "text": "今天一次這樣念個四題"}, {"start": 10.359, "end": 13.16, "text": "就是有focus聚焦的感覺啦 對不對"}, {"start": 13.359, "end": 15.16, "text": "還有一種開始備戰的感覺"}, {"start": 15.3, "end": 17.359, "text": "沒錯 我們現在就來講一下"}, {"start": 17.559, "end": 19.059, "text": "接下來練習工作"}, {"start": 19.96, "end": 22.16, "text": "請大家開始去模擬"}, {"start": 23.559, "end": 26.8, "text": "你們這個練習很輕鬆就是讀題目"}, {"start": 27.46, "end": 28.76, "text": "就是讀題目"}, {"start": 29.06, "end": 29.86, "text": "然後呢"}, {"start": 30.22, "end": 33.66, "text": "我前幾個禮拜有去做個示範"}, {"start": 33.92, "end": 36.02, "text": "我把最重要的字眼寫下來"}, {"start": 36.16, "end": 38.16, "text": "對應到哪些最重要的空間"}, {"start": 38.16, "end": 40.56, "text": "那這些空間是地面層的空間"}, {"start": 40.92, "end": 41.52, "text": "對不對"}, {"start": 41.66, "end": 43.719, "text": "然後這是第一部分要練習的"}, {"start": 43.719, "end": 45.159, "text": "第二部分要練習的時候"}, {"start": 45.52, "end": 48.82, "text": "我這些字很重要的字眼如何轉換成"}, {"start": 50.02, "end": 52.82, "text": "圖面上的標題的副標題"}, {"start": 53.52, "end": 56.92, "text": "就是描述標題的那些字眼"}, {"start": 56.96, "end": 58.32, "text": "要怎麼樣去產生"}, {"start": 58.979, "end": 59.82, "text": "你就可以這樣寫"}, {"start": 59.82, "end": 60.079, "text": "哦"}, {"start": 60.52, "end": 63.38, "text": "這句話我可以拿來當捧面圖的副標題"}, {"start": 63.619, "end": 65.379, "text": "這句話我可以拿來當空間組織"}, {"start": 65.379, "end": 66.68, "text": "包圍圖的副標題"}, {"start": 66.819, "end": 68.879, "text": "這句話我可以拿來當做基地環境分析的"}, {"start": 68.879, "end": 69.48, "text": "副標題"}, {"start": 69.879, "end": 71.28, "text": "這個要開始練習"}, {"start": 71.519, "end": 71.879, "text": "哦"}, {"start": 72.819, "end": 74.78, "text": "我剛剛今天開頭的時候有講"}, {"start": 74.78, "end": 76.219, "text": "大家都很懶惰"}, {"start": 76.42, "end": 79.42, "text": "要你同時畫圖又要同時思考很痛苦"}, {"start": 79.62, "end": 82.78, "text": "所以今天就是只是要你思考不用畫圖"}, {"start": 83.42, "end": 83.719, "text": "哦"}, {"start": 83.78, "end": 85.42, "text": "但是如果你想要開啟的話"}, {"start": 85.42, "end": 87.12, "text": "你可以指畫圖不思考"}, {"start": 87.52, "end": 89.92, "text": "指畫圖不思考就是開始練習排版"}, {"start": 90.92, "end": 93.28, "text": "指思考不畫圖就是開始練習獨題"}, {"start": 93.719, "end": 95.38, "text": "今天來的有幾個是老鳥"}, {"start": 95.47999999999999, "end": 97.82, "text": "那你可以練習獨題不畫圖"}, {"start": 98.28, "end": 99.58, "text": "思考不畫圖"}, {"start": 99.82, "end": 101.219, "text": "哦有一些菜鳥"}, {"start": 101.32, "end": 103.58, "text": "那就是又要畫圖又要思考"}, {"start": 103.68, "end": 104.78, "text": "哈哈哈哈"}, {"start": 104.97999999999999, "end": 107.28, "text": "啊如果兩個都不想那拜託"}, {"start": 107.88, "end": 109.719, "text": "這個禮拜有個很重要的工作"}, {"start": 109.719, "end": 111.42, "text": "去買30張大圖紙"}, {"start": 111.78, "end": 113.78, "text": "哦老鳥不用老鳥不用"}, {"start": 113.82, "end": 115.97999999999999, "text": "哦因為我覺得你會考上"}, {"start": 116.38, "end": 117.88, "text": "哈哈哈哈"}, {"start": 118.07900000000001, "end": 118.57900000000001, "text": "好"}, {"start": 119.88, "end": 120.84, "text": "十天後就知道"}, {"start": 120.84, "end": 122.64, "text": "十天後就知道來我們繼續講一下"}, {"start": 122.64, "end": 123.04, "text": "哦"}, {"start": 123.74, "end": 126.079, "text": "拜託拜託我們現在有三個功課了"}, {"start": 126.079, "end": 127.54, "text": "第一個功課是做"}, {"start": 128.14, "end": 128.539, "text": "呃"}, {"start": 129.74, "end": 130.68, "text": "兩個功課啦"}, {"start": 130.68, "end": 132.58, "text": "一個是做空間定性定量"}, {"start": 132.939, "end": 134.18, "text": "上禮拜有示範過"}, {"start": 134.28, "end": 136.439, "text": "他的練習目標是要看起來"}, {"start": 136.57999999999998, "end": 137.78, "text": "好像很厲害"}, {"start": 138.14, "end": 139.34, "text": "要可以寫出來"}, {"start": 139.34, "end": 141.84, "text": "就好像是圖面上的正式的一部分"}, {"start": 142.0, "end": 142.84, "text": "這是目標"}, {"start": 143.18, "end": 143.64, "text": "哦"}, {"start": 143.799, "end": 146.139, "text": "隨便你怎麼寫我也不會認真看"}, {"start": 146.739, "end": 149.039, "text": "但是麻煩你有做就傳給我"}, {"start": 149.699, "end": 151.199, "text": "哦傳給我之後"}, {"start": 151.199, "end": 152.559, "text": "我們開個項目坐在裡面"}, {"start": 152.559, "end": 154.099, "text": "你要一直累積裡面的量"}, {"start": 154.659, "end": 156.299, "text": "這是第一個開始練習"}, {"start": 156.699, "end": 158.899, "text": "第二個開始練習讀題"}, {"start": 159.039, "end": 160.56, "text": "麻煩那一張A4的紙"}, {"start": 160.56, "end": 163.099, "text": "把你覺得地面成最重要的空間寫下來"}, {"start": 163.639, "end": 165.439, "text": "然後去寫是哪一句話"}, {"start": 165.439, "end": 166.899, "text": "讓你覺得是最重要的空間"}, {"start": 167.399, "end": 168.539, "text": "哦然後"}, {"start": 169.939, "end": 171.599, "text": "哪一句話可以當做"}, {"start": 171.899, "end": 173.199, "text": "圖面的副標題"}, {"start": 173.899, "end": 174.639, "text": "了解嗎"}, {"start": 174.839, "end": 176.939, "text": "哦寫下來一樣傳給我"}, {"start": 177.0, "end": 178.399, "text": "一樣我不會認真看"}, {"start": 178.899, "end": 181.5, "text": "哦為什麼不認真看有我的理由"}, {"start": 181.599, "end": 182.699, "text": "因為接下來"}, {"start": 182.899, "end": 184.439, "text": "我都會去講到這些題目"}, {"start": 184.639, "end": 185.939, "text": "你要自己能夠去"}, {"start": 186.139, "end": 188.799, "text": "重新拿出你的舊練習來對照"}, {"start": 189.039, "end": 191.799, "text": "我真正會花時間看的是你們的配置"}, {"start": 192.339, "end": 194.139, "text": "哦真正會花時間看配置"}, {"start": 194.239, "end": 195.639, "text": "你們這個階段的"}, {"start": 195.739, "end": 198.199, "text": "獨體練習空間定性定量練習"}, {"start": 198.399, "end": 199.099, "text": "都是"}, {"start": 199.899, "end": 202.199, "text": "做完了以後去看我的影片去對照"}, {"start": 202.5, "end": 203.75900000000001, "text": "這樣會比較幫助"}, {"start": 204.299, "end": 205.459, "text": "哦那當然"}, {"start": 206.099, "end": 207.56, "text": "我還是會"}, {"start": 208.799, "end": 211.25900000000001, "text": "接下來我會開始去講大家練習"}, {"start": 211.25900000000001, "end": 212.959, "text": "那講大家練習因為我"}, {"start": 213.459, "end": 215.659, "text": "今年的設定是前半段的"}, {"start": 216.25900000000001, "end": 219.159, "text": "前半段的課程都是輸出"}, {"start": 219.56, "end": 220.56, "text": "輸出為主"}, {"start": 220.599, "end": 222.25900000000001, "text": "然後後半段才會是你們"}, {"start": 222.659, "end": 224.25900000000001, "text": "換你們輸出我來"}, {"start": 224.799, "end": 226.299, "text": "檢視哦好"}, {"start": 226.799, "end": 227.459, "text": "然後這邊"}, {"start": 228.0, "end": 229.899, "text": "如果你們有同學想上課"}, {"start": 230.3, "end": 232.4, "text": "一定堅持要付錢才要開始上課"}, {"start": 232.4, "end": 235.7, "text": "可以跟他說先來上課再決定好在付錢"}, {"start": 235.9, "end": 236.46, "text": "好不好"}, {"start": 236.599, "end": 238.7, "text": "來現場不能來現場"}, {"start": 238.8, "end": 240.939, "text": "麻煩你看個影片幫我點按"}, {"start": 241.06, "end": 241.7, "text": "點讚"}, {"start": 242.159, "end": 242.759, "text": "分享"}, {"start": 243.4, "end": 246.06, "text": "不點讚不分享沒關係至少私訊我說"}, {"start": 247.14, "end": 248.4, "text": "你還想不想繼續看"}, {"start": 248.56, "end": 249.75900000000001, "text": "哈哈哈哈"}, {"start": 250.3, "end": 250.75900000000001, "text": "然後"}, {"start": 251.659, "end": 252.56, "text": "因為我被"}, {"start": 252.939, "end": 254.74, "text": "某些原因我今年要繼續教了"}, {"start": 254.74, "end": 257.259, "text": "所以就請大家幫我去推廣一下"}, {"start": 257.66, "end": 258.06, "text": "好"}, {"start": 258.06, "end": 260.06, "text": "謝謝大家今天到這邊感謝各位"}]</script>
+    <script id="data-subtitle-en" type="application/json">[]</script>
+
+    <script>
+        // ========================================
+        // Video Notes v0.3.4 - Safer Data Loading
+        // ========================================
+        
+        console.log("Script starting...");
+        window.onerror = function(message, source, lineno, colno, error) {
+            console.error("Global JS Error:", message, "at", source, ":", lineno, ":", colno);
+        };
+
+        // Initialize variables
+        let videoData = {};
+        let durationSeconds = 0;
+        let frames = [];
+        let chapters = [];
+        let subtitleSegments = [];
+        let subtitleEnSegments = [];
+
+        try {
+            console.log('Step 1: Parsing Video Data');
+            const rawData = document.getElementById('data-video').textContent;
+            if (rawData) {
+                 videoData = JSON.parse(rawData);
+            }
+            durationSeconds = 261;
+            frames = videoData.frames || [];
+            chapters = videoData.chapters || [];
+            console.log('Step 1 Done: Frames', frames.length);
+        } catch (e) {
+            console.error('Error parsing video data:', e);
+            // Fallback
+            durationSeconds = 0;
+            frames = [];
+        }
+
+        try {
+            console.log('Step 2: Parsing Subtitles');
+            subtitleSegments = JSON.parse(document.getElementById('data-subtitle-zh').textContent);
+            subtitleEnSegments = JSON.parse(document.getElementById('data-subtitle-en').textContent);
+            console.log('Step 2 Done: Subs loaded');
+        } catch (e) { console.error('Error parsing subtitles:', e); }
+
+        const mainVideo = document.getElementById('mainVideo');
+        const subtitleDisplay = document.getElementById('subtitleDisplay');
+
+        // Lightbox
+        let currentImageIndex = 0;
+        const images = frames.map(f => f.image).filter(Boolean);
+
+        // 根據 frame index 找到對應章節
+        window.findChapterForFrame = function(frameIndex) {
+            for (let i = 0; i < chapters.length; i++) {
+                const ch = chapters[i];
+                if (frameIndex >= ch.start_index + 1 && frameIndex <= ch.end_index + 1) {
+                    return i + 1;  // 章節編號從 1 開始
+                }
+            }
+            return null;
+        };
+
+        // ========================================
+        // 可拖曳分隔線
+        // ========================================
+
+        // ========================================
+        // 可拖曳分隔線
+        // ========================================
+        
+        try {
+            const resizer = document.getElementById('resizer');
+            const leftPanel = document.getElementById('leftPanel');
+            let isResizing = false;
+
+            if (resizer && leftPanel) {
+                resizer.addEventListener('mousedown', (e) => {
+                    isResizing = true;
+                    resizer.classList.add('dragging');
+                    document.body.style.cursor = 'col-resize';
+                    document.body.style.userSelect = 'none';
+                });
+
+                document.addEventListener('mousemove', (e) => {
+                    if (!isResizing) return;
+
+                    const containerWidth = document.body.clientWidth;
+                    const newWidth = (e.clientX / containerWidth) * 100;
+
+                    // 限制範圍 25% - 75%
+                    if (newWidth >= 25 && newWidth <= 75) {
+                        leftPanel.style.width = newWidth + '%';
+                    }
+                });
+
+                document.addEventListener('mouseup', () => {
+                    if (isResizing) {
+                        isResizing = false;
+                        resizer.classList.remove('dragging');
+                        document.body.style.cursor = '';
+                        document.body.style.userSelect = '';
+
+                        // 儲存寬度偏好
+                        localStorage.setItem('leftPanelWidth', leftPanel.style.width);
+                    }
+                });
+                
+                // 載入寬度偏好
+                const savedWidth = localStorage.getItem('leftPanelWidth');
+                if (savedWidth) {
+                    leftPanel.style.width = savedWidth;
+                }
+            }
+        } catch (e) { console.error("Resizer init error:", e); }
+
+        // ========================================
+        // 主題切換
+        // ========================================
+
+        window.toggleTheme = function() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+
+            document.getElementById('themeIcon').textContent = newTheme === 'dark' ? '☀️' : '🌙';
+            document.getElementById('themeText').textContent = newTheme === 'dark' ? '淺色' : '深色';
+
+            localStorage.setItem('theme', newTheme);
+        };
+
+        // 載入主題偏好
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        if (savedTheme === 'dark') {
+            document.getElementById('themeIcon').textContent = '☀️';
+            document.getElementById('themeText').textContent = '淺色';
+        }
+
+        // ========================================
+        // 影片控制
+        // ========================================
+
+        window.togglePlay = function() {
+            if (mainVideo.paused) {
+                mainVideo.play();
+            } else {
+                mainVideo.pause();
+            }
+        };
+
+        window.setVolume = function(value) {
+            mainVideo.volume = value;
+        };
+
+        window.setPlaybackRate = function(rate) {
+            mainVideo.playbackRate = parseFloat(rate);
+        };
+
+        window.handleTimelineClick = function(event) {
+            const track = event.currentTarget;
+            const rect = track.getBoundingClientRect();
+            const percent = (event.clientX - rect.left) / rect.width;
+            mainVideo.currentTime = percent * durationSeconds;
+        };
+
+        window.jumpToTimeAndPlay = function(seconds) {
+            if (mainVideo) {
+                mainVideo.currentTime = seconds;
+                mainVideo.play().catch(e => console.error("Play failed:", e));
+            }
+        };
+
+        // 影片事件
+        mainVideo.addEventListener('play', () => {
+            document.getElementById('playBtn').textContent = '⏸';
+        });
+
+        mainVideo.addEventListener('pause', () => {
+            document.getElementById('playBtn').textContent = '▶';
+        });
+
+        mainVideo.addEventListener('timeupdate', () => {
+            const percent = (mainVideo.currentTime / durationSeconds) * 100;
+            document.getElementById('timelineProgress').style.width = percent + '%';
+
+            const mins = Math.floor(mainVideo.currentTime / 60);
+            const secs = Math.floor(mainVideo.currentTime % 60);
+            document.getElementById('currentTime').textContent =
+                mins.toString().padStart(2, '0') + ':' + secs.toString().padStart(2, '0');
+
+            // 更新字幕
+            updateSubtitle(mainVideo.currentTime);
+
+            // 高亮當前標記
+            highlightCurrentMarker(mainVideo.currentTime);
+        });
+
+        // 字幕功能 - 支援多語言與切換模式
+        window.updateSubtitle = function(currentTime) {
+            let subtitleZh = '';
+            let subtitleEn = '';
+
+            // 1. 讀取 ZH 字幕
+            if (subtitleSegments && subtitleSegments.length > 0) {
+                for (const seg of subtitleSegments) {
+                    if (currentTime >= seg.start && currentTime < seg.end) {
+                        subtitleZh = seg.text;
+                        break;
+                    }
+                }
+            }
+
+            // 2. 讀取 EN 字幕
+            if (subtitleEnSegments && subtitleEnSegments.length > 0) {
+                for (const seg of subtitleEnSegments) {
+                    if (currentTime >= seg.start && currentTime < seg.end) {
+                        subtitleEn = seg.text;
+                        break;
+                    }
+                }
+            }
+
+            // 3. 後備邏輯：如果沒 SRT，從 frame 逐字稿取 (ZH)
+            if (!subtitleZh && !subtitleEn) {
+                for (let i = 0; i < frames.length; i++) {
+                    const frame = frames[i];
+                    const startTime = frame.timestamp_seconds;
+                    const endTime = (i + 1 < frames.length) ? frames[i + 1].timestamp_seconds : durationSeconds;
+
+                    if (currentTime >= startTime && currentTime < endTime && frame.transcript) {
+                        const sentences = frame.transcript.split(/\n+/).filter(s => s.trim());
+                        if (sentences.length > 0) {
+                            const segmentDuration = endTime - startTime;
+                            const timeInSegment = currentTime - startTime;
+                            const sentenceIndex = Math.min(
+                                Math.floor((timeInSegment / segmentDuration) * sentences.length),
+                                sentences.length - 1
+                            );
+                            subtitleZh = sentences[sentenceIndex].trim();
+                        }
+                        break;
+                    }
+                }
+            }
+
+            // 4. 根據模式組合顯示內容
+            let displayHtml = '';
+            const mode = typeof currentSubMode !== 'undefined' ? currentSubMode : 'bilingual';
+
+            if (mode === 'bilingual') {
+                if (subtitleZh) displayHtml += `<div class="sub-zh">${subtitleZh}</div>`;
+                if (subtitleEn) displayHtml += `<div class="sub-en" style="font-size: 0.8em; opacity: 0.8; margin-top: 4px; font-style: italic;">${subtitleEn}</div>`;
+            } else if (mode === 'zh') {
+                displayHtml = subtitleZh;
+            } else if (mode === 'en') {
+                displayHtml = subtitleEn;
+            }
+
+            if (displayHtml) {
+                subtitleDisplay.innerHTML = displayHtml;
+                subtitleDisplay.classList.add('visible');
+            } else {
+                subtitleDisplay.classList.remove('visible');
+            }
+        }
+
+        // 高亮當前標記
+        function highlightCurrentMarker(currentTime) {
+            document.querySelectorAll('.timeline-marker').forEach(m => m.classList.remove('active'));
+
+            let activeFrameIndex = -1;
+            for (let i = 0; i < frames.length; i++) {
+                const frame = frames[i];
+                const startTime = frame.timestamp_seconds;
+                const endTime = (i + 1 < frames.length) ? frames[i + 1].timestamp_seconds : durationSeconds;
+
+                if (currentTime >= startTime && currentTime < endTime) {
+                    const marker = document.getElementById('marker-' + (i + 1));
+                    if (marker) marker.classList.add('active');
+                    activeFrameIndex = i + 1;
+                    break;
+                }
+            }
+
+            // v0.4.0: 自動跟隨 (Auto-scroll)
+            if (activeFrameIndex !== -1) {
+                // 1. 滾動卡片 (僅當該卡片不在視窗內或切換時)
+                const card = document.getElementById('frame-' + activeFrameIndex);
+                if (card && window.lastAutoScrollFrame !== activeFrameIndex) {
+                    card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    window.lastAutoScrollFrame = activeFrameIndex;
+                    
+                    // 高亮卡片感
+                    document.querySelectorAll('.frame-card').forEach(c => c.classList.remove('active'));
+                    card.classList.add('active');
+                }
+
+                // 2. 滾動章節導覽
+                const chapterIdx = window.findChapterForFrame(activeFrameIndex);
+                if (chapterIdx !== null && window.lastAutoScrollChapter !== chapterIdx) {
+                    const chapterItem = document.getElementById('chapter-item-' + chapterIdx);
+                    if (chapterItem) {
+                        // 展開章節
+                        chapterItem.classList.add('open');
+                        window.lastAutoScrollChapter = chapterIdx;
+                        
+                        // 高亮章節內連結
+                        document.querySelectorAll('.chapter-frame-link').forEach(link => {
+                            link.classList.toggle('active', parseInt(link.dataset.frameIndex) === activeFrameIndex);
+                        });
+
+                        // 讓章節項捲動到可見區域
+                        chapterItem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
+                } else if (chapterIdx !== null) {
+                    // 即使章節相同，也要高亮對應的連結
+                    document.querySelectorAll('.chapter-frame-link').forEach(link => {
+                        link.classList.toggle('active', parseInt(link.dataset.frameIndex) === activeFrameIndex);
+                    });
+                }
+            }
+        }
+
+        // ========================================
+        // 章節目錄
+        // ========================================
+
+        // Expose functions to global scope - DEFINED EARLY
+        window.toggleChapter = function(index) {
+            console.log('Toggling chapter:', index);
+            const item = document.getElementById('chapter-item-' + index);
+            if (item) {
+                item.classList.toggle('open');
+            } else {
+                console.error('Chapter item not found:', index);
+            }
+        };
+
+        window.jumpToFrame = function(index, seconds, chapterIndex) {
+            // 跳轉影片
+            const v = document.getElementById('mainVideo');
+            if (v) {
+                if (typeof seconds === 'number' && !isNaN(seconds)) {
+                    v.currentTime = seconds;
+                }
+            }
+
+            // 滾動到卡片
+            const card = document.getElementById('frame-' + index);
+            if (card) {
+                card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                // 高亮卡片
+                document.querySelectorAll('.frame-card').forEach(c => c.classList.remove('active'));
+                card.classList.add('active');
+                setTimeout(() => card.classList.remove('active'), 2000);
+            }
+            
+            // 展開並高亮對應章節
+            if (chapterIndex) {
+                const chapIdx = parseInt(chapterIndex);
+                if (!isNaN(chapIdx)) {
+                    // 關閉其他章節，展開當前章節
+                    document.querySelectorAll('.chapter-item').forEach(item => {
+                        if (item.id === 'chapter-item-' + chapIdx) {
+                            item.classList.add('open');
+                        }
+                    });
+
+                    // 高亮章節中對應的連結
+                    document.querySelectorAll('.chapter-frame-link').forEach(link => {
+                        link.classList.remove('active');
+                        if (parseInt(link.dataset.frameIndex) === index) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            }
+        };
+
+        // ========================================
+        // Initializers
+        // ========================================
+
+        try {
+             // 確保 chapters 存在
+             if (typeof chapters === 'undefined') chapters = [];
+        } catch(e) { console.error("Init vars error", e); }
+
+
+        // ========================================
+        // 卡片跳轉
+        // ========================================
+
+        // Previously defined jumpToFrame here, now moved up.
+
+
+        // ========================================
+        // Lightbox
+        // ========================================
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            const frame = frames[index];
+            if (!frame || !frame.image) return;
+
+            document.getElementById('lightboxImg').src = frame.image;
+            document.getElementById('lightboxInfo').textContent =
+                `${frame.timestamp} - ${frame.title || '截圖 ' + (index + 1)} (${index + 1}/${frames.length})`;
+            document.getElementById('lightbox').classList.add('active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + frames.length) % frames.length;
+            while (!frames[currentImageIndex].image && currentImageIndex > 0) {
+                currentImageIndex--;
+            }
+            openLightbox(currentImageIndex);
+        }
+
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % frames.length;
+            while (!frames[currentImageIndex].image && currentImageIndex < frames.length - 1) {
+                currentImageIndex++;
+            }
+            openLightbox(currentImageIndex);
+        }
+
+        // ========================================
+        // 手動戳記功能
+        // ========================================
+
+        // 從 localStorage 載入手動戳記
+        const videoId = '2BYPh2bDQ2A';
+        let manualMarks = JSON.parse(localStorage.getItem('manualMarks_' + videoId) || '[]');
+
+        // 初始化：渲染已保存的手動戳記
+        function renderManualMarks() {
+            // 移除舊的手動戳記
+            document.querySelectorAll('.timeline-marker.user-manual').forEach(m => m.remove());
+
+            // 添加新的手動戳記
+            const track = document.getElementById('timelineTrack');
+            manualMarks.forEach((mark, idx) => {
+                const marker = document.createElement('div');
+                marker.className = 'timeline-marker manual user-manual';
+                marker.style.left = (mark.time / durationSeconds * 100) + '%';
+                marker.title = 'M' + (idx + 1) + ': ' + formatTime(mark.time) + ' (手動)';
+                marker.textContent = 'M' + (idx + 1);
+                marker.onclick = (e) => {
+                    e.stopPropagation();
+                    mainVideo.currentTime = mark.time;
+                };
+                // 右鍵刪除
+                marker.oncontextmenu = (e) => {
+                    e.preventDefault();
+                    if (confirm('刪除此手動戳記？')) {
+                        manualMarks.splice(idx, 1);
+                        saveManualMarks();
+                        renderManualMarks();
+                    }
+                };
+                track.appendChild(marker);
+            });
+        }
+
+        function saveManualMarks() {
+            localStorage.setItem('manualMarks_' + videoId, JSON.stringify(manualMarks));
+        }
+
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return mins.toString().padStart(2, '0') + ':' + secs.toString().padStart(2, '0');
+        }
+
+        function addManualMark() {
+            const currentTime = mainVideo.currentTime;
+            // 檢查是否已有相近的戳記（5秒內）
+            const tooClose = manualMarks.some(m => Math.abs(m.time - currentTime) < 5);
+            if (tooClose) {
+                alert('此位置已有戳記（5秒內）');
+                return;
+            }
+            manualMarks.push({ time: currentTime, created: Date.now() });
+            manualMarks.sort((a, b) => a.time - b.time);
+            saveManualMarks();
+            renderManualMarks();
+
+            // 視覺反饋
+            const btn = document.getElementById('markBtn');
+            btn.style.transform = 'scale(1.2)';
+            setTimeout(() => btn.style.transform = '', 200);
+        }
+
+        // 初始化手動戳記
+        renderManualMarks();
+
+        // ========================================
+        // 鍵盤快捷鍵
+        // ========================================
+
+        document.addEventListener('keydown', (e) => {
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+            switch(e.key) {
+                case 'Escape':
+                    closeLightbox();
+                    break;
+                case 'ArrowLeft':
+                    if (document.getElementById('lightbox').classList.contains('active')) {
+                        prevImage();
+                    } else {
+                        mainVideo.currentTime = Math.max(0, mainVideo.currentTime - 5);
+                    }
+                    break;
+                case 'ArrowRight':
+                    if (document.getElementById('lightbox').classList.contains('active')) {
+                        nextImage();
+                    } else {
+                        mainVideo.currentTime = Math.min(durationSeconds, mainVideo.currentTime + 5);
+                    }
+                    break;
+                case ' ':
+                    e.preventDefault();
+                    togglePlay();
+                    break;
+                case 'm':
+                case 'M':
+                    addManualMark();
+                    break;
+            }
+        });
+
+        // 字幕切換模式
+        let currentSubMode = 'bilingual';
+
+        window.setSubtitleMode = function(mode) {
+            currentSubMode = mode;
+            document.body.classList.remove('sub-mode-zh', 'sub-mode-en', 'sub-mode-bilingual');
+            document.body.classList.add('sub-mode-' + mode);
+            localStorage.setItem('alex_diary_video_sub_mode', mode);
+
+            // Update the selector value if it exists
+            const selector = document.getElementById('subModeSelector');
+            if (selector) selector.value = mode;
+        }
+
+        // 初始化模式
+        function initSubMode() {
+            const savedMode = localStorage.getItem('alex_diary_video_sub_mode') || 'bilingual';
+            window.setSubtitleMode(savedMode); // Call the main setter function
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            initSubMode();
+        });
+
+        // ========================================
+        // 編輯摘要功能 (v0.4.1)
+        // ========================================
+
+        window.toggleEdit = function(index) {
+            const display = document.getElementById('summary-display-' + index);
+            const editor = document.getElementById('summary-editor-' + index);
+            const controls = document.getElementById('edit-controls-' + index);
+            
+            const isEditing = editor.style.display === 'block';
+            
+            if (isEditing) {
+                display.style.display = 'block';
+                editor.style.display = 'none';
+                controls.style.display = 'none';
+            } else {
+                display.style.display = 'none';
+                editor.style.display = 'block';
+                controls.style.display = 'flex';
+                editor.style.height = 'auto';
+                editor.style.height = (editor.scrollHeight + 10) + 'px';
+                editor.focus();
+            }
+        };
+
+        window.saveSummary = function(index) {
+            const videoId = document.getElementById('data-video') ? JSON.parse(document.getElementById('data-video').textContent).video.url.split('v=')[1].split('&')[0] : 'unknown';
+            const newSummary = document.getElementById('summary-editor-' + index).value;
+            const saveBtn = document.getElementById('save-btn-' + index);
+            
+            const originalText = saveBtn.textContent;
+            saveBtn.textContent = '⌛ 儲存中...';
+            saveBtn.disabled = true;
+
+            // 預設打向本機 server
+            fetch('http://localhost:10002/api/save', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    video_id: videoId,
+                    frame_index: index,
+                    summary: newSummary
+                })
+            })
+            .then(res => {
+                if (!res.ok) throw new Error('伺服器錯誤: ' + res.status);
+                return res.json();
+            })
+            .then(data => {
+                if (data.status === 'success') {
+                    saveBtn.textContent = '✅ 已存檔';
+                    saveBtn.style.background = '#27ae60';
+                    setTimeout(() => {
+                        location.reload(); // 重新整理以載入重新渲染後的 HTML
+                    }, 500);
+                } else {
+                    alert('儲存失敗: ' + (data.error || '未知錯誤'));
+                    saveBtn.textContent = originalText;
+                    saveBtn.disabled = false;
+                }
+            })
+            .catch(err => {
+                console.error(err);
+                alert('伺服器連線失敗！\n請回終端機檢查 python scripts/video_notes/server.py 是否正在運行。');
+                saveBtn.textContent = originalText;
+                saveBtn.disabled = false;
+            });
+        };
+
+        window.toggleStar = function(index) {
+            const btn = document.getElementById('star-' + index);
+            const isActive = btn.classList.toggle('active');
+            
+            // 同步更新時間軸上的標記顏色 (注意模板中是 1-indexed)
+            const marker = document.getElementById('marker-' + (index + 1));
+            if (marker) {
+                marker.classList.toggle('starred', isActive);
+            }
+
+            const videoId = document.getElementById('data-video') ? JSON.parse(document.getElementById('data-video').textContent).video.url.split('v=')[1].split('&')[0] : 'unknown';
+            
+            fetch('http://localhost:10002/api/save', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    video_id: videoId,
+                    frame_index: index,
+                    starred: isActive
+                })
+            });
+        };
+
+        console.log('Video Notes v0.4.1 - Script execution complete');
+    </script>
+</body>
+</html>
